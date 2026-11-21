@@ -1,0 +1,21 @@
+{
+  "name": "04-voucher-escrow",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "diagnose": "tsx src/diagnose.ts",
+    "experiment": "tsx src/experiment.ts"
+  },
+  "dependencies": {
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

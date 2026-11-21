@@ -135,6 +135,28 @@ importers:
         specifier: latest
         version: 7.0.2
 
+  spikes/06-oracle-share:
+    dependencies:
+      shamir-secret-sharing:
+        specifier: 0.0.4
+        version: 0.0.4
+      xrpl:
+        specifier: latest
+        version: 5.3.0
+      xrpl-kit:
+        specifier: workspace:*
+        version: link:../../packages/xrpl-kit
+    devDependencies:
+      '@types/node':
+        specifier: latest
+        version: 26.6.6
+      tsx:
+        specifier: latest
+        version: 4.23.15
+      typescript:
+        specifier: latest
+        version: 7.0.2
+
 packages:
 
   '@esbuild/aix-ppc64@0.28.2':
@@ -478,6 +500,9 @@ packages:
     resolution: {integrity: sha512-yeqN768gaHStQ76qwaJ2TGxIGMXA4c9tg32n1zMHUWbyfEKXA70XOUH8SQdnAnIQNCASd8hzBZ8Edoqcd+a+IA==}
     engines: {node: '>= 18'}
 
+  shamir-secret-sharing@0.0.4:
+    resolution: {integrity: sha512-ui8u/cIg2j16b9on/LH3V/glL6wHdwiTo/Iajzqx0STniBvuOzl6VYUxhrow3waF0dggovJfYiBZSWfTAN4XLQ==}
+
   tsx@4.23.15:
     resolution: {integrity: sha512-Yiex1Ovn8z2xPpOWckIiysV1SSyRMY9BkLF++q0yKiDxCqRhosKfMg3janKkiLBwZ5c/YryloKwGZcrEmtwxKw==}
     engines: {node: '>=18.0.0'}
@@ -753,6 +778,8 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+
+  shamir-secret-sharing@0.0.4: {}
 
   tsx@4.23.15:
     dependencies:

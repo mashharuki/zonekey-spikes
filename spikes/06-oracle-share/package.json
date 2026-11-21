@@ -1,0 +1,21 @@
+{
+  "name": "06-oracle-share",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "memo-limit": "tsx src/memo-limit.ts"
+  },
+  "dependencies": {
+    "shamir-secret-sharing": "0.0.4",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

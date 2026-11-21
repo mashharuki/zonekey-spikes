@@ -5,6 +5,8 @@ export interface TxOutcome {
   label: string;
   /** 署名済みトランザクションの hash（送信前に確定するので失敗時も残る） */
   hash: string;
+  /** 送信した tx の Sequence（EscrowFinish の OfferSequence などに使う） */
+  sequence: number | undefined;
   /** メタデータの TransactionResult（tesSUCCESS / tecXXX など）。取得できなければ undefined */
   engineResult: string | undefined;
   validated: boolean | undefined;
@@ -27,7 +29,12 @@ export async function submitAndLog(
 ): Promise<TxOutcome> {
   const prepared = await client.autofill(tx);
   const signed = wallet.sign(prepared);
-  const base = { label, hash: signed.hash, explorerUrl: explorerTxUrl(signed.hash) };
+  const base = {
+    label,
+    hash: signed.hash,
+    sequence: prepared.Sequence,
+    explorerUrl: explorerTxUrl(signed.hash),
+  };
   console.log(`[xrpl-kit] ${label}: submitting ${tx.TransactionType} hash=${signed.hash}`);
 
   try {

@@ -40,6 +40,63 @@ importers:
         specifier: latest
         version: 7.0.2
 
+  spikes/01-preflight:
+    dependencies:
+      xrpl:
+        specifier: latest
+        version: 5.3.0
+      xrpl-kit:
+        specifier: workspace:*
+        version: link:../../packages/xrpl-kit
+    devDependencies:
+      '@types/node':
+        specifier: latest
+        version: 26.6.6
+      tsx:
+        specifier: latest
+        version: 4.23.15
+      typescript:
+        specifier: latest
+        version: 7.0.2
+
+  spikes/02-rlusd-wallet:
+    dependencies:
+      xrpl:
+        specifier: latest
+        version: 5.3.0
+      xrpl-kit:
+        specifier: workspace:*
+        version: link:../../packages/xrpl-kit
+    devDependencies:
+      '@types/node':
+        specifier: latest
+        version: 26.6.6
+      tsx:
+        specifier: latest
+        version: 4.23.15
+      typescript:
+        specifier: latest
+        version: 7.0.2
+
+  spikes/03-rlusd-escrow:
+    dependencies:
+      xrpl:
+        specifier: latest
+        version: 5.3.0
+      xrpl-kit:
+        specifier: workspace:*
+        version: link:../../packages/xrpl-kit
+    devDependencies:
+      '@types/node':
+        specifier: latest
+        version: 26.6.6
+      tsx:
+        specifier: latest
+        version: 4.23.15
+      typescript:
+        specifier: latest
+        version: 7.0.2
+
 packages:
 
   '@esbuild/aix-ppc64@0.28.2':

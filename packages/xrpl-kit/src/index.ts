@@ -10,3 +10,19 @@ export {
 export { createFundedWallet, type FundedWallet } from "./wallet.js";
 export { isSuccess, submitAndLog, type TxOutcome } from "./submit.js";
 export { renderReport, writeReport, type Report, type ReportRow, type Verdict } from "./report.js";
+export {
+  isAccountActivated,
+  loadOrCreatePersistentWallet,
+  saveSeedToEnvLocal,
+  walletFromEnv,
+  type PersistentWallet,
+} from "./persistent-wallet.js";
+export {
+  RLUSD_CURRENCY,
+  RLUSD_FAUCET_URL,
+  RLUSD_TESTNET_ISSUER,
+  ensureRlusdTrustLine,
+  getRlusdLine,
+  type RlusdLine,
+} from "./rlusd.js";
+export { createPreimageCondition, type PreimageCondition } from "./condition.js";

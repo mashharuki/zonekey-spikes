@@ -16,7 +16,7 @@ XRPLハッカソン（2026年12月）向けPoC「ZoneKey Relief」の事前技�
 - 結果を良く見せるための回避策を勝手に入れない。期待どおりに動かなければ、そこで止めて事実を記録する
 
 ## 技術
-- Node.js 22以上、TypeScript（strict）、pnpm、tsx で実行
+- Node.js 26以上、TypeScript（strict）、pnpm、tsx で実行
 - xrpl.js は最新版。使う前に、Batch・Credential・Oracle・DID・Token Escrow のフィールドが型にあるかを確認する
 - トランザクションのフィールド名・フラグ値・エラーコードは記憶で書かず、xrpl.org のリファレンスと xrpl.js の型定義で確認してから使う
 

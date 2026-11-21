@@ -1,0 +1,7 @@
+packages:
+  - "packages/*"
+  - "spikes/*"
+
+# tsx が依存する esbuild のビルドスクリプトのみ許可
+allowBuilds:
+  esbuild: true

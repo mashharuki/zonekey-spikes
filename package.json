@@ -1,0 +1,13 @@
+{
+  "name": "zonekey-spikes",
+  "private": true,
+  "version": "0.0.0",
+  "description": "ZoneKey Relief の事前技術検証（XRPL Testnet 専用）",
+  "type": "module",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck"
+  }
+}

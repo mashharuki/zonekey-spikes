@@ -26,3 +26,15 @@ export {
   type RlusdLine,
 } from "./rlusd.js";
 export { createPreimageCondition, type PreimageCondition } from "./condition.js";
+export { Abort, Recorder, type Status } from "./recorder.js";
+export { LSF_ALLOW_TRUSTLINE_LOCKING, LSF_DEFAULT_RIPPLE, configureEscrowableIssuer, issued } from "./mock-issuer.js";
+export {
+  BATCH_MAX_INNER,
+  baseFeeDrops,
+  batchFeeDrops,
+  buildSingleAccountBatch,
+  standaloneFeeDrops,
+  submitBatch,
+  type BatchOutcome,
+  type InnerResult,
+} from "./batch.js";

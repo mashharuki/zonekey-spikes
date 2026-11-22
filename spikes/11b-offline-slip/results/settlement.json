@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-22T11:58:43.093Z",
+  "inputs": {
+    "checks": "results/checks.json",
+    "slips": [
+      "results/slips-A.json",
+      "results/slips-B.json"
+    ]
+  },
+  "checks": [
+    {
+      "CheckID": "BBE0A3C03064E1600B1F01C351B93E5B92B831CAA2C95FBDD71C97D3664B37F3",
+      "SendMax": "0.5",
+      "slipsReceived": 3,
+      "slipsUnique": 3,
+      "invalid": [],
+      "doubleSpends": [
+        {
+          "seq": 1,
+          "slips": [
+            {
+              "shop": "店-AOPN",
+              "shopId": "BE65B3D96FC396B5E379279E8E784D93",
+              "total": "0.2",
+              "slipTime": 1795348688,
+              "receivedAt": "2026-11-22T11:58:08.888Z",
+              "slipHex": "544F444F4B452D534C49502D763100BBE0A3C03064E1600B1F01C351B93E5B92B831CAA2C95FBDD71C97D3664B37F3000000010000000000030D40BE65B3D96FC396B5E379279E8E784D936B02D8D0",
+              "signatureHex": "BA52FD502D2C7C4F7FE968D2662079D845AFD5854CE7F12BAFA8E5B70524C8AB54DCD0FBF9979CB6FDE4701609E12C52CF4DA1EB3C15E4E2A1486DC935DB390B",
+              "publicKeyHex": "049F4426618AB3D2DC24A1D55B6581C7EEA30B28746613B858CC3CAE38B5F17981325CF5DB1F5F828606AD8BDA48C6B8DE0C1E8171B52549F81657BE2FEC2B3057",
+              "alg": "ECDSA-P256"
+            },
+            {
+              "shop": "店-O8G9",
+              "shopId": "412F5990D731BA78FBC64D6F12EAAD8C",
+              "total": "0.4",
+              "slipTime": 1795348691,
+              "receivedAt": "2026-11-22T11:58:11.887Z",
+              "slipHex": "544F444F4B452D534C49502D763100BBE0A3C03064E1600B1F01C351B93E5B92B831CAA2C95FBDD71C97D3664B37F3000000010000000000061A80412F5990D731BA78FBC64D6F12EAAD8C6B02D8D3",
+              "signatureHex": "86D0C98B629756B4C354DD55659895712E68B80473DCED91DFA220767E73EA0D482A4A49B1E048624A30DEC81EC691920DDA7D0FA274B9A13211F4A4E2812659",
+              "publicKeyHex": "049F4426618AB3D2DC24A1D55B6581C7EEA30B28746613B858CC3CAE38B5F17981325CF5DB1F5F828606AD8BDA48C6B8DE0C1E8171B52549F81657BE2FEC2B3057",
+              "alg": "ECDSA-P256"
+            }
+          ]
+        }
+      ],
+      "payouts": [
+        {
+          "shop": "店-AOPN",
+          "seq": 1,
+          "total": "0.2",
+          "claim": "0.2",
+          "paid": "0.2",
+          "loss": "0",
+          "receivedAt": "2026-11-22T11:58:08.888Z"
+        },
+        {
+          "shop": "店-O8G9",
+          "seq": 1,
+          "total": "0.4",
+          "claim": "0.4",
+          "paid": "0.3",
+          "loss": "0.1",
+          "receivedAt": "2026-11-22T11:58:11.887Z"
+        },
+        {
+          "shop": "店-O8G9",
+          "seq": 2,
+          "total": "0.5",
+          "claim": "0.1",
+          "paid": "0",
+          "loss": "0.1",
+          "receivedAt": "2026-11-22T11:58:12.652Z"
+        }
+      ],
+      "byShop": {
+        "店-AOPN": {
+          "claim": "0.2",
+          "paid": "0.2",
+          "loss": "0"
+        },
+        "店-O8G9": {
+          "claim": "0.5",
+          "paid": "0.3",
+          "loss": "0.2"
+        }
+      },
+      "settlementTotal": "0.5",
+      "withinSendMax": true,
+      "totalClaimed": "0.7",
+      "totalLoss": "0.2"
+    }
+  ]
+}

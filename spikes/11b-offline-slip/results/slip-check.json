@@ -1,0 +1,245 @@
+{
+  "base": "http://127.0.0.1:34057",
+  "browser": "Chrome 153.0.8010.12（headless、Linux x86_64）",
+  "invoiceId": "14A1DF91D22086D6AEBE4230C8418C33E58B826438F9CFCE1401E44EC5F0C66A",
+  "exportBeforeReload": "pkcs8: InvalidAccessError（Failed to execute 'exportKey' on 'SubtleCrypto': key is not extractable） / jwk: InvalidAccessError（Failed to execute 'exportKey' on 'SubtleCrypto': key is not extractable） / extractable=false",
+  "exportAfterReload": "pkcs8: InvalidAccessError（Failed to execute 'exportKey' on 'SubtleCrypto': key is not extractable） / jwk: InvalidAccessError（Failed to execute 'exportKey' on 'SubtleCrypto': key is not extractable） / extractable=false",
+  "checks": [
+    {
+      "CheckID": "BBE0A3C03064E1600B1F01C351B93E5B92B831CAA2C95FBDD71C97D3664B37F3",
+      "SendMax": "0.5",
+      "Expiration": 851255883,
+      "InvoiceID": "14A1DF91D22086D6AEBE4230C8418C33E58B826438F9CFCE1401E44EC5F0C66A",
+      "source": "試験用（CheckID・SendMax は 11a 確認 1 の Check。InvoiceID はこの世帯の鍵、期限は 30 日後に差し替え。台帳には作っていない）"
+    }
+  ],
+  "slip1": {
+    "info": "番号 1・合計 0.2 / 208 バイト・QR 型番 9 / 署名 0.3 ms",
+    "bytes": 208
+  },
+  "A_receive_slip1_qr": {
+    "verdict": "受け付け",
+    "ok": "true",
+    "text": "slip1-to-A.png\n\n受け付け\n\n番号 1・合計 0.2 / a InvoiceID ✅・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている （初回） / 確認 0.4 ms"
+  },
+  "tamper_total_1bit": {
+    "verdict": "不一致",
+    "ok": "false",
+    "text": "tamper-total.bin\n\n不一致\n\n・b: 署名が正しくない\n\n・d: 番号か合計額が、前に受け取った伝票（番号 1・合計 0.2）より大きくない\n\n番号 1・合計 0.200001 / a InvoiceID ✅・b 署名 ❌・c 上限 ✅・c 期限 ✅・d 増えている ❌ / 確認 0.1 ms"
+  },
+  "tamper_other_key_signature": {
+    "verdict": "不一致",
+    "ok": "false",
+    "text": "tamper-otherkey.bin\n\n不一致\n\n・b: 署名が正しくない\n\n・d: 番号か合計額が、前に受け取った伝票（番号 1・合計 0.2）より大きくない\n\n番号 1・合計 0.2 / a InvoiceID ✅・b 署名 ❌・c 上限 ✅・c 期限 ✅・d 増えている ❌ / 確認 0.2 ms"
+  },
+  "tamper_pubkey_not_invoiceid": {
+    "verdict": "不一致",
+    "ok": "false",
+    "text": "slip-wrongkey.png\n\n不一致\n\n・a: 公開鍵が Check の InvoiceID と合わない\n\n・d: 番号か合計額が、前に受け取った伝票（番号 1・合計 0.2）より大きくない\n\n番号 1・合計 0.1 / a InvoiceID ❌・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている ❌ / 確認 0.3 ms"
+  },
+  "replay_same_slip_to_A": {
+    "verdict": "不一致",
+    "ok": "false",
+    "text": "slip1-to-A.png\n\n不一致\n\n・d: 番号か合計額が、前に受け取った伝票（番号 1・合計 0.2）より大きくない\n\n番号 1・合計 0.2 / a InvoiceID ✅・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている ❌ / 確認 0.2 ms"
+  },
+  "slip_for_A_shown_to_B": {
+    "verdict": "不一致",
+    "ok": "false",
+    "text": "slip1-to-A.png\n\n不一致\n\n・宛先: 別のお店宛ての伝票\n\n番号 1・合計 0.2 / a InvoiceID ✅・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている （初回） / 確認 0.4 ms"
+  },
+  "slip1dup": {
+    "info": "番号 1・合計 0.4 / 208 バイト・QR 型番 9 / 署名 0.1 ms"
+  },
+  "B_receive_slip1dup_offline": {
+    "verdict": "受け付け",
+    "ok": "true",
+    "text": "slip1dup-to-B.png\n\n受け付け\n\n番号 1・合計 0.4 / a InvoiceID ✅・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている （初回） / 確認 0.2 ms"
+  },
+  "B_receive_slip2": {
+    "verdict": "受け付け",
+    "ok": "true",
+    "text": "slip2-to-B.png\n\n受け付け\n\n番号 2・合計 0.5 / a InvoiceID ✅・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている ✅ / 確認 0.2 ms"
+  },
+  "household_refuses_over_sendmax": "合計 0.6 が上限 0.5 を超える（世帯の画面で止める）",
+  "timing": {
+    "ECDSA-P256": {
+      "signMsAvg": 0.044,
+      "verifyMsAvg": 0.074,
+      "signatureBytes": 64
+    },
+    "Ed25519": {
+      "signMsAvg": 0.022,
+      "verifyMsAvg": 0.046,
+      "signatureBytes": 64
+    },
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  },
+  "ed25519": {
+    "info": "番号 1・合計 0.3 / 175 バイト・QR 型番 8 / 署名 0.2 ms",
+    "bytes": 175,
+    "shopC": {
+      "verdict": "受け付け",
+      "ok": "true",
+      "text": "slip-ed25519.png\n\n受け付け\n\n番号 1・合計 0.3 / a InvoiceID ✅・b 署名 ✅・c 上限 ✅・c 期限 ✅・d 増えている （初回） / 確認 0.3 ms"
+    }
+  },
+  "server_requests_by_phase": {
+    "online": [
+      "/",
+      "/assets/index-D-aFQub7.css",
+      "/assets/index-DUMW3tql.js",
+      "/assets/HouseholdPage-CbvKnmJ9.js",
+      "/assets/qr-DdO-s5ul.js",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+      "/icon.svg",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/pwa-64x64.png",
+      "/pwa-512x512.png",
+      "/pwa-192x192.png",
+      "/maskable-icon-512x512.png",
+      "/index.html",
+      "/icon.svg",
+      "/apple-touch-icon-180x180.png",
+      "/assets/browser-BouD1YmC.js",
+      "/assets/ShopPage-CiuMuL2u.js",
+      "/manifest.webmanifest",
+      "/",
+      "/assets/index-D-aFQub7.css",
+      "/assets/index-DUMW3tql.js",
+      "/assets/ShopPage-CiuMuL2u.js",
+      "/assets/qr-DdO-s5ul.js",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+      "/icon.svg",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/pwa-64x64.png",
+      "/pwa-512x512.png",
+      "/pwa-192x192.png",
+      "/maskable-icon-512x512.png",
+      "/index.html",
+      "/icon.svg",
+      "/apple-touch-icon-180x180.png",
+      "/assets/browser-BouD1YmC.js",
+      "/assets/HouseholdPage-CbvKnmJ9.js",
+      "/manifest.webmanifest",
+      "/sw.js",
+      "/",
+      "/assets/index-D-aFQub7.css",
+      "/assets/index-DUMW3tql.js",
+      "/assets/ShopPage-CiuMuL2u.js",
+      "/assets/qr-DdO-s5ul.js",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+      "/icon.svg",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/pwa-64x64.png",
+      "/pwa-512x512.png",
+      "/pwa-192x192.png",
+      "/maskable-icon-512x512.png",
+      "/index.html",
+      "/icon.svg",
+      "/apple-touch-icon-180x180.png",
+      "/assets/browser-BouD1YmC.js",
+      "/assets/HouseholdPage-CbvKnmJ9.js",
+      "/manifest.webmanifest",
+      "/sw.js",
+      "/",
+      "/assets/index-DUMW3tql.js",
+      "/assets/index-D-aFQub7.css",
+      "/assets/HouseholdPage-CbvKnmJ9.js",
+      "/assets/qr-DdO-s5ul.js",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+      "/icon.svg",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/pwa-64x64.png",
+      "/pwa-512x512.png",
+      "/pwa-192x192.png",
+      "/maskable-icon-512x512.png",
+      "/index.html",
+      "/icon.svg",
+      "/apple-touch-icon-180x180.png",
+      "/assets/browser-BouD1YmC.js",
+      "/assets/ShopPage-CiuMuL2u.js",
+      "/manifest.webmanifest",
+      "/sw.js"
+    ],
+    "offline": [
+      "/sw.js",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/sw.js",
+      "/sw.js",
+      "/sw.js"
+    ],
+    "online-ed": [
+      "/",
+      "/assets/index-D-aFQub7.css",
+      "/assets/index-DUMW3tql.js",
+      "/assets/HouseholdPage-CbvKnmJ9.js",
+      "/assets/qr-DdO-s5ul.js",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+      "/icon.svg",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/pwa-64x64.png",
+      "/pwa-512x512.png",
+      "/pwa-192x192.png",
+      "/maskable-icon-512x512.png",
+      "/index.html",
+      "/icon.svg",
+      "/apple-touch-icon-180x180.png",
+      "/assets/browser-BouD1YmC.js",
+      "/assets/ShopPage-CiuMuL2u.js",
+      "/manifest.webmanifest",
+      "/",
+      "/assets/index-D-aFQub7.css",
+      "/assets/index-DUMW3tql.js",
+      "/assets/ShopPage-CiuMuL2u.js",
+      "/assets/qr-DdO-s5ul.js",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+      "/icon.svg",
+      "/sw.js",
+      "/workbox-abeb32eb.js",
+      "/pwa-64x64.png",
+      "/pwa-512x512.png",
+      "/pwa-192x192.png",
+      "/maskable-icon-512x512.png",
+      "/index.html",
+      "/icon.svg",
+      "/apple-touch-icon-180x180.png",
+      "/assets/browser-BouD1YmC.js",
+      "/assets/HouseholdPage-CbvKnmJ9.js",
+      "/manifest.webmanifest",
+      "/sw.js"
+    ]
+  },
+  "offline_server_requests": [
+    {
+      "path": "/sw.js",
+      "serviceWorkerScriptUpdate": true
+    },
+    {
+      "path": "/sw.js",
+      "serviceWorkerScriptUpdate": true
+    },
+    {
+      "path": "/workbox-abeb32eb.js",
+      "serviceWorkerScriptUpdate": false
+    },
+    {
+      "path": "/sw.js",
+      "serviceWorkerScriptUpdate": true
+    },
+    {
+      "path": "/sw.js",
+      "serviceWorkerScriptUpdate": true
+    },
+    {
+      "path": "/sw.js",
+      "serviceWorkerScriptUpdate": true
+    }
+  ],
+  "offline_external_requests": []
+}

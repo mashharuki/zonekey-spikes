@@ -1,0 +1,214 @@
+{
+  "at": "2026-11-22T03:12:55.255Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "crossOriginIsolated": true,
+  "hardwareConcurrency": 10,
+  "noirWasmInitMs": 20.6,
+  "bbInitMs": 632.7,
+  "verify": {
+    "withVk": {
+      "n": 10,
+      "avg": 35.7,
+      "min": 28.3,
+      "max": 66.5
+    },
+    "allTrue": true,
+    "firstMs": 66.5
+  },
+  "proofBytes": 14656,
+  "prove": {
+    "firstExecuteMs": 4.2,
+    "firstProveMs": 172.9,
+    "warmProve": {
+      "n": 2,
+      "avg": 115.8,
+      "min": 110.1,
+      "max": 121.5
+    }
+  },
+  "wasm": {
+    "files": [
+      {
+        "url": "acvm_js_bg.wasm?import&url",
+        "transfer": 300,
+        "encoded": 893,
+        "decoded": 893
+      },
+      {
+        "url": "noirc_abi_wasm_bg.wasm?import&url",
+        "transfer": 300,
+        "encoded": 932,
+        "decoded": 932
+      },
+      {
+        "url": "acvm_js_bg.wasm",
+        "transfer": 300,
+        "encoded": 3050251,
+        "decoded": 3050251
+      },
+      {
+        "url": "noirc_abi_wasm_bg.wasm",
+        "transfer": 300,
+        "encoded": 789608,
+        "decoded": 789608
+      }
+    ],
+    "totalDecodedBytes": 3841684,
+    "totalEncodedBytes": 3841684
+  },
+  "bbJs": [
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 37205,
+      "decoded": 37205
+    },
+    {
+      "url": "backend.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 71719,
+      "decoded": 71719
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 2880,
+      "decoded": 2880
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 44591,
+      "decoded": 44591
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 845,
+      "decoded": 845
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 4898,
+      "decoded": 4898
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 8676,
+      "decoded": 8676
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 17647,
+      "decoded": 17647
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 2898,
+      "decoded": 2898
+    },
+    {
+      "url": "heap_allocator.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 11617,
+      "decoded": 11617
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 856,
+      "decoded": 856
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 7671,
+      "decoded": 7671
+    },
+    {
+      "url": "main.worker.js?worker_file&type=module",
+      "transfer": 300,
+      "encoded": 2548,
+      "decoded": 2548
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 8676,
+      "decoded": 8676
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 44591,
+      "decoded": 44591
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 17647,
+      "decoded": 17647
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 2898,
+      "decoded": 2898
+    },
+    {
+      "url": "index.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 845,
+      "decoded": 845
+    },
+    {
+      "url": "heap_allocator.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 11617,
+      "decoded": 11617
+    },
+    {
+      "url": "barretenberg-threads.js?v=ac29ba65",
+      "transfer": 0,
+      "encoded": 15173222,
+      "decoded": 15173222
+    }
+  ],
+  "crs": {
+    "files": [
+      {
+        "url": "index.js?v=ac29ba65",
+        "transfer": 0,
+        "encoded": 882,
+        "decoded": 882
+      },
+      {
+        "url": "index.js?v=ac29ba65",
+        "transfer": 0,
+        "encoded": 1079,
+        "decoded": 1079
+      },
+      {
+        "url": "cached_net_crs.js?v=ac29ba65",
+        "transfer": 0,
+        "encoded": 14216,
+        "decoded": 14216
+      },
+      {
+        "url": "net_crs.js?v=ac29ba65",
+        "transfer": 0,
+        "encoded": 21393,
+        "decoded": 21393
+      }
+    ],
+    "totalTransferBytes": 0
+  },
+  "allResources": {
+    "count": 68,
+    "totalDecodedBytes": 24991336
+  }
+}

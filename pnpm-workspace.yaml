@@ -7,3 +7,5 @@ allowBuilds:
   # 07-privy（@privy-io/react-auth の依存）。ログイン画面には不要なのでビルドスクリプトは実行しない
   '@reown/appkit': false
   esbuild: true
+  # 08-noir（bb.js の依存 msgpackr の高速化用ネイティブ拡張）。無くても JS 実装で動くのでビルドしない
+  msgpackr-extract: false

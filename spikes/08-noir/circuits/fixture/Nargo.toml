@@ -1,0 +1,8 @@
+[package]
+name = "fixture"
+type = "bin"
+authors = ["zonekey-spikes"]
+compiler_version = ">=1.0.0"
+
+[dependencies]
+elig_lib = { path = "../elig_lib" }

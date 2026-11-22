@@ -1,0 +1,3 @@
+[workspace]
+members = ["elig_lib", "eligibility", "fixture"]
+default-member = "eligibility"

@@ -1,0 +1,233 @@
+{
+  "at": "2026-11-22T03:12:21.010Z",
+  "machine": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": 10,
+    "cpuModel": "Apple M1 Pro",
+    "memGB": 16,
+    "node": "v24.20.0"
+  },
+  "versions": {
+    "noir_compiler": "1.0.0+275d3ab1a5c916c6ea73e8d6b943f685f574500c",
+    "noir_js": "1.0.0",
+    "bb_js": "6.0.0"
+  },
+  "verifierTarget": "noir-recursive",
+  "bbBrowserWasm": [
+    {
+      "file": "barretenberg-threads.js",
+      "jsBytes": 5428879,
+      "jsGzipBytes": 4053171,
+      "wasmGzipBytes": 4071596,
+      "wasmBytes": 18276755
+    },
+    {
+      "file": "barretenberg.js",
+      "jsBytes": 5423267,
+      "jsGzipBytes": 4048893,
+      "wasmGzipBytes": 4067387,
+      "wasmBytes": 18278515
+    }
+  ],
+  "negative": [
+    {
+      "case": "根が違う",
+      "expected": "merkle root mismatch",
+      "result": "Circuit execution failed: merkle root mismatch",
+      "blocked": true
+    },
+    {
+      "case": "別アカウント（acct だけ差し替え）",
+      "expected": "merkle root mismatch",
+      "result": "Circuit execution failed: merkle root mismatch",
+      "blocked": true
+    },
+    {
+      "case": "ゾーンが対象外",
+      "expected": "zone not in zone_set",
+      "result": "Circuit execution failed: zone not in zone_set",
+      "blocked": true
+    },
+    {
+      "case": "高齢者が必要なのに senior=false（根は作り直し）",
+      "expected": "senior required",
+      "result": "Circuit execution failed: senior required",
+      "blocked": true
+    },
+    {
+      "case": "再被災が必要なのに revictim=false（根は作り直し）",
+      "expected": "revictim required",
+      "result": "Circuit execution failed: revictim required",
+      "blocked": true
+    },
+    {
+      "case": "区分が足りない",
+      "expected": "tier below min_tier",
+      "result": "Circuit execution failed: tier below min_tier",
+      "blocked": true
+    },
+    {
+      "case": "nullifier が違う",
+      "expected": "nullifier mismatch",
+      "result": "Circuit execution failed: nullifier mismatch",
+      "blocked": true
+    },
+    {
+      "case": "別プログラムの nullifier",
+      "expected": "nullifier mismatch",
+      "result": "Circuit execution failed: nullifier mismatch",
+      "blocked": true
+    }
+  ],
+  "modes": [
+    {
+      "label": "native",
+      "backend": "NativeUnixSocket",
+      "initMs": 103.2,
+      "gates": {
+        "numGates": 1363,
+        "numGatesDyadic": 2048,
+        "numAcirOpcodes": 138
+      },
+      "vk": {
+        "ms": 17.4,
+        "bytes": 3680
+      },
+      "single": {
+        "firstExecuteMs": 2.1,
+        "firstProveMs": 73.8,
+        "warmExecute": {
+          "n": 5,
+          "avg": 2,
+          "min": 2,
+          "max": 2.1
+        },
+        "warmProve": {
+          "n": 5,
+          "avg": 60.5,
+          "min": 55.7,
+          "max": 75.5
+        }
+      },
+      "sizes": {
+        "proofBytes": 14656,
+        "publicInputs": 15,
+        "publicInputsBytes": 480,
+        "vkBytes": 3680
+      },
+      "verify": {
+        "withVk": {
+          "n": 10,
+          "avg": 5.2,
+          "min": 5.1,
+          "max": 5.8
+        },
+        "withVkAllTrue": true,
+        "recomputeVk": {
+          "n": 3,
+          "avg": 26.1,
+          "min": 16.1,
+          "max": 45.9
+        },
+        "rejectsTamperedPublicInput": true
+      },
+      "batch": {
+        "n": 100,
+        "totalMs": 7010.6,
+        "perProofMs": 70.1
+      },
+      "memory": {
+        "peakNodeMB": 360,
+        "peakChildrenMB": 43
+      }
+    },
+    {
+      "label": "wasm",
+      "backend": "WasmWorker",
+      "initMs": 634.6,
+      "gates": {
+        "numGates": 1363,
+        "numGatesDyadic": 2048,
+        "numAcirOpcodes": 138
+      },
+      "vk": {
+        "ms": 41.1,
+        "bytes": 3680
+      },
+      "single": {
+        "firstExecuteMs": 2,
+        "firstProveMs": 141.5,
+        "warmExecute": {
+          "n": 5,
+          "avg": 2,
+          "min": 1.9,
+          "max": 2.1
+        },
+        "warmProve": {
+          "n": 5,
+          "avg": 103.6,
+          "min": 100.1,
+          "max": 105.1
+        }
+      },
+      "sizes": {
+        "proofBytes": 14656,
+        "publicInputs": 15,
+        "publicInputsBytes": 480,
+        "vkBytes": 3680
+      },
+      "verify": {
+        "withVk": {
+          "n": 10,
+          "avg": 18.6,
+          "min": 16.3,
+          "max": 30.2
+        },
+        "withVkAllTrue": true,
+        "recomputeVk": {
+          "n": 3,
+          "avg": 49.7,
+          "min": 40.2,
+          "max": 64.2
+        },
+        "rejectsTamperedPublicInput": true
+      },
+      "batch": {
+        "n": 100,
+        "totalMs": 10282.8,
+        "perProofMs": 102.8
+      },
+      "memory": {
+        "peakNodeMB": 822,
+        "peakChildrenMB": 12
+      }
+    }
+  ],
+  "crsCache": [
+    {
+      "file": "bn254_g1.dat",
+      "bytes": 134217728
+    },
+    {
+      "file": "bn254_g1_compressed.dat",
+      "bytes": 67108864
+    },
+    {
+      "file": "bn254_g2.dat",
+      "bytes": 128
+    },
+    {
+      "file": "crs.lock",
+      "bytes": 0
+    },
+    {
+      "file": "grumpkin_g1_v2.flat.dat",
+      "bytes": 4194304
+    },
+    {
+      "file": "grumpkin_size",
+      "bytes": 5
+    }
+  ]
+}

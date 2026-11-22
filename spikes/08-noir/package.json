@@ -1,0 +1,25 @@
+{
+  "name": "08-noir",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "bench": "tsx bench/node.ts",
+    "web": "vite",
+    "report": "tsx scripts/report.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aztec-foundation/bb.js": "6.0.0",
+    "@noir-lang/acvm_js": "1.0.0",
+    "@noir-lang/noir_js": "1.0.0",
+    "@noir-lang/noirc_abi": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-plugin-node-polyfills": "latest"
+  }
+}

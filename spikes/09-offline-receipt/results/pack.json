@@ -1,0 +1,97 @@
+[
+  {
+    "name": "s2",
+    "txCount": 6,
+    "proofLevels": 1,
+    "parts": {
+      "header": 118,
+      "tx": 260,
+      "meta": 1328,
+      "proof": 131,
+      "allTxs": 7077,
+      "vlJson": 3790,
+      "manifests": 1290
+    },
+    "full": {
+      "bytes": 12298
+    },
+    "ab": {
+      "bytes": 1846,
+      "deflated": 1183,
+      "qr": {
+        "L": "入る（型番 32）",
+        "M": "入る（型番 36）"
+      },
+      "qrDeflated": {
+        "L": "入る（型番 25）",
+        "M": "入る（型番 28）"
+      }
+    },
+    "abcEstimate": {
+      "bytes": 3017,
+      "deflated": 1908,
+      "qr": {
+        "L": "入らない（The amount of data is too big to be stored in a QR Code）",
+        "M": "入らない（The amount of data is too big to be stored in a QR Code）"
+      },
+      "qrDeflated": {
+        "L": "入る（型番 32）",
+        "M": "入る（型番 36）"
+      },
+      "note": "live の検証 5 件を大きさの見積もりに使った（署名は無効）"
+    }
+  },
+  {
+    "name": "live",
+    "txCount": 17,
+    "proofLevels": 2,
+    "parts": {
+      "header": 118,
+      "tx": 188,
+      "meta": 515,
+      "proof": 357,
+      "allTxs": 11355,
+      "vlJson": 3790,
+      "manifests": 1290
+    },
+    "full": {
+      "bytes": 18020
+    },
+    "ab": {
+      "bytes": 1186,
+      "deflated": 1075,
+      "qr": {
+        "L": "入る（型番 25）",
+        "M": "入る（型番 28）"
+      },
+      "qrDeflated": {
+        "L": "入る（型番 23）",
+        "M": "入る（型番 27）"
+      }
+    },
+    "abc": {
+      "bytes": 2357,
+      "validations": 5,
+      "validationBytes": [
+        232,
+        233,
+        232,
+        232,
+        232
+      ],
+      "deflated": 1764,
+      "qr": {
+        "L": "入る（型番 36）",
+        "M": "入らない（The amount of data is too big to be stored in a QR Code）"
+      },
+      "qrDeflated": {
+        "L": "入る（型番 31）",
+        "M": "入る（型番 35）"
+      },
+      "withUnl": {
+        "bytes": 7437,
+        "note": "VL とマニフェストもパックに入れた場合"
+      }
+    }
+  }
+]

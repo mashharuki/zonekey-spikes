@@ -1,0 +1,249 @@
+{
+  "at": "2026-11-22T04:41:00.503Z",
+  "networkAttempts": 0,
+  "bundles": [
+    {
+      "name": "s2",
+      "context": {
+        "kind": "s2",
+        "tx": "90AD02700471CD53D255489446210E55E742973058C93F3E0428A86E1ACAEA8C",
+        "ledger_index": 22492505,
+        "fetched_at": "2026-11-22T04:31:04.678Z",
+        "note": "spike 04 Escrow A の EscrowFinish（既定）"
+      },
+      "validatedFlagFromApi": true,
+      "serverVersion": "3.4.1",
+      "serverQuorum": 5,
+      "A": {
+        "ok": true,
+        "txCount": 6,
+        "computedRoot": "DA6DD60ABA64C0C9225D98F50463A1999B52FDF221A9CF9DDE4F49E7D7556402",
+        "headerTxHash": "DA6DD60ABA64C0C9225D98F50463A1999B52FDF221A9CF9DDE4F49E7D7556402",
+        "rootMatches": true,
+        "targetTxId": "90AD02700471CD53D255489446210E55E742973058C93F3E0428A86E1ACAEA8C",
+        "targetIncluded": true,
+        "proofLevels": 1,
+        "proofRootMatches": true,
+        "target": {
+          "TransactionType": "EscrowFinish",
+          "Account": "rnLhRMaLLdQ8QguFNWRvrjaU3yk8ihiHeP",
+          "Destination": "rf5KmznG6nH8rW3orSRq7oxmUvVGKUTzCe",
+          "TransactionResult": "tesSUCCESS",
+          "delivered_amount": {
+            "value": "0.1",
+            "currency": "ZKV",
+            "issuer": "rL78UuDATjCUXaRt1xBunNG9qUB6uhRGg1"
+          }
+        }
+      },
+      "B": {
+        "ok": true,
+        "computedLedgerHash": "8831D4CEDDB509073F7010D43155537CB3D5E63C6B07D37EAD4B0D5E6382CF07",
+        "expectedLedgerHash": "8831D4CEDDB509073F7010D43155537CB3D5E63C6B07D37EAD4B0D5E6382CF07",
+        "header": {
+          "ledger_index": 22492505,
+          "total_coins": "99999872145594016",
+          "parent_hash": "EDFCC924F7004CFA9D44D03D699EFDC7475C14251BB529B6BC8516194F5BBE8D",
+          "transaction_hash": "DA6DD60ABA64C0C9225D98F50463A1999B52FDF221A9CF9DDE4F49E7D7556402",
+          "account_hash": "633612BCCA3884F82AD52F1BE6200318672148BB7296A891DBE3EB9C07030EEB",
+          "parent_close_time": 848559560,
+          "close_time": 848559561,
+          "close_time_resolution": 10,
+          "close_flags": 0
+        },
+        "closeTimeIso": "2026-11-21T06:59:21.000Z",
+        "headerBinaryMatchesJson": true
+      },
+      "C": {
+        "ok": false,
+        "reason": "このレジャーへの検証者の署名（validation）を持っていない。validations ストリームは受信時点のものしか流れず、過去のレジャーの検証を後から取る公開 API はない"
+      },
+      "tamper": {
+        "metaFlipped_A": false,
+        "closeTimePlus1_B": false,
+        "accountHashFlipped_B": false
+      },
+      "receipts": {
+        "ab": {
+          "bytes": 1846,
+          "A": {
+            "ok": true,
+            "computedRoot": "DA6DD60ABA64C0C9225D98F50463A1999B52FDF221A9CF9DDE4F49E7D7556402",
+            "headerTxHash": "DA6DD60ABA64C0C9225D98F50463A1999B52FDF221A9CF9DDE4F49E7D7556402",
+            "targetTxId": "90AD02700471CD53D255489446210E55E742973058C93F3E0428A86E1ACAEA8C",
+            "proofLevels": 1
+          },
+          "B": {
+            "ok": true,
+            "computedLedgerHash": "8831D4CEDDB509073F7010D43155537CB3D5E63C6B07D37EAD4B0D5E6382CF07"
+          },
+          "C": "（署名を入れていない）"
+        }
+      }
+    },
+    {
+      "name": "live",
+      "context": {
+        "kind": "live",
+        "tx": "64D0B887F5F3D1504115642FBE3ADF81D99908FC3809883707D3CCB140958393",
+        "ledger_index": 22515681,
+        "receiver": "rNon59tzfcgzmcmETTG6coVwBn3ZDQaEac",
+        "fetched_at": "2026-11-22T04:31:21.728Z",
+        "validationsReceivedTotal": 29,
+        "note": "Faucet → 新規アカウントの Payment。購読開始後に起こした"
+      },
+      "validatedFlagFromApi": true,
+      "serverVersion": "3.4.1",
+      "serverQuorum": 5,
+      "A": {
+        "ok": true,
+        "txCount": 17,
+        "computedRoot": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+        "headerTxHash": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+        "rootMatches": true,
+        "targetTxId": "64D0B887F5F3D1504115642FBE3ADF81D99908FC3809883707D3CCB140958393",
+        "targetIncluded": true,
+        "proofLevels": 2,
+        "proofRootMatches": true,
+        "target": {
+          "TransactionType": "Payment",
+          "Account": "rJjHYTCPpNA3qAM8ZpCDtip3a8xg7B8PFo",
+          "Destination": "rNon59tzfcgzmcmETTG6coVwBn3ZDQaEac",
+          "TransactionResult": "tesSUCCESS",
+          "delivered_amount": "100000000"
+        }
+      },
+      "B": {
+        "ok": true,
+        "computedLedgerHash": "4D119012DB5D3EB0CE8070F2D1D91D9BD57288E89D36176BF578BF53FE4074D8",
+        "expectedLedgerHash": "4D119012DB5D3EB0CE8070F2D1D91D9BD57288E89D36176BF578BF53FE4074D8",
+        "header": {
+          "ledger_index": 22515681,
+          "total_coins": "99999871149054699",
+          "parent_hash": "3920680DD62C22C2CF6708BED889DB639FEE3F1667D993DA061AEF14848515E8",
+          "transaction_hash": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+          "account_hash": "4B0453CF4909369F0311B688CA049F89161A3AB794E5BFBFB9FD2E1FE1665EFF",
+          "parent_close_time": 848637061,
+          "close_time": 848637070,
+          "close_time_resolution": 10,
+          "close_flags": 0
+        },
+        "closeTimeIso": "2026-11-22T04:31:10.000Z",
+        "headerBinaryMatchesJson": true
+      },
+      "C": {
+        "ok": true,
+        "vl": {
+          "sequence": 59,
+          "expiration": 870975066,
+          "expirationIso": "2027-08-07T17:31:06.000Z",
+          "publisherOk": true,
+          "blobSignatureValid": true,
+          "inForceAtClose": true,
+          "unlSize": 6,
+          "manifestsResolved": 6
+        },
+        "quorum": 5,
+        "trustedSigners": 6,
+        "validations": {
+          "total": 6,
+          "signatureValid": 6,
+          "forThisLedger": 6,
+          "trustedValidFull": 6,
+          "untrustedOrUnknownKey": 0
+        },
+        "signers": [
+          {
+            "master": "ED061ECB51B5BD62665F5D1A5DB1A62AF84464BED77E7728235A7A551D4535E717",
+            "domain": "ED061ECB51B5BD62665F5D1A5DB1A62AF84464BED77E7728235A7A551D4535E717",
+            "signingTime": 848637067
+          },
+          {
+            "master": "EDF62907763AAD8ED21F7EAF3F36B5264856A375FBB47CE64383EED74847C8DA6A",
+            "domain": "EDF62907763AAD8ED21F7EAF3F36B5264856A375FBB47CE64383EED74847C8DA6A",
+            "signingTime": 848637068
+          },
+          {
+            "master": "EDA9BEAB987DCFFEDCF2067B24CC7B8CF0C210B358A891FE0ED78EC324FBB40ADB",
+            "domain": "EDA9BEAB987DCFFEDCF2067B24CC7B8CF0C210B358A891FE0ED78EC324FBB40ADB",
+            "signingTime": 848637068
+          },
+          {
+            "master": "ED20BB134D03B54E3D2E6745775BF41FADF3C276399B1F3623081D7B66D0714E33",
+            "domain": "ED20BB134D03B54E3D2E6745775BF41FADF3C276399B1F3623081D7B66D0714E33",
+            "signingTime": 848637068
+          },
+          {
+            "master": "EDADB6E6F7229F92909E5A6DBAF81AD1EC723D31B676CD8F5F3E926AD043D187C0",
+            "domain": "EDADB6E6F7229F92909E5A6DBAF81AD1EC723D31B676CD8F5F3E926AD043D187C0",
+            "signingTime": 848637068
+          },
+          {
+            "master": "EDF5B661ECC615C5C77D55F1B572FAC6FE6C7B116EB0A0E3F1DCEB9F48932548D0",
+            "domain": "EDF5B661ECC615C5C77D55F1B572FAC6FE6C7B116EB0A0E3F1DCEB9F48932548D0",
+            "signingTime": 848637068
+          }
+        ]
+      },
+      "tamper": {
+        "metaFlipped_A": false,
+        "closeTimePlus1_B": false,
+        "accountHashFlipped_B": false,
+        "firstValidationFlipped_C_signersAfter": 5
+      },
+      "receipts": {
+        "ab": {
+          "bytes": 1186,
+          "A": {
+            "ok": true,
+            "computedRoot": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+            "headerTxHash": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+            "targetTxId": "64D0B887F5F3D1504115642FBE3ADF81D99908FC3809883707D3CCB140958393",
+            "proofLevels": 2
+          },
+          "B": {
+            "ok": true,
+            "computedLedgerHash": "4D119012DB5D3EB0CE8070F2D1D91D9BD57288E89D36176BF578BF53FE4074D8"
+          },
+          "C": "（署名を入れていない）"
+        },
+        "abc": {
+          "bytes": 2357,
+          "A": {
+            "ok": true,
+            "computedRoot": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+            "headerTxHash": "CCE09C0DD9D3FCEA809BB45A9868CD99AB9BFA636FF23B1983A9F16683F6E9D0",
+            "targetTxId": "64D0B887F5F3D1504115642FBE3ADF81D99908FC3809883707D3CCB140958393",
+            "proofLevels": 2
+          },
+          "B": {
+            "ok": true,
+            "computedLedgerHash": "4D119012DB5D3EB0CE8070F2D1D91D9BD57288E89D36176BF578BF53FE4074D8"
+          },
+          "C": {
+            "ok": true,
+            "vl": {
+              "sequence": 59,
+              "expiration": 870975066,
+              "expirationIso": "2027-08-07T17:31:06.000Z",
+              "publisherOk": true,
+              "blobSignatureValid": true,
+              "inForceAtClose": true,
+              "unlSize": 6,
+              "manifestsResolved": 6
+            },
+            "quorum": 5,
+            "trustedSigners": 5,
+            "validations": {
+              "total": 5,
+              "signatureValid": 5,
+              "forThisLedger": 5,
+              "trustedValidFull": 5,
+              "untrustedOrUnknownKey": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

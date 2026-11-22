@@ -5,11 +5,11 @@
  *   （各段で対象が進む位置は txid から決まるので書かない）
  * 検証者リスト（VL）とマニフェストは「検証アプリに事前に入れておく」前提でパックに含めない。
  */
-import { type Bytes, Reader, concat, u16, u8, vl } from "./bytes.js";
+import { type Bytes, Reader, concat, u16, u8, utf8, vl } from "./bytes.js";
 import { HEADER_BYTES, type Header, parseHeader, serializeHeader } from "./ledger.js";
 import { type ProofLevel, nibble, txId } from "./shamap.js";
 
-const MAGIC = new TextEncoder().encode("ZKR1");
+export const MAGIC = new TextEncoder().encode("ZKR1");
 
 export function encodeReceipt(header: Header, tx: Bytes, meta: Bytes, proof: ProofLevel[], validations: Bytes[]): Bytes {
   const levels = proof.map((l) => {
@@ -23,7 +23,7 @@ export function encodeReceipt(header: Header, tx: Bytes, meta: Bytes, proof: Pro
 
 export function decodeReceipt(b: Bytes) {
   const r = new Reader(b);
-  if (Buffer.from(r.take(4)).toString() !== "ZKR1") throw new Error("受け取りパックではない");
+  if (utf8(r.take(4)) !== "ZKR1") throw new Error("受け取りパックではない");
   const header = parseHeader(r.take(HEADER_BYTES));
   const tx = r.vl(), meta = r.vl();
   const id = txId(tx);

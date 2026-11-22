@@ -1,6 +1,6 @@
 # 09-offline-receipt: 受け取り取引の確定をネットなしで検証できるか
 
-計測: 2026-11-22T04:41:00.503Z（取得は 2026-11-22T04:31:04.678Z）/ Testnet サーバー: 3.4.1
+計測: 2026-11-22T04:53:29.481Z（取得は 2026-11-22T04:31:04.678Z）/ Testnet サーバー: 3.4.1
 実装: 根拠に使った rippled のソースは **3.4.1**（タグ）。xrpl 5.3.0（取得のみ）、ripple-binary-codec 2.11.0（表示用のデコードのみ）、@noble/curves 2.4.0（secp256k1 / Ed25519）、ハッシュは Node の SHA-512
 対象: S2 = spike 04「Escrow A: 第三者（keeper）が正しい Fulfillment で完了」の EscrowFinish（リポジトリに「S2」の表記がないため、受益者に受給証が届いた EscrowFinish をこれと判断した）
 

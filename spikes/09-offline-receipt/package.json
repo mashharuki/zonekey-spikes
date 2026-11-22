@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    "./verifier": "./src/lib/verifier.ts"
+  },
   "scripts": {
     "collect": "tsx src/fetch.ts",
     "receipt": "tsx src/pack.ts",
@@ -13,6 +16,7 @@
   },
   "dependencies": {
     "@noble/curves": "2.4.0",
+    "@noble/hashes": "2.4.0",
     "qrcode": "latest",
     "ripple-address-codec": "latest",
     "ripple-binary-codec": "latest",

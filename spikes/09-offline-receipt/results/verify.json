@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-22T04:41:00.503Z",
+  "at": "2026-11-22T04:53:29.481Z",
   "networkAttempts": 0,
   "bundles": [
     {
@@ -77,7 +77,15 @@
             "ok": true,
             "computedLedgerHash": "8831D4CEDDB509073F7010D43155537CB3D5E63C6B07D37EAD4B0D5E6382CF07"
           },
-          "C": "（署名を入れていない）"
+          "C": "（署名を入れていない）",
+          "verifier": {
+            "confirmed": false,
+            "reasons": [
+              "C: パックに検証者の署名が入っていない（A・B だけのパック）。確定したことは確かめられない"
+            ],
+            "confirmedFromDeflated": false,
+            "deflatedBytes": 1183
+          }
         }
       }
     },
@@ -205,7 +213,15 @@
             "ok": true,
             "computedLedgerHash": "4D119012DB5D3EB0CE8070F2D1D91D9BD57288E89D36176BF578BF53FE4074D8"
           },
-          "C": "（署名を入れていない）"
+          "C": "（署名を入れていない）",
+          "verifier": {
+            "confirmed": false,
+            "reasons": [
+              "C: パックに検証者の署名が入っていない（A・B だけのパック）。確定したことは確かめられない"
+            ],
+            "confirmedFromDeflated": false,
+            "deflatedBytes": 1075
+          }
         },
         "abc": {
           "bytes": 2357,
@@ -241,6 +257,12 @@
               "trustedValidFull": 5,
               "untrustedOrUnknownKey": 0
             }
+          },
+          "verifier": {
+            "confirmed": true,
+            "reasons": [],
+            "confirmedFromDeflated": true,
+            "deflatedBytes": 1764
           }
         }
       }

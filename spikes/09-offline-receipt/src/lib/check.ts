@@ -11,7 +11,7 @@ import { checkValidation } from "./validation.js";
 export interface StageA {
   ok: boolean; txCount: number; computedRoot: string; headerTxHash: string; rootMatches: boolean;
   targetTxId: string; targetIncluded: boolean; proofLevels: number; proofRootMatches: boolean;
-  target: { TransactionType?: unknown; Account?: unknown; Destination?: unknown; TransactionResult?: unknown; delivered_amount?: unknown };
+  target: ReturnType<typeof describeTarget>;
 }
 export interface StageB { ok: boolean; computedLedgerHash: string; expectedLedgerHash: string; header: ReturnType<typeof describe>; closeTimeIso: string }
 export interface StageC {
@@ -20,6 +20,22 @@ export interface StageC {
   quorum?: number; trustedSigners?: number;
   validations?: { total: number; signatureValid: number; forThisLedger: number; trustedValidFull: number; untrustedOrUnknownKey: number };
   signers?: { master: string; domain?: string; signingTime?: number }[];
+}
+
+/**
+ * 受け取りの中身（表示用。検証には使わない）。改ざんしたバイト列ではデコードに失敗しうるので落とさない。
+ * EscrowFinish は tx に Destination がないので、meta で削除された Escrow の FinalFields から受取人と額を読む。
+ * XRP の通常の Payment は meta に DeliveredAmount がない（部分支払いのときだけ入る）ので tx の Amount を使う。
+ */
+export function describeTarget(txb: Bytes, metab: Bytes) {
+  const safe = (b: Bytes): Record<string, unknown> => { try { return decode(hex(b)) as Record<string, unknown>; } catch { return {}; } };
+  const tx = safe(txb), meta = safe(metab);
+  const escrow = ((meta["AffectedNodes"] as Record<string, Record<string, unknown>>[] | undefined) ?? [])
+    .map((n) => n["DeletedNode"]).find((d) => d?.["LedgerEntryType"] === "Escrow")?.["FinalFields"] as Record<string, unknown> | undefined;
+  return {
+    TransactionType: tx["TransactionType"], Account: tx["Account"], Destination: tx["Destination"] ?? escrow?.["Destination"],
+    TransactionResult: meta["TransactionResult"], delivered_amount: meta["DeliveredAmount"] ?? escrow?.["Amount"] ?? tx["Amount"],
+  };
 }
 
 /** 段階 A: 全 tx から木の根を作り、ヘッダの transaction_hash と比べる。対象 tx の枝も作って確かめる */
@@ -31,18 +47,11 @@ export function stageA(target: { tx: Bytes; meta: Bytes }, all: { tx: Bytes; met
   const targetIncluded = items.some((x) => equal(x.key, id) && equal(x.hash, leaf));
   const p = targetIncluded ? proof(items, id) : [];
   const proofRootMatches = targetIncluded && equal(rootFromProof(p, id, leaf), header.txHash);
-  // 表示用のデコード（検証には使わない）。改ざんしたバイト列では失敗しうるので落とさない
-  const safe = (b: Bytes): Record<string, unknown> => { try { return decode(hex(b)) as Record<string, unknown>; } catch { return {}; } };
-  const tx = safe(target.tx);
-  const meta = safe(target.meta);
-  // EscrowFinish は tx に Destination がないので、meta で削除された Escrow の FinalFields から受取人と額を読む（表示用）
-  const escrow = ((meta["AffectedNodes"] as Record<string, Record<string, unknown>>[] | undefined) ?? [])
-    .map((n) => n["DeletedNode"]).find((d) => d?.["LedgerEntryType"] === "Escrow")?.["FinalFields"] as Record<string, unknown> | undefined;
   const rootMatches = equal(root, header.txHash);
   return {
     ok: rootMatches && targetIncluded && proofRootMatches, txCount: items.length, computedRoot: hex(root), headerTxHash: hex(header.txHash),
     rootMatches, targetTxId: hex(id), targetIncluded, proofLevels: p.length, proofRootMatches, proof: p,
-    target: { TransactionType: tx["TransactionType"], Account: tx["Account"], Destination: tx["Destination"] ?? escrow?.["Destination"], TransactionResult: meta["TransactionResult"], delivered_amount: meta["DeliveredAmount"] ?? escrow?.["Amount"] ?? tx["Amount"] },
+    target: describeTarget(target.tx, target.meta),
   };
 }
 

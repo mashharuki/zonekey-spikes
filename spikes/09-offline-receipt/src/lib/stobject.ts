@@ -4,7 +4,7 @@
  * 根拠: xrpl.org Binary Format（Field IDs / Type List / Length Prefixing）
  *       rippled STObject::getSigningHash（src/libxrpl/protocol/STObject.cpp）
  */
-import { type Bytes, concat, readVL } from "./bytes.js";
+import { type Bytes, concat, readU32, readVL } from "./bytes.js";
 
 export interface Field { type: number; nth: number; start: number; end: number; valueStart: number }
 
@@ -64,4 +64,4 @@ export const F = {
   Version: [1, 16],
 } as const satisfies Record<string, readonly [number, number]>;
 export const get = (b: Bytes, f: readonly [number, number]) => find(b, f[0], f[1]);
-export const getU32 = (b: Bytes, f: readonly [number, number]) => { const v = get(b, f); return v ? Buffer.from(v).readUInt32BE() : undefined; };
+export const getU32 = (b: Bytes, f: readonly [number, number]) => { const v = get(b, f); return v ? readU32(v) : undefined; };

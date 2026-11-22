@@ -23,6 +23,8 @@ const { stageA, stageAFromProof, stageB, stageC } = await import("./lib/check.js
 const { decodeReceipt } = await import("./lib/receipt.js");
 const { ledgerHash } = await import("./lib/ledger.js");
 const { hex } = await import("./lib/bytes.js");
+const { verifyReceipt } = await import("./lib/verifier.js");
+const { deflateRawSync } = await import("node:zlib");
 
 const out = (p: string) => new URL(`../${p}`, import.meta.url);
 mkdirSync(out("results/"), { recursive: true });
@@ -63,6 +65,13 @@ for (const name of bundleNames()) {
       B: { ok: rb.ok, computedLedgerHash: rb.computedLedgerHash },
       C: kind === "abc" ? (({ signers: _s, ...c }) => c)(stageC(r.header, ledgerHash(r.header), r.validations, b.vl, b.manifests)) : "（署名を入れていない）",
     };
+    // PWA（spike 10）と同じ入口での判定。圧縮したパックでも同じ結果になるか
+    if (b.vl) {
+      const trust = { vl: b.vl, manifests: b.manifests.map((m) => btoa(String.fromCharCode(...m.raw))) };
+      const v = await verifyReceipt(bytes, trust);
+      const vz = await verifyReceipt(new Uint8Array(deflateRawSync(bytes, { level: 9 })), trust);
+      (receipts[kind] as Record<string, unknown>)["verifier"] = { confirmed: v.confirmed, reasons: v.reasons, confirmedFromDeflated: vz.confirmed, deflatedBytes: vz.input.bytes };
+    }
   }
 
   const row = { name, context: b.context, validatedFlagFromApi: b.validated, serverVersion: b.serverVersion, serverQuorum: b.serverQuorum, A, B: { ...B, headerBinaryMatchesJson }, C, tamper, receipts };

@@ -4,7 +4,7 @@
  *   sha512Half("LWR\0", seq u32, drops u64, parentHash, txHash, accountHash,
  *              parentCloseTime u32, closeTime u32, closeTimeResolution u8, closeFlags u8)
  */
-import { type Bytes, HashPrefix, Reader, concat, hex, sha512Half, u32, u64, u8, unhex } from "./bytes.js";
+import { type Bytes, HashPrefix, Reader, concat, hex, readU32, readU64, sha512Half, u32, u64, u8, unhex } from "./bytes.js";
 
 export interface Header {
   seq: number; drops: bigint; parentHash: Bytes; txHash: Bytes; accountHash: Bytes;
@@ -19,9 +19,9 @@ export const ledgerHash = (h: Header): Bytes => sha512Half(HashPrefix.LedgerMast
 export function parseHeader(b: Bytes): Header {
   const r = new Reader(b);
   return {
-    seq: Buffer.from(r.take(4)).readUInt32BE(), drops: Buffer.from(r.take(8)).readBigUInt64BE(),
+    seq: readU32(r.take(4)), drops: readU64(r.take(8)),
     parentHash: r.take(32), txHash: r.take(32), accountHash: r.take(32),
-    parentCloseTime: Buffer.from(r.take(4)).readUInt32BE(), closeTime: Buffer.from(r.take(4)).readUInt32BE(),
+    parentCloseTime: readU32(r.take(4)), closeTime: readU32(r.take(4)),
     closeTimeResolution: r.u8(), closeFlags: r.u8(),
   };
 }

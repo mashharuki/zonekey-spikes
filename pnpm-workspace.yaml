@@ -4,4 +4,6 @@ packages:
 
 # tsx が依存する esbuild のビルドスクリプトのみ許可
 allowBuilds:
+  # 07-privy（@privy-io/react-auth の依存）。ログイン画面には不要なのでビルドスクリプトは実行しない
+  '@reown/appkit': false
   esbuild: true

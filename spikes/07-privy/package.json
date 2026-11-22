@@ -1,0 +1,31 @@
+{
+  "name": "07-privy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "pnpm run /^dev:/",
+    "dev:server": "tsx src/server/index.ts",
+    "dev:web": "vite",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@hono/node-server": "latest",
+    "@privy-io/node": "0.41.0",
+    "@privy-io/react-auth": "3.52.0",
+    "hono": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}

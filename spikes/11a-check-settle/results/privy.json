@@ -1,0 +1,121 @@
+{
+  "at": "2026-11-22T11:39:07.124Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "🔎 確認7: 口座",
+      "expected": "-",
+      "actual": "H2（Privy のユーザー所有）=r3FDUiRWkL37BUs1iWPCgPb4Fdu8w56KJA（wallet_id=z7p6ean7oppmzkitcrvuvgir）<br>S=rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY / V=rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh<br>付いていたポリシー=[\"ddtu31yobf77rugg7yaodyxr\"]",
+      "evidence": "wallets().list"
+    },
+    {
+      "item": "✅ 確認7 準備: H2 のポリシーを外す（本人の JWT で）",
+      "expected": "policy_ids=[]",
+      "actual": "policy_ids=[]",
+      "evidence": "wallets().update + user_jwts"
+    },
+    {
+      "item": "✅ 確認7 準備: H2 の受給証トラストライン（Privy で署名）",
+      "expected": "署名される → tesSUCCESS",
+      "actual": "署名された → tesSUCCESS",
+      "evidence": "[863719506B3746DA8510BA07DE5B0EF906094CF81283483A3139818843561836](https://testnet.xrpl.org/transactions/863719506B3746DA8510BA07DE5B0EF906094CF81283483A3139818843561836)"
+    },
+    {
+      "item": "✅ 確認7 準備: V → H2 受給証 1.0",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[390B53460D0DB74EF7DCA9A95A848BBEC3B106B9D5DF53A9C51F5DC1167C6C2E](https://testnet.xrpl.org/transactions/390B53460D0DB74EF7DCA9A95A848BBEC3B106B9D5DF53A9C51F5DC1167C6C2E)"
+    },
+    {
+      "item": "✅ 確認7a: H2 → S CheckCreate（SendMax 0.5）を xrpl_signTransaction で署名して送る（ポリシーなし）",
+      "expected": "署名される → tesSUCCESS",
+      "actual": "署名された → tesSUCCESS",
+      "evidence": "[46061FC3ADF43F447FC8F55C7FE3957E1AF1B1222B46F65AB62CD9D8B86611DE](https://testnet.xrpl.org/transactions/46061FC3ADF43F447FC8F55C7FE3957E1AF1B1222B46F65AB62CD9D8B86611DE)"
+    },
+    {
+      "item": "🔎 確認7 準備: ゆるいロックのポリシー",
+      "expected": "-",
+      "actual": "policy_id=hp8ydaboqfp1hhuh9tvfs5x5<br>DENY: Payment かつ Payment.Amount.currency=ZKV<br>ALLOW: TrustSet（ZKV / V）だけ。それ以外は既定で拒否",
+      "evidence": "policies().create"
+    },
+    {
+      "item": "🔎 確認7b: TransactionType = CheckCreate の ALLOW ルール",
+      "expected": "作れる？（spike 07 では 4 種類以外は invalid_policy_format。今のドキュメントは作れるように読める）",
+      "actual": "作れない: 400 {\"error\":\"Validation error: Condition value must be a supported XRPL transaction type (Payment, OfferCreate, OfferCancel, TrustSet) for the 'TransactionType' field at \\\"value\\\"\",\"code\":\"invalid_policy_format\"}",
+      "evidence": "policies().createRule"
+    },
+    {
+      "item": "✅ 確認7c 準備: ゆるいロックを H2 に付ける（本人の JWT で）",
+      "expected": "policy_ids に入る",
+      "actual": "policy_ids=[\"hp8ydaboqfp1hhuh9tvfs5x5\"]",
+      "evidence": "wallets().update + user_jwts"
+    },
+    {
+      "item": "✅ 確認7c(1): 受給証の Payment（H2 → S 0.1）",
+      "expected": "ポリシーで拒否される",
+      "actual": "拒否: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+      "evidence": "xrpl_signTransaction（送信なし）"
+    },
+    {
+      "item": "✅ 確認7c(2): CheckCancel（7a の Check）",
+      "expected": "ポリシーで拒否される",
+      "actual": "拒否: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+      "evidence": "xrpl_signTransaction（送信なし）"
+    },
+    {
+      "item": "✅ 確認7c(3): OfferCreate（受給証 0.1 を XRP に）",
+      "expected": "ポリシーで拒否される",
+      "actual": "拒否: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+      "evidence": "xrpl_signTransaction（送信なし）"
+    },
+    {
+      "item": "✅ 確認7c(参考): 新しい CheckCreate（S 以外の宛先へ）",
+      "expected": "ポリシーで拒否される",
+      "actual": "拒否: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+      "evidence": "xrpl_signTransaction（送信なし）"
+    },
+    {
+      "item": "✅ 確認7d: ポリシーを付けたまま、S が H2 の Check を CheckCash（Amount 0.2）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[E4C1E0096199AF101E5CF2712896ABCBB2C92F567DF3F95009D6B6BFC0FDE062](https://testnet.xrpl.org/transactions/E4C1E0096199AF101E5CF2712896ABCBB2C92F567DF3F95009D6B6BFC0FDE062)。Check は 消えた"
+    },
+    {
+      "item": "🔎 確認7 後片付け: H2 のポリシーを元に戻す",
+      "expected": "[\"ddtu31yobf77rugg7yaodyxr\"]",
+      "actual": "[\"ddtu31yobf77rugg7yaodyxr\"]",
+      "evidence": "wallets().update + user_jwts"
+    }
+  ],
+  "statuses": [
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe"
+  ],
+  "errorCodes": [
+    "確認7b: 400 {\"error\":\"Validation error: Condition value must be a supported XRPL transaction type (Payment, OfferCreate, OfferCancel, TrustSet) for the 'TransactionType' field at \\\"value\\\"\",\"code\":\"invalid_policy_format\"}",
+    "確認7c(1): 受給証の Payment（H2 → S 0.1）: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+    "確認7c(2): CheckCancel（7a の Check）: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+    "確認7c(3): OfferCreate（受給証 0.1 を XRP に）: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}",
+    "確認7c(参考): 新しい CheckCreate（S 以外の宛先へ）: 400 {\"error\":\"RPC request denied due to policy violation\",\"code\":\"policy_violation\"}"
+  ],
+  "unknowns": [],
+  "H2": "r3FDUiRWkL37BUs1iWPCgPb4Fdu8w56KJA",
+  "walletId": "z7p6ean7oppmzkitcrvuvgir",
+  "originalPolicyIds": [
+    "ddtu31yobf77rugg7yaodyxr"
+  ],
+  "check7a": "48CE158B885690B45C76E785A46DD90ABA7F634EF06B783C87D69B96A0ACDED3",
+  "checkCreateRule": "400 {\"error\":\"Validation error: Condition value must be a supported XRPL transaction type (Payment, OfferCreate, OfferCancel, TrustSet) for the 'TransactionType' field at \\\"value\\\"\",\"code\":\"invalid_policy_format\"}"
+}

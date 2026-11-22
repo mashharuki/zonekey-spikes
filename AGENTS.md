@@ -4,9 +4,11 @@ XRPLハッカソン（2026年12月）向けPoC「ZoneKey Relief」の事前技�
 ここのコードは検証のためだけのもので、本番には持ち込まない。目的は「動くか・動かないか」を事実で確かめること。
 
 ## プロダクトの要約
-災害時、国・県・NGOのドナーが世帯ごとにRLUSD（相当のトークン）のToken Escrowを積む。
-条件はPREIMAGE-SHA-256。ゾーン鍵をShamir 2-of-3で3つのオラクルに分け、2つが閾値を超えると
-鍵が揃って巡回ボット（keeper）がEscrowFinishをBatchで一斉に送る。期限（CancelAfter）切れはEscrowCancelでドナーへ戻る。
+Todoke（トドケ）。災害時、国・県・NGOなどの支援元が、RLUSDと1対1の受給証（発行者V、DEXの常設注文で交換）を、
+世帯ごとにToken Escrowに積む。条件はPREIMAGE-SHA-256。ゾーン鍵をShamir 2-of-3で3つのオラクルに分け、
+2つが閾値を超えると鍵が揃って巡回ボット（keeper）がEscrowFinishをBatchで一斉に送る（1回最大8件）。
+期限（CancelAfter）切れはEscrowCancelで支援元へ戻る。受取人の口座はPrivyのユーザー所有ウォレット。
+RLUSDはTestnetの発行者に lsfAllowTrustLineLocking がなく、直接エスクローに入れられない（spike 03）。
 
 ## 絶対に守ること
 - XRPL Testnet のみ。Mainnetには接続しない。エンドポイント: wss://s.altnet.rippletest.net:51233

@@ -1,0 +1,445 @@
+{
+  "at": "2026-11-22T11:31:29.884Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "🔎 準備: Testnet",
+      "expected": "-",
+      "actual": "rippled 3.4.1 / 準備金 1 XRP + 0.2 XRP/件 / 基本手数料 0.00001 XRP",
+      "evidence": "server_info"
+    },
+    {
+      "item": "🔎 準備: 口座",
+      "expected": "-",
+      "actual": "S=rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY<br>V=rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh<br>H1=rLcnf4tmAVye2YwGSi8AmSY1jN8LCDKJYL（受給証 1.0）<br>T（第三者）=rUmHE72sttaXmS63bsiMu4wVoSMVQVN1CN<br>H3〜H10=rMJH3FHVqSktGPE8aRvu153591UEgDgpwV, rwRjExJFa5qeKicMYbLVksCeUrG2QGDBVd, rLEDdHgME3phvPAgLh7nWw8MSsG3hf7QvN, rNWsojQvhRcr5TziUXUPu9uyjiSyTtmwAg, rDQ96HRma6Uwg5gBEmhX8udJBS15CzvfSn, rLzXzgW6xqGp1rAFweiKAoXWhUZmwfKrGo, r3vKqqfu9nVktcifVw8uuxZ42gd6Sx7VVC, r4mybnTgRBZUk6Zz5DtCmVSDXPwpuKtEEy（受給証 0.2 ずつ）",
+      "evidence": "世帯の受給証は V から直接配った（本番は Escrow の払い出し）。S・V の seed は .env.local"
+    },
+    {
+      "item": "✅ 確認1: H1 → S CheckCreate（SendMax 受給証 0.5、Expiration 30 分、InvoiceID）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[472905FC5D85C3BFBF227FA343E427716E1D0427E2673FD1FE837A2E274398A2](https://testnet.xrpl.org/transactions/472905FC5D85C3BFBF227FA343E427716E1D0427E2673FD1FE837A2E274398A2)"
+    },
+    {
+      "item": "✅ 確認1: 台帳の Check に InvoiceID が残る（account_objects）",
+      "expected": "D31D5F9DB787040901A56F2E47CDCF7C11598C3AC139DCC0645D46DF12E6318E",
+      "actual": "D31D5F9DB787040901A56F2E47CDCF7C11598C3AC139DCC0645D46DF12E6318E",
+      "evidence": "CheckID=BBE0A3C03064E1600B1F01C351B93E5B92B831CAA2C95FBDD71C97D3664B37F3<br>伝票の公開鍵（P-256 非圧縮 65 B）=0449b6e0e777aa2ee27f…"
+    },
+    {
+      "item": "✅ 確認1: H1 の OwnerCount",
+      "expected": "1 増える",
+      "actual": "1 → 2",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認2: S が CheckCash（Amount 0.2）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[562BAE2D9105C7F280BE703C996B5CFB6AAE45DD49FAD8A80EC94FA973A2B169](https://testnet.xrpl.org/transactions/562BAE2D9105C7F280BE703C996B5CFB6AAE45DD49FAD8A80EC94FA973A2B169)"
+    },
+    {
+      "item": "✅ 確認2: 上限 0.5 のうち 0.2 だけ換金したあと、Check は台帳から消えるか",
+      "expected": "消える（rippled CheckCash.cpp: 成功したら額にかかわらず erase）",
+      "actual": "消えた（残りの 0.3 も引けなくなる）",
+      "evidence": "ledger_entry / account_objects"
+    },
+    {
+      "item": "🔎 確認2: 受給証の残高",
+      "expected": "H1 −0.2 / S +0.2",
+      "actual": "H1 1 → 0.8<br>S 1 → 1.2",
+      "evidence": "account_lines"
+    },
+    {
+      "item": "✅ 確認2: 同じ CheckID でもう一度 CheckCash",
+      "expected": "tecNO_ENTRY（validated）",
+      "actual": "tecNO_ENTRY / validated=true",
+      "evidence": "[377D278875033F830B96DFD09F6588FCE8EEA7FC5BB01A70BCF0B811CA10E82F](https://testnet.xrpl.org/transactions/377D278875033F830B96DFD09F6588FCE8EEA7FC5BB01A70BCF0B811CA10E82F)"
+    },
+    {
+      "item": "✅ 確認3 準備: 新しい Check（SendMax 0.3）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[6B437A00BD4F7FC86E55DAC603F5E44551B9C000AACD9881B94D8A96C6670676](https://testnet.xrpl.org/transactions/6B437A00BD4F7FC86E55DAC603F5E44551B9C000AACD9881B94D8A96C6670676)"
+    },
+    {
+      "item": "✅ 確認3: Amount 0.4 で CheckCash（上限 0.3 を超える）",
+      "expected": "tecPATH_PARTIAL（validated）",
+      "actual": "tecPATH_PARTIAL / validated=true",
+      "evidence": "[8A7B162F6529933FA349DF5290FA1F1B8FC5B55FCF0CE3EB2B3FA06319ECAA15](https://testnet.xrpl.org/transactions/8A7B162F6529933FA349DF5290FA1F1B8FC5B55FCF0CE3EB2B3FA06319ECAA15)。期待は rippled 3.4.1 CheckCash.cpp（value > sendMax）による"
+    },
+    {
+      "item": "🔎 確認3: 失敗後も Check は残るか",
+      "expected": "残る（xrpl.org: 換金に失敗したら Check は残る）",
+      "actual": "残っている",
+      "evidence": "ledger_entry"
+    },
+    {
+      "item": "✅ 確認4 準備: 新しい Check（SendMax 0.5）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[35CCA05B1E7656272C48167BE6BBE0D004875A92DF77B1362ED934AA1DA105C9](https://testnet.xrpl.org/transactions/35CCA05B1E7656272C48167BE6BBE0D004875A92DF77B1362ED934AA1DA105C9)"
+    },
+    {
+      "item": "✅ 確認4 準備: H1 が受給証 0.7 を T へ移す（残高を 0.1 に）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[E41A642C707F9E539E9863CF3C7B30FD2FFBEA20BD9C41C935B3C50451562885](https://testnet.xrpl.org/transactions/E41A642C707F9E539E9863CF3C7B30FD2FFBEA20BD9C41C935B3C50451562885)"
+    },
+    {
+      "item": "🔎 確認4: H1 の受給証残高",
+      "expected": "0.1",
+      "actual": "0.8 → 0.1",
+      "evidence": "account_lines"
+    },
+    {
+      "item": "✅ 確認4: Amount 0.3 で CheckCash（H1 の残高 0.1）",
+      "expected": "tecPATH_PARTIAL（validated）",
+      "actual": "tecPATH_PARTIAL / validated=true",
+      "evidence": "[0C2006D2410844EDDEACE52417719994F42CF93285BD0DD1A53BC5D162271146](https://testnet.xrpl.org/transactions/0C2006D2410844EDDEACE52417719994F42CF93285BD0DD1A53BC5D162271146)。期待は rippled CheckCash.cpp（value > 送り手の残高）による"
+    },
+    {
+      "item": "🔎 確認4: 失敗後も Check は残るか",
+      "expected": "残る",
+      "actual": "残っている（期限まで再試行できる）",
+      "evidence": "ledger_entry"
+    },
+    {
+      "item": "✅ 確認4: DeliverMin 0.05 で CheckCash",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[A9193F70266C55AF2F9481092712617191625D3D972BE8EF04C2C38BE6688841](https://testnet.xrpl.org/transactions/A9193F70266C55AF2F9481092712617191625D3D972BE8EF04C2C38BE6688841)"
+    },
+    {
+      "item": "🔎 確認4: 届いた額（delivered_amount）",
+      "expected": "送り手の残高ぶん（0.1）",
+      "actual": "{\"currency\":\"ZKV\",\"issuer\":\"rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh\",\"value\":\"0.1\"}",
+      "evidence": "[A9193F70266C55AF2F9481092712617191625D3D972BE8EF04C2C38BE6688841](https://testnet.xrpl.org/transactions/A9193F70266C55AF2F9481092712617191625D3D972BE8EF04C2C38BE6688841)。H1 の残高 0、Check は 消えた"
+    },
+    {
+      "item": "✅ 確認5 準備: Check（Expiration 90 秒後）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[20E2C1272C63AD36984C3C2C377E2A53180CDB1F7A62F56C82BE410F7C072F3E](https://testnet.xrpl.org/transactions/20E2C1272C63AD36984C3C2C377E2A53180CDB1F7A62F56C82BE410F7C072F3E)"
+    },
+    {
+      "item": "🔎 確認5: 期限が過ぎるまで待つ",
+      "expected": "-",
+      "actual": "Expiration=848662232 / 検証済みレジャーの close_time=848662240",
+      "evidence": "ledger"
+    },
+    {
+      "item": "✅ 確認5: 期限後に S が CheckCash",
+      "expected": "tecEXPIRED（validated）",
+      "actual": "tecEXPIRED / validated=true",
+      "evidence": "[62431FF39929BA4307623DEECE21EBA7C59089B06AC06B5010ACAB691390BA27](https://testnet.xrpl.org/transactions/62431FF39929BA4307623DEECE21EBA7C59089B06AC06B5010ACAB691390BA27)"
+    },
+    {
+      "item": "✅ 確認5: 無関係の第三者 T が CheckCancel",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[BFFC2756CCF003E0F9CBA2338DB598976E3F0EE3BF4B738750A6462176E8D947](https://testnet.xrpl.org/transactions/BFFC2756CCF003E0F9CBA2338DB598976E3F0EE3BF4B738750A6462176E8D947)"
+    },
+    {
+      "item": "🔎 確認5: 取消後の Check",
+      "expected": "消える",
+      "actual": "消えた",
+      "evidence": "ledger_entry"
+    },
+    {
+      "item": "✅ 確認6 準備: H3 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[4CD51904C37D524892F743B133F6E51500A1A16AF378FC30C3725D9DB5A26EB4](https://testnet.xrpl.org/transactions/4CD51904C37D524892F743B133F6E51500A1A16AF378FC30C3725D9DB5A26EB4)"
+    },
+    {
+      "item": "✅ 確認6 準備: H4 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[E445255D13C56CB8D5D80E182582FEB75C04926AD6975BD632B94218D1D8FD6D](https://testnet.xrpl.org/transactions/E445255D13C56CB8D5D80E182582FEB75C04926AD6975BD632B94218D1D8FD6D)"
+    },
+    {
+      "item": "✅ 確認6 準備: H5 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[5A607ABFE5B0092B3B0DB7EDF8CFD29A907BFD7D13AB85D5102944D3115E8E41](https://testnet.xrpl.org/transactions/5A607ABFE5B0092B3B0DB7EDF8CFD29A907BFD7D13AB85D5102944D3115E8E41)"
+    },
+    {
+      "item": "✅ 確認6 準備: H6 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[2FB9E9DF8862A4EC9A022912F929652C625DD5B79E4CABD9FF49694A02447589](https://testnet.xrpl.org/transactions/2FB9E9DF8862A4EC9A022912F929652C625DD5B79E4CABD9FF49694A02447589)"
+    },
+    {
+      "item": "✅ 確認6 準備: H7 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[32D78EBC028D502B4271E6F7B11932E712220FC432EEFB9E046D4046DCF30F63](https://testnet.xrpl.org/transactions/32D78EBC028D502B4271E6F7B11932E712220FC432EEFB9E046D4046DCF30F63)"
+    },
+    {
+      "item": "✅ 確認6 準備: H8 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[383022D51CF139E034A230F9681C42CD07B14A89B58799E92490718096392F51](https://testnet.xrpl.org/transactions/383022D51CF139E034A230F9681C42CD07B14A89B58799E92490718096392F51)"
+    },
+    {
+      "item": "✅ 確認6 準備: H9 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[FA33E668ECFCED455D7A282FC45556469326FB5DD492FF69D9A804F77F16B8F5](https://testnet.xrpl.org/transactions/FA33E668ECFCED455D7A282FC45556469326FB5DD492FF69D9A804F77F16B8F5)"
+    },
+    {
+      "item": "✅ 確認6 準備: H10 → S CheckCreate（SendMax 0.1）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[4448F20F2CB700536B45F8B768C3E68490C8A45DABD66848072619DC72FC694C](https://testnet.xrpl.org/transactions/4448F20F2CB700536B45F8B768C3E68490C8A45DABD66848072619DC72FC694C)"
+    },
+    {
+      "item": "✅ 確認6 準備: H5 が受給証 0.2 を T へ移す（5 件目の Check を引けなくする）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[5C2636096D09209E3F59BA6A967836C1629D17F85395AE533607E8A427FA9222](https://testnet.xrpl.org/transactions/5C2636096D09209E3F59BA6A967836C1629D17F85395AE533607E8A427FA9222)"
+    },
+    {
+      "item": "✅ 確認6: S が CheckCash 8 件を Batch（tfIndependent）で送る: 外側",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS / Fee=100 drops（計算式 10×2 + Σ内側(10+10+10+10+10+10+10+10) = 100）/ XRP 残高差=-100 drops",
+      "evidence": "[F1A4BF2EF560B4E9C9FC7AFD3AD185F22969A12C445BC94791547B3BEBEBD460](https://testnet.xrpl.org/transactions/F1A4BF2EF560B4E9C9FC7AFD3AD185F22969A12C445BC94791547B3BEBEBD460)"
+    },
+    {
+      "item": "🔎 確認6: 内側 #1（H3）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[6284F19299588447271F96EA8B976AD6010F72F5EF4D8B45F8F7B074ECDB149F](https://testnet.xrpl.org/transactions/6284F19299588447271F96EA8B976AD6010F72F5EF4D8B45F8F7B074ECDB149F)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #2（H4）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[46A8BAFD62434C3F0D62FC942A5D79F1F957E755B8352C20349153278578E22A](https://testnet.xrpl.org/transactions/46A8BAFD62434C3F0D62FC942A5D79F1F957E755B8352C20349153278578E22A)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #3（H5）",
+      "expected": "失敗（資金を抜いた）",
+      "actual": "tecPATH_PARTIAL",
+      "evidence": "[3941CE767FEB9A0406ED4A10ED980B8B6A538ABC0B1BB3C786DA3C25B8185413](https://testnet.xrpl.org/transactions/3941CE767FEB9A0406ED4A10ED980B8B6A538ABC0B1BB3C786DA3C25B8185413)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #4（H6）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[9BE36D4B4A60CE2EBFC6685A92A95864165E30ABA51F6849A2A67AEF3DD8376C](https://testnet.xrpl.org/transactions/9BE36D4B4A60CE2EBFC6685A92A95864165E30ABA51F6849A2A67AEF3DD8376C)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #5（H7）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[D700653F5B38E452084839D576FFBBDDDA3D7B6B94B27642C75535377188699B](https://testnet.xrpl.org/transactions/D700653F5B38E452084839D576FFBBDDDA3D7B6B94B27642C75535377188699B)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #6（H8）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[EE5D92395DA1812960938BC92123B6C21FA1DDCBCAC6CEB93CD30185651D2FB6](https://testnet.xrpl.org/transactions/EE5D92395DA1812960938BC92123B6C21FA1DDCBCAC6CEB93CD30185651D2FB6)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #7（H9）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[8106E670656D2BFB24679804884361199E66E83A9321491B26C1CC8F09FFECA9](https://testnet.xrpl.org/transactions/8106E670656D2BFB24679804884361199E66E83A9321491B26C1CC8F09FFECA9)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "🔎 確認6: 内側 #8（H10）",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "evidence": "[CEEB2E9894239B67BAAD322B508F81A229110886880A5C1D7089C8A74AAACA34](https://testnet.xrpl.org/transactions/CEEB2E9894239B67BAAD322B508F81A229110886880A5C1D7089C8A74AAACA34)（ParentBatchID: 外側と一致）"
+    },
+    {
+      "item": "✅ 確認6: 内側の結果",
+      "expected": "7 件成功・1 件（#3 = H5）失敗",
+      "actual": "成功 7 件 / 失敗 #3 tecPATH_PARTIAL",
+      "evidence": "S の受給証 1.3 → 2"
+    },
+    {
+      "item": "✅ 確認8: DONOR → S RLUSD の CheckCreate（SendMax 0.01）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[38E75ADD387B67C5A7EEEB4BBF08E73C16D69A089413AA89CA82862D143702D7](https://testnet.xrpl.org/transactions/38E75ADD387B67C5A7EEEB4BBF08E73C16D69A089413AA89CA82862D143702D7)。DONOR=rUbh5WJVtCuymfJNT6NHCBrdkCbFLDumfh（H1 は RLUSD を持たないため spike 02 の DONOR から送った）"
+    },
+    {
+      "item": "✅ 確認8: S が RLUSD の CheckCash（換金前の S の RLUSD トラストライン: あり）",
+      "expected": "tesSUCCESS（Escrow と違い lsfAllowTrustLineLocking は不要。トラストラインが無ければ CheckCash が作る: rippled CheckCash.cpp）",
+      "actual": "tesSUCCESS / 換金後の S の RLUSD: あり（残高 0.02）",
+      "evidence": "[8672BA96ACE898CA5B70EBE8EE9DA59F2A4E0365CD010FB0534DF049001F30F4](https://testnet.xrpl.org/transactions/8672BA96ACE898CA5B70EBE8EE9DA59F2A4E0365CD010FB0534DF049001F30F4)"
+    }
+  ],
+  "statuses": [
+    "observe",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "observe",
+    "pass",
+    "observe",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe",
+    "observe",
+    "observe",
+    "observe",
+    "observe",
+    "observe",
+    "observe",
+    "observe",
+    "pass",
+    "pass",
+    "pass"
+  ],
+  "errorCodes": [
+    "確認2: 同じ CheckID でもう一度 CheckCash: tecNO_ENTRY",
+    "確認3: Amount 0.4 で CheckCash（上限 0.3 を超える）: tecPATH_PARTIAL",
+    "確認4: Amount 0.3 で CheckCash（H1 の残高 0.1）: tecPATH_PARTIAL",
+    "確認5: 期限後に S が CheckCash: tecEXPIRED",
+    "確認6 内側 #3: tecPATH_PARTIAL"
+  ],
+  "unknowns": [],
+  "accounts": {
+    "S": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+    "V": "rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+    "H1": "rLcnf4tmAVye2YwGSi8AmSY1jN8LCDKJYL",
+    "T": "rUmHE72sttaXmS63bsiMu4wVoSMVQVN1CN",
+    "H3_H10": [
+      "rMJH3FHVqSktGPE8aRvu153591UEgDgpwV",
+      "rwRjExJFa5qeKicMYbLVksCeUrG2QGDBVd",
+      "rLEDdHgME3phvPAgLh7nWw8MSsG3hf7QvN",
+      "rNWsojQvhRcr5TziUXUPu9uyjiSyTtmwAg",
+      "rDQ96HRma6Uwg5gBEmhX8udJBS15CzvfSn",
+      "rLzXzgW6xqGp1rAFweiKAoXWhUZmwfKrGo",
+      "r3vKqqfu9nVktcifVw8uuxZ42gd6Sx7VVC",
+      "r4mybnTgRBZUk6Zz5DtCmVSDXPwpuKtEEy"
+    ]
+  },
+  "check1": {
+    "CheckID": "BBE0A3C03064E1600B1F01C351B93E5B92B831CAA2C95FBDD71C97D3664B37F3",
+    "SendMax": "0.5",
+    "Expiration": 848663882,
+    "InvoiceID": "D31D5F9DB787040901A56F2E47CDCF7C11598C3AC139DCC0645D46DF12E6318E",
+    "slipPublicKeyHex": "0449b6e0e777aa2ee27f64b3582d7466d48e5aa6b5d29c4059dab1dd8ccee46925deecf526f63ac00e058147c2b723f4bd0082f5bbfcbcc781a45d33c0f1710a0f",
+    "currency": "ZKV",
+    "issuer": "rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+    "destination": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+    "account": "rLcnf4tmAVye2YwGSi8AmSY1jN8LCDKJYL"
+  },
+  "batch": {
+    "hash": "F1A4BF2EF560B4E9C9FC7AFD3AD185F22969A12C445BC94791547B3BEBEBD460",
+    "explorerUrl": "https://testnet.xrpl.org/transactions/F1A4BF2EF560B4E9C9FC7AFD3AD185F22969A12C445BC94791547B3BEBEBD460",
+    "preliminary": "tesSUCCESS",
+    "engineResult": "tesSUCCESS",
+    "validated": true,
+    "ledgerIndex": 22523197,
+    "fee": "100",
+    "innerCount": 8,
+    "inner": [
+      {
+        "index": 1,
+        "hash": "6284F19299588447271F96EA8B976AD6010F72F5EF4D8B45F8F7B074ECDB149F",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522802,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 2,
+        "hash": "46A8BAFD62434C3F0D62FC942A5D79F1F957E755B8352C20349153278578E22A",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522803,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 3,
+        "hash": "3941CE767FEB9A0406ED4A10ED980B8B6A538ABC0B1BB3C786DA3C25B8185413",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522804,
+        "result": "tecPATH_PARTIAL",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 4,
+        "hash": "9BE36D4B4A60CE2EBFC6685A92A95864165E30ABA51F6849A2A67AEF3DD8376C",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522805,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 5,
+        "hash": "D700653F5B38E452084839D576FFBBDDDA3D7B6B94B27642C75535377188699B",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522806,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 6,
+        "hash": "EE5D92395DA1812960938BC92123B6C21FA1DDCBCAC6CEB93CD30185651D2FB6",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522807,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 7,
+        "hash": "8106E670656D2BFB24679804884361199E66E83A9321491B26C1CC8F09FFECA9",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522808,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 8,
+        "hash": "CEEB2E9894239B67BAAD322B508F81A229110886880A5C1D7089C8A74AAACA34",
+        "computedHashMatches": false,
+        "type": "CheckCash",
+        "sequence": 22522809,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      }
+    ],
+    "sequenceBefore": 22522801,
+    "sequenceAfter": 22522810,
+    "balanceDeltaDrops": "-100"
+  }
+}

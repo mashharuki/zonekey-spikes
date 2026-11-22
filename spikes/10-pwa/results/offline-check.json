@@ -1,0 +1,252 @@
+{
+  "base": "http://127.0.0.1:43885",
+  "browser": "153.0.8010.12",
+  "noSW": {
+    "home": {
+      "requests": 6,
+      "bytes": 311765,
+      "files": [
+        "/ 1064",
+        "/assets/index-D-aFQub7.css 39237",
+        "/assets/index-CzOwxwWR.js 249426",
+        "/assets/workbox-window.prod.es5-BBnX5xw4.js 5748",
+        "/icon.svg 8145",
+        "/icon.svg 8145"
+      ]
+    },
+    "openVerify": {
+      "requests": 2,
+      "bytes": 398572,
+      "files": [
+        "/assets/VerifyPage-BsvOcvLV.js 390427",
+        "/icon.svg 8145"
+      ]
+    }
+  },
+  "installability": {
+    "installabilityErrors": []
+  },
+  "manifest": [],
+  "swController": true,
+  "cacheNames": [
+    "workbox-precache-v2-http://127.0.0.1:43885/"
+  ],
+  "precached": [
+    "/pwa-64x64.png?__WB_REVISION__=42128777c77c0ea2647235f824bb28e6",
+    "/pwa-512x512.png?__WB_REVISION__=8a424b1949b574db85577d2588d152aa",
+    "/pwa-192x192.png?__WB_REVISION__=b45f1fcf3d0e5e0ef7b5e96c3cd02fbe",
+    "/maskable-icon-512x512.png?__WB_REVISION__=f19db714623f696054e802a4cde05899",
+    "/index.html?__WB_REVISION__=affb1c426989bb608045e866e30fb85d",
+    "/icon.svg?__WB_REVISION__=2de3ef5794bd6bf672a7ed97614d783c",
+    "/apple-touch-icon-180x180.png?__WB_REVISION__=3f9dc07b5f0bd7612ffbfdfdbf059926",
+    "/samples/tampered.bin?__WB_REVISION__=8b5517f1281bbeee253cd1a5ccb849b3",
+    "/samples/no-signatures.bin?__WB_REVISION__=e801351978557d90d7fe7bf0eb769546",
+    "/samples/confirmed.bin?__WB_REVISION__=e30823207648ca5bcff880c1c25fe481",
+    "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+    "/assets/index-D-aFQub7.css",
+    "/assets/index-CzOwxwWR.js",
+    "/assets/VerifyPage-BsvOcvLV.js",
+    "/manifest.webmanifest?__WB_REVISION__=e37df4787665c4ee678ece247fedb00d"
+  ],
+  "firstVisit": {
+    "requests": 25,
+    "bytes": 1118028,
+    "files": [
+      "/ 1064",
+      "/assets/index-D-aFQub7.css 39237",
+      "/assets/index-CzOwxwWR.js 249426",
+      "/manifest.webmanifest 608",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js 5748",
+      "/icon.svg 8145",
+      "/pwa-192x192.png 12335",
+      "/icon.svg 8145",
+      "/sw.js 2158",
+      "/workbox-abeb32eb.js 15507",
+      "/pwa-64x64.png 7875",
+      "/pwa-512x512.png 27313",
+      "/pwa-192x192.png 12335",
+      "/maskable-icon-512x512.png 19280",
+      "/index.html 1064",
+      "/icon.svg 8145",
+      "/apple-touch-icon-180x180.png 9484",
+      "/samples/tampered.bin 1766",
+      "/samples/no-signatures.bin 1183",
+      "/samples/confirmed.bin 1764",
+      "/assets/workbox-window.prod.es5-BBnX5xw4.js 5748",
+      "/assets/index-D-aFQub7.css 39237",
+      "/assets/index-CzOwxwWR.js 249426",
+      "/assets/VerifyPage-BsvOcvLV.js 390427",
+      "/manifest.webmanifest 608"
+    ],
+    "pageResources": [
+      {
+        "name": "/assets/index-CzOwxwWR.js",
+        "decoded": 249426
+      },
+      {
+        "name": "/assets/index-D-aFQub7.css",
+        "decoded": 39237
+      },
+      {
+        "name": "/manifest.webmanifest",
+        "decoded": 608
+      },
+      {
+        "name": "/assets/workbox-window.prod.es5-BBnX5xw4.js",
+        "decoded": 5748
+      },
+      {
+        "name": "/icon.svg",
+        "decoded": 8145
+      },
+      {
+        "name": "/icon.svg",
+        "decoded": 8145
+      },
+      {
+        "name": "/pwa-192x192.png",
+        "decoded": 12335
+      }
+    ],
+    "documentBytes": 1064
+  },
+  "secondVisit": {
+    "requests": 0,
+    "bytes": 0,
+    "files": []
+  },
+  "openVerifyWithSW": {
+    "requests": 0,
+    "bytes": 0,
+    "files": []
+  },
+  "offline": {
+    "netLabel": "オンライン",
+    "navigatorOnLine": true,
+    "file:confirmed.bin": {
+      "verdict": "確定済み",
+      "confirmed": "true",
+      "text": "confirmed.bin\n\n確定済み\n\n取引\nPayment（tesSUCCESS）\n受取人\nrNon59tzfcgzmcmETTG6coVwBn3ZDQaEac\n額\n100 XRP\nレジャー\n22515681（2026-11-22T04:31:10.000Z）\nA 台帳の木に入っている\n✅\nC 検証者の署名\n✅ 5 / 定足数 5（UNL 6 人）\n検証者リスト\nsequence 59 / 期限 2027-08-07T17:31:06.000Z\n入力\n1764 B（展開後 2357 B）／検証 56.9 ms"
+    },
+    "qrImage:confirmed.png": {
+      "verdict": "確定済み",
+      "confirmed": "true",
+      "text": "confirmed.png\n\n確定済み\n\n取引\nPayment（tesSUCCESS）\n受取人\nrNon59tzfcgzmcmETTG6coVwBn3ZDQaEac\n額\n100 XRP\nレジャー\n22515681（2026-11-22T04:31:10.000Z）\nA 台帳の木に入っている\n✅\nC 検証者の署名\n✅ 5 / 定足数 5（UNL 6 人）\n検証者リスト\nsequence 59 / 期限 2027-08-07T17:31:06.000Z\n入力\n1764 B（展開後 2357 B）／検証 23.9 ms"
+    },
+    "sampleButton:confirmed": {
+      "verdict": "確定済み",
+      "confirmed": "true",
+      "text": "サンプル confirmed\n\n確定済み\n\n取引\nPayment（tesSUCCESS）\n受取人\nrNon59tzfcgzmcmETTG6coVwBn3ZDQaEac\n額\n100 XRP\nレジャー\n22515681（2026-11-22T04:31:10.000Z）\nA 台帳の木に入っている\n✅\nC 検証者の署名\n✅ 5 / 定足数 5（UNL 6 人）\n検証者リスト\nsequence 59 / 期限 2027-08-07T17:31:06.000Z\n入力\n1764 B（展開後 2357 B）／検証 38.9 ms"
+    },
+    "file:tampered.bin": {
+      "verdict": "不一致",
+      "confirmed": "false",
+      "text": "tampered.bin\n\n不一致\n\nA: 対象の取引がヘッダの木に入っていない（取引・meta・枝のどれかが違う）\n取引\nPayment（tesSUCCESS）\n受取人\nrNon59tzfcgzmcmETTG6coVwBn3ZDQaEac\n額\n100 XRP\nレジャー\n22515681（2026-11-22T04:31:10.000Z）\nA 台帳の木に入っている\n❌\nC 検証者の署名\n✅ 5 / 定足数 5（UNL 6 人）\n検証者リスト\nsequence 59 / 期限 2027-08-07T17:31:06.000Z\n入力\n1766 B（展開後 2357 B）／検証 23.4 ms"
+    },
+    "qrImage:tampered.png": {
+      "verdict": "不一致",
+      "confirmed": "false",
+      "text": "tampered.png\n\n不一致\n\nA: 対象の取引がヘッダの木に入っていない（取引・meta・枝のどれかが違う）\n取引\nPayment（tesSUCCESS）\n受取人\nrNon59tzfcgzmcmETTG6coVwBn3ZDQaEac\n額\n100 XRP\nレジャー\n22515681（2026-11-22T04:31:10.000Z）\nA 台帳の木に入っている\n❌\nC 検証者の署名\n✅ 5 / 定足数 5（UNL 6 人）\n検証者リスト\nsequence 59 / 期限 2027-08-07T17:31:06.000Z\n入力\n1766 B（展開後 2357 B）／検証 26.9 ms"
+    },
+    "sampleButton:tampered": {
+      "verdict": "不一致",
+      "confirmed": "false",
+      "text": "サンプル tampered\n\n不一致\n\nA: 対象の取引がヘッダの木に入っていない（取引・meta・枝のどれかが違う）\n取引\nPayment（tesSUCCESS）\n受取人\nrNon59tzfcgzmcmETTG6coVwBn3ZDQaEac\n額\n100 XRP\nレジャー\n22515681（2026-11-22T04:31:10.000Z）\nA 台帳の木に入っている\n❌\nC 検証者の署名\n✅ 5 / 定足数 5（UNL 6 人）\n検証者リスト\nsequence 59 / 期限 2027-08-07T17:31:06.000Z\n入力\n1766 B（展開後 2357 B）／検証 23.3 ms"
+    },
+    "file:no-signatures.bin": {
+      "verdict": "不一致",
+      "confirmed": "false",
+      "text": "no-signatures.bin\n\n不一致\n\nC: パックに検証者の署名が入っていない（A・B だけのパック）。確定したことは確かめられない\n取引\nEscrowFinish（tesSUCCESS）\n受取人\nrf5KmznG6nH8rW3orSRq7oxmUvVGKUTzCe\n額\n0.1 ZKV\nレジャー\n22492505（2026-11-21T06:59:21.000Z）\nA 台帳の木に入っている\n✅\nC 検証者の署名\n❌ 0 / 定足数 —（UNL — 人）\n検証者リスト\nsequence — / 期限 —\n入力\n1183 B（展開後 1846 B）／検証 18.1 ms"
+    },
+    "qrImage:no-signatures.png": {
+      "verdict": "不一致",
+      "confirmed": "false",
+      "text": "no-signatures.png\n\n不一致\n\nC: パックに検証者の署名が入っていない（A・B だけのパック）。確定したことは確かめられない\n取引\nEscrowFinish（tesSUCCESS）\n受取人\nrf5KmznG6nH8rW3orSRq7oxmUvVGKUTzCe\n額\n0.1 ZKV\nレジャー\n22492505（2026-11-21T06:59:21.000Z）\nA 台帳の木に入っている\n✅\nC 検証者の署名\n❌ 0 / 定足数 —（UNL — 人）\n検証者リスト\nsequence — / 期限 —\n入力\n1183 B（展開後 1846 B）／検証 12.5 ms"
+    },
+    "sampleButton:no-signatures": {
+      "verdict": "不一致",
+      "confirmed": "false",
+      "text": "サンプル no-signatures\n\n不一致\n\nC: パックに検証者の署名が入っていない（A・B だけのパック）。確定したことは確かめられない\n取引\nEscrowFinish（tesSUCCESS）\n受取人\nrf5KmznG6nH8rW3orSRq7oxmUvVGKUTzCe\n額\n0.1 ZKV\nレジャー\n22492505（2026-11-21T06:59:21.000Z）\nA 台帳の木に入っている\n✅\nC 検証者の署名\n❌ 0 / 定足数 —（UNL — 人）\n検証者リスト\nsequence — / 期限 —\n入力\n1183 B（展開後 1846 B）／検証 19 ms"
+    },
+    "networkOnly": {
+      "privy": "失敗: Failed to fetch",
+      "xrpl": "失敗: Failed to fetch",
+      "api": "失敗: Failed to fetch"
+    },
+    "server": {
+      "requests": 0,
+      "bytes": 0,
+      "files": []
+    }
+  },
+  "fileSizes": {
+    "maskable-icon-512x512.png": {
+      "raw": 19280,
+      "gzip": 14152
+    },
+    "pwa-192x192.png": {
+      "raw": 12335,
+      "gzip": 8148
+    },
+    "sw.js": {
+      "raw": 2158,
+      "gzip": 1167
+    },
+    "apple-touch-icon-180x180.png": {
+      "raw": 9484,
+      "gzip": 5228
+    },
+    "index.html": {
+      "raw": 1064,
+      "gzip": 602
+    },
+    "workbox-abeb32eb.js": {
+      "raw": 15507,
+      "gzip": 5346
+    },
+    "pwa-64x64.png": {
+      "raw": 7875,
+      "gzip": 3697
+    },
+    "pwa-512x512.png": {
+      "raw": 27313,
+      "gzip": 21990
+    },
+    "icon.svg": {
+      "raw": 8145,
+      "gzip": 2266
+    },
+    "manifest.webmanifest": {
+      "raw": 608,
+      "gzip": 363
+    },
+    "assets/index-D-aFQub7.css": {
+      "raw": 39237,
+      "gzip": 9716
+    },
+    "assets/index-CzOwxwWR.js": {
+      "raw": 249426,
+      "gzip": 78135
+    },
+    "assets/workbox-window.prod.es5-BBnX5xw4.js": {
+      "raw": 5748,
+      "gzip": 2359
+    },
+    "assets/VerifyPage-BsvOcvLV.js": {
+      "raw": 390427,
+      "gzip": 125030
+    },
+    "samples/tampered.bin": {
+      "raw": 1766,
+      "gzip": 1789
+    },
+    "samples/no-signatures.bin": {
+      "raw": 1183,
+      "gzip": 1206
+    },
+    "samples/confirmed.bin": {
+      "raw": 1764,
+      "gzip": 1787
+    }
+  }
+}

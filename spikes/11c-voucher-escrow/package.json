@@ -13,7 +13,8 @@
   "dependencies": {
     "qrcode": "latest",
     "xrpl": "latest",
-    "xrpl-kit": "workspace:*"
+    "xrpl-kit": "workspace:*",
+    "ripple-address-codec": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

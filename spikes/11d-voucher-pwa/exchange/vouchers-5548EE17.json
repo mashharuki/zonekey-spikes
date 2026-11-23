@@ -1,0 +1,39 @@
+{
+  "kind": "todoke-11d-vouchers",
+  "household": "5548EE17",
+  "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+  "shop": "rBEaXHXsoNxaJf7ff7WLMQDt68N59hjD2e",
+  "currency": "ZKV",
+  "issuer": "rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+  "batchTx": "983F23A00A5C3D7EEDFECFC87EF16EBBD5692523F7CDE1721DB4CCB8CCA20EC3",
+  "vouchers": [
+    {
+      "n": 1,
+      "value": "5",
+      "offerSequence": 22540374,
+      "condition": "A025802062AEADF0047ADF055490E04C5B09F8C18B4EE4694800987010FC8E0AD5BC2662810120",
+      "cancelAfter": 848810171
+    },
+    {
+      "n": 2,
+      "value": "5",
+      "offerSequence": 22540375,
+      "condition": "A0258020D8B2AD3770B616BCFBA740D6567A5B4DC56527965395B13F09A2798FCB81459B810120",
+      "cancelAfter": 848810171
+    },
+    {
+      "n": 3,
+      "value": "10",
+      "offerSequence": 22540376,
+      "condition": "A02580201FC8109758AE9A0B8DC04D44F7A9311339EA1B0ABBCD49F17CF75F7894893B7D810120",
+      "cancelAfter": 848810171
+    },
+    {
+      "n": 4,
+      "value": "10",
+      "offerSequence": 22540377,
+      "condition": "A0258020F2147134922ADA59FDF6588D760C1970C6EC31D7B65938F2853AFCD131779C06810120",
+      "cancelAfter": 848810171
+    }
+  ]
+}

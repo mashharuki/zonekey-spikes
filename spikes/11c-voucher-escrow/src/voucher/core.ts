@@ -5,7 +5,7 @@
  *     Fulfillment = A0 22 80 20 || preimage(32B) / Condition = A0 25 80 20 || SHA-256(preimage) || 81 01 20
  * - preimage は世帯の秘密（32B）から HMAC-SHA256(秘密, ラベル) で作る。消えても秘密があれば作り直せる。配布用アカウント D は Condition（ハッシュ）しか受け取らない
  */
-import { decodeAccountID, encodeAccountID } from "xrpl";
+import { decodeAccountID, encodeAccountID } from "ripple-address-codec";
 
 const subtle = globalThis.crypto.subtle;
 const enc = new TextEncoder();

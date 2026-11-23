@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "lib": ["ES2023", "DOM"], "types": ["node"], "noEmit": true },
+  "include": ["scripts", "src/lib/exchange.ts", "../11c-voucher-escrow/src/voucher"]
+}

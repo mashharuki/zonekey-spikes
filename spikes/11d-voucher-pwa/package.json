@@ -1,0 +1,36 @@
+{
+  "name": "11d-voucher-pwa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "issue": "tsx scripts/issue.ts",
+    "settle": "tsx scripts/settle.ts",
+    "report": "tsx scripts/report.ts"
+  },
+  "dependencies": {
+    "jsqr": "latest",
+    "lism-css": "^1.1.0",
+    "qrcode": "latest",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "ripple-address-codec": "latest",
+    "workbox-window": "latest",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/qrcode": "latest",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tsx": "latest",
+    "typescript": "~5.8.3",
+    "vite": "^6.4.3",
+    "vite-plugin-pwa": "latest"
+  }
+}

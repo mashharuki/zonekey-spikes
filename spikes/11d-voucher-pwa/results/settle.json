@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-23T04:41:21.172Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "🔎 精算: お店が受け付けた券",
+      "expected": "-",
+      "actual": "2 枚（番号 22540374・5 / 番号 22540376・10）",
+      "evidence": "お店の画面で受け付けた時点の確認時間: 2.2 ms, 1.5 ms"
+    },
+    {
+      "item": "✅ 精算: お店 S が EscrowFinish 2 件を Batch（tfIndependent）で送る",
+      "expected": "tesSUCCESS, tesSUCCESS",
+      "actual": "tesSUCCESS, tesSUCCESS",
+      "evidence": "外側 tesSUCCESS・[6B9CB2963D93CE1FAF64D792325318089EB5F1433572E4E82D7886838B03F389](https://testnet.xrpl.org/transactions/6B9CB2963D93CE1FAF64D792325318089EB5F1433572E4E82D7886838B03F389)<br>手数料 726 drops（10×2 + Σ内側(353+353) = 726）"
+    },
+    {
+      "item": "✅ 精算: お店 S の受給証残高",
+      "expected": "15",
+      "actual": "15",
+      "evidence": "精算前 （線なし）。トラストラインはお店自身の Finish で自動で作られる"
+    }
+  ],
+  "statuses": [
+    "observe",
+    "pass",
+    "pass"
+  ],
+  "errorCodes": [],
+  "unknowns": [],
+  "settle": {
+    "shop": "rBEaXHXsoNxaJf7ff7WLMQDt68N59hjD2e",
+    "batches": [
+      {
+        "hash": "6B9CB2963D93CE1FAF64D792325318089EB5F1433572E4E82D7886838B03F389",
+        "fee": "726",
+        "inner": [
+          {
+            "index": 1,
+            "hash": "C065F1D27E9033D9AEE13DEAA3F4AF9F576BC0C81E23DA0119FCE401221386FE",
+            "computedHashMatches": false,
+            "type": "EscrowFinish",
+            "sequence": 22541379,
+            "result": "tesSUCCESS",
+            "parentBatchId": "外側と一致"
+          },
+          {
+            "index": 2,
+            "hash": "51057FB343C17A08072BF298F6D85F923C7872E96509E8A560BE5DFA59D26FCC",
+            "computedHashMatches": false,
+            "type": "EscrowFinish",
+            "sequence": 22541380,
+            "result": "tesSUCCESS",
+            "parentBatchId": "外側と一致"
+          }
+        ]
+      }
+    ]
+  }
+}

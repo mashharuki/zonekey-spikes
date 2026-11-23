@@ -1,0 +1,24 @@
+{
+  "name": "11c-voucher-escrow",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "issue": "tsx src/issue.ts",
+    "offline": "tsx src/offline.ts",
+    "settle": "tsx src/settle.ts",
+    "report": "tsx src/report.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "qrcode": "latest",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/qrcode": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

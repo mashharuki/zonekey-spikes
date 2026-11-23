@@ -1,0 +1,164 @@
+{
+  "at": "2026-11-23T04:14:33.185Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "🔎 確認6 準備: お店 A の受給証トラストライン",
+      "expected": "なし",
+      "actual": "（線なし）",
+      "evidence": "issue でお店は TrustSet をしていない"
+    },
+    {
+      "item": "✅ 確認6: お店 A が EscrowFinish 5 件を Batch（tfIndependent）で送る（4 件は受け付けた券、5 件目は v7 に条件違いの Fulfillment）",
+      "expected": "tesSUCCESS, tesSUCCESS, tesSUCCESS, tesSUCCESS, tecCRYPTOCONDITION_ERROR",
+      "actual": "tesSUCCESS, tesSUCCESS, tesSUCCESS, tesSUCCESS, tecCRYPTOCONDITION_ERROR",
+      "evidence": "外側 tesSUCCESS・[AF2371AC004A2914…](https://testnet.xrpl.org/transactions/AF2371AC004A2914CE412780748A9A2D448EB26ADC6E5DDBAE9F25F014B673D2)<br>手数料 1785 drops（10×2 + Σ内側(353+353+353+353+353) = 1785）"
+    },
+    {
+      "item": "✅ 確認6: お店 A の受給証残高",
+      "expected": "30",
+      "actual": "30",
+      "evidence": "宛先が自分で Finish したので、トラストラインは自動で作られる（EscrowHelpers.h）"
+    },
+    {
+      "item": "🔎 確認6: お店 A の XRP の変化",
+      "expected": "手数料 + トラストラインの準備金ぶん減る（準備金は残高から引かれない）",
+      "actual": "2000000 → 1998215 drops",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認6: v7 を正しい Fulfillment で Finish（条件違いの失敗で券が消えていない）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[97B5C50E6CC8E03623AAF2C16448CE82254FDA18B4E5CD5474A736D553CA8814](https://testnet.xrpl.org/transactions/97B5C50E6CC8E03623AAF2C16448CE82254FDA18B4E5CD5474A736D553CA8814)"
+    },
+    {
+      "item": "✅ 確認5: 精算済みの v1 をもう一度 Finish",
+      "expected": "tecNO_TARGET（validated）",
+      "actual": "tecNO_TARGET / validated=true",
+      "evidence": "[2C6645AEBF2791D0FF277C43616D6D360B165A9904C1E745C6D4614AC197D55F](https://testnet.xrpl.org/transactions/2C6645AEBF2791D0FF277C43616D6D360B165A9904C1E745C6D4614AC197D55F)。Escrow は消えているので台帳上でも二重には受け取れない"
+    },
+    {
+      "item": "✅ 確認6: 第三者 D が v5（お店 B 宛て）を Finish（B はトラストラインなし）",
+      "expected": "tecNO_LINE（validated）",
+      "actual": "tecNO_LINE / validated=true",
+      "evidence": "[9CA559B2A4512B4E65861B7F6E4D8FA02ABF00735531DA6E0D3CAE531A184C95](https://testnet.xrpl.org/transactions/9CA559B2A4512B4E65861B7F6E4D8FA02ABF00735531DA6E0D3CAE531A184C95)。期待は rippled EscrowHelpers.h（宛先以外が出すとラインを作らない）"
+    },
+    {
+      "item": "✅ 確認6: お店 B 自身が v5 を Finish",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[1887793B6281564A82CF666C371CABD06FEA54789D8E65400EAC7E65758DC24B](https://testnet.xrpl.org/transactions/1887793B6281564A82CF666C371CABD06FEA54789D8E65400EAC7E65758DC24B)"
+    },
+    {
+      "item": "✅ 確認6: お店 B の受給証残高",
+      "expected": "10",
+      "actual": "10",
+      "evidence": "トラストラインは自動で作られた"
+    },
+    {
+      "item": "🔎 確認7: v6 の期限が過ぎるまで待つ",
+      "expected": "-",
+      "actual": "CancelAfter=848722452 / 検証済みレジャーの close_time=848722461",
+      "evidence": "ledger"
+    },
+    {
+      "item": "✅ 確認7: 期限後にお店 A が v6 を Finish",
+      "expected": "tecNO_PERMISSION（validated）",
+      "actual": "tecNO_PERMISSION / validated=true",
+      "evidence": "[2FE0A8EADFB6A3242B0EB6FA8B8778CB97A1463FF24CA904942CAE3C0B0584DA](https://testnet.xrpl.org/transactions/2FE0A8EADFB6A3242B0EB6FA8B8778CB97A1463FF24CA904942CAE3C0B0584DA)。期待は rippled EscrowFinish.cpp（CancelAfter 後）"
+    },
+    {
+      "item": "✅ 確認7: 期限後に D が v6 を EscrowCancel",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[950FA2B7E4D741FB252CAA280B3BDD26315139F78D9D273FCAF2401F31155F35](https://testnet.xrpl.org/transactions/950FA2B7E4D741FB252CAA280B3BDD26315139F78D9D273FCAF2401F31155F35)"
+    },
+    {
+      "item": "🔎 確認7: D の受給証残高",
+      "expected": "+5",
+      "actual": "20 → 25",
+      "evidence": "account_lines"
+    },
+    {
+      "item": "🔎 確認9: 世帯 1 軒あたりのコスト（券 5 枚の場合）",
+      "expected": "-",
+      "actual": "作成: Batch 1 件で内側 5 件なら 10×2 + 10×5 = 70 drops（今回 7 件で 90 drops）<br>準備金: 券 1 枚 0.2 XRP × 5 = 1 XRP を D が精算まで拘束<br>精算: EscrowFinish 1 件 353 drops（330 + 10 × 36/16 の切り上げ）を お店が負担",
+      "evidence": "D の OwnerCount は今 8（残っている Escrow の数 + トラストライン）"
+    }
+  ],
+  "statuses": [
+    "observe",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "observe",
+    "observe"
+  ],
+  "errorCodes": [
+    "確認5: 精算済みの v1 をもう一度 Finish: tecNO_TARGET",
+    "確認6: 第三者 D が v5（お店 B 宛て）を Finish（B はトラストラインなし）: tecNO_LINE",
+    "確認7: 期限後にお店 A が v6 を Finish: tecNO_PERMISSION"
+  ],
+  "unknowns": [],
+  "settleBatch": {
+    "hash": "AF2371AC004A2914CE412780748A9A2D448EB26ADC6E5DDBAE9F25F014B673D2",
+    "fee": "1785",
+    "formula": "10×2 + Σ内側(353+353+353+353+353) = 1785",
+    "inner": [
+      {
+        "index": 1,
+        "hash": "DABF1583A9F1E1309BF15FD9ABFE7708E319B244203B5B95DBBF91978A695133",
+        "computedHashMatches": false,
+        "type": "EscrowFinish",
+        "sequence": 22540889,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 2,
+        "hash": "4FD618F64104F91E32E443238CB2B62DED5E2D9487208992D589A4F5D07CD1CD",
+        "computedHashMatches": false,
+        "type": "EscrowFinish",
+        "sequence": 22540890,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 3,
+        "hash": "B798BA80A3C4E921DEBA4106129C45C9EB4F681652CC306EF695230FD8D2055C",
+        "computedHashMatches": false,
+        "type": "EscrowFinish",
+        "sequence": 22540891,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 4,
+        "hash": "E5455A733FA584170D5C1217EEE98F67F4088D9507C129BCD8D3D71B738BC3EA",
+        "computedHashMatches": false,
+        "type": "EscrowFinish",
+        "sequence": 22540892,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 5,
+        "hash": "50084B491F2E79EA8C95B68D6D36B22AF7EE5D46198ED8FC1DD8C46215F49D66",
+        "computedHashMatches": false,
+        "type": "EscrowFinish",
+        "sequence": 22540893,
+        "result": "tecCRYPTOCONDITION_ERROR",
+        "parentBatchId": "外側と一致"
+      }
+    ]
+  }
+}

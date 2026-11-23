@@ -1,0 +1,120 @@
+{
+  "at": "2026-11-23T04:09:51.364Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "✅ 確認3: v1（HH1・500 円券・端末の署名つき）",
+      "expected": "使える",
+      "actual": "使える",
+      "evidence": "187 B / 1.2 ms"
+    },
+    {
+      "item": "✅ 確認5: v1 をもう一度出す",
+      "expected": "使用済み",
+      "actual": "使用済み",
+      "evidence": "187 B / 0.0 ms"
+    },
+    {
+      "item": "✅ 確認3: v2（HH1・1,000 円券・署名つき）",
+      "expected": "使える",
+      "actual": "使える",
+      "evidence": "187 B / 0.4 ms"
+    },
+    {
+      "item": "✅ 確認8: v3 の preimage だけを盗み見して出す（署名なし）",
+      "expected": "端末の署名がない",
+      "actual": "端末の署名がない",
+      "evidence": "58 B / 0.1 ms"
+    },
+    {
+      "item": "✅ 確認8: v3 を別の端末の鍵で署名して出す",
+      "expected": "端末の公開鍵が券と合わない",
+      "actual": "端末の公開鍵が券と合わない",
+      "evidence": "187 B / 0.1 ms"
+    },
+    {
+      "item": "✅ 確認3: v3（本人の端末）",
+      "expected": "使える",
+      "actual": "使える",
+      "evidence": "187 B / 0.3 ms"
+    },
+    {
+      "item": "✅ 確認5: v4 の preimage を 1 ビット書き換える",
+      "expected": "preimage が条件と合わない",
+      "actual": "preimage が条件と合わない",
+      "evidence": "58 B / 0.1 ms"
+    },
+    {
+      "item": "✅ 確認3: v4（HH2・500 円券・署名なしの券）",
+      "expected": "使える",
+      "actual": "使える",
+      "evidence": "58 B / 0.1 ms"
+    },
+    {
+      "item": "✅ 確認5: v5（お店 B 宛て）をお店 A で出す",
+      "expected": "このお店宛ての券ではない（または未同期）",
+      "actual": "このお店宛ての券ではない（または未同期）",
+      "evidence": "58 B / 0.0 ms"
+    },
+    {
+      "item": "✅ 確認5: v6 を期限の 120 秒前を過ぎた時刻で出す（端末の時計を CancelAfter − 119 秒にして確認）",
+      "expected": "期限切れ（精算が間に合わない）",
+      "actual": "期限切れ（精算が間に合わない）",
+      "evidence": "58 B / 0.0 ms"
+    },
+    {
+      "item": "✅ 確認5: 壊れた QR（長さ違い）",
+      "expected": "形式が不正",
+      "actual": "形式が不正",
+      "evidence": "40 B / 0.0 ms"
+    },
+    {
+      "item": "✅ 確認3: 確認中のネットワーク利用の試み",
+      "expected": "0 回",
+      "actual": "0 回",
+      "evidence": "fetch・ソケット・DNS・TLS を遮断して実行"
+    },
+    {
+      "item": "🔎 確認3: 受け付けた券",
+      "expected": "v1・v2・v3・v4",
+      "actual": "v1・v2・v3・v4",
+      "evidence": "精算（settle）で EscrowFinish する。Fulfillment は .state/ にだけ保存"
+    }
+  ],
+  "statuses": [
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe"
+  ],
+  "errorCodes": [],
+  "unknowns": [],
+  "marginSec": 120,
+  "accepted": [
+    {
+      "id": "v1",
+      "offerSequence": 22540362
+    },
+    {
+      "id": "v2",
+      "offerSequence": 22540363
+    },
+    {
+      "id": "v3",
+      "offerSequence": 22540364
+    },
+    {
+      "id": "v4",
+      "offerSequence": 22540365
+    }
+  ]
+}

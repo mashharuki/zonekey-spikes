@@ -1,0 +1,272 @@
+{
+  "at": "2026-11-23T04:09:31.724Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "🔎 準備: Testnet",
+      "expected": "-",
+      "actual": "rippled 3.4.1 / 準備金 1 XRP + 0.2 XRP/件 / 基本手数料 0.00001 XRP",
+      "evidence": "server_info"
+    },
+    {
+      "item": "✅ 準備: amendment TokenEscrow",
+      "expected": "enabled",
+      "actual": "true",
+      "evidence": "feature TokenEscrow"
+    },
+    {
+      "item": "✅ 準備: V → D 受給証 60（本番は D が RLUSD で 1:1 に買う。spike 04 で確認済み）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[8604EF403987C4B5E5F8C59DA58ADD3DD22E8129A994ECDEA5E473ECA16F64B7](https://testnet.xrpl.org/transactions/8604EF403987C4B5E5F8C59DA58ADD3DD22E8129A994ECDEA5E473ECA16F64B7)"
+    },
+    {
+      "item": "🔎 準備: 口座",
+      "expected": "-",
+      "actual": "V=rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh<br>D=rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn<br>お店 A=r3U2EkdFGEdVDvfhw5aNTnk7fNVopB29Ax<br>お店 B=rpZtrM6S7sJAyivUKYgJXynVxLJsNVakGG<br>世帯 HH1・HH2 は XRPL の口座なし",
+      "evidence": "お店は受給証のトラストラインを張らない（Finish のときに自動で作られるかを確認 6 で見る）"
+    },
+    {
+      "item": "✅ 確認2: 世帯の秘密から preimage を作り直せる（v1 を 2 回導出）",
+      "expected": "一致",
+      "actual": "一致",
+      "evidence": "HMAC-SHA256(秘密, todoke-11c|HH1|1)。preimage の値は出力しない"
+    },
+    {
+      "item": "✅ 確認1: D が EscrowCreate 7 件を Batch（tfAllOrNothing）で送る",
+      "expected": "外側 tesSUCCESS・内側 7 件すべて tesSUCCESS",
+      "actual": "外側 tesSUCCESS / 内側 [tesSUCCESS, tesSUCCESS, tesSUCCESS, tesSUCCESS, tesSUCCESS, tesSUCCESS, tesSUCCESS]",
+      "evidence": "[619EF0FE71389CC6…](https://testnet.xrpl.org/transactions/619EF0FE71389CC6AC03212BB8D80C89023BB909808C5AF467C35D15E4053587)<br>手数料 90 drops（10×2 + Σ内側(10+10+10+10+10+10+10) = 90）"
+    },
+    {
+      "item": "✅ 確認1: D の OwnerCount（Escrow 1 件 = 1）",
+      "expected": "15",
+      "actual": "15",
+      "evidence": "8 → 15。準備金 0.2 XRP × 7 を D が持つ"
+    },
+    {
+      "item": "🔎 確認1: D の残高の変化",
+      "expected": "受給証 −50、XRP は手数料だけ減る",
+      "actual": "受給証 70 → 20<br>XRP 91999838 → 91999748 drops（差 -90）",
+      "evidence": "account_lines / account_info"
+    },
+    {
+      "item": "✅ 確認1: 台帳の tx に preimage が出ていない",
+      "expected": "0 件",
+      "actual": "0 件",
+      "evidence": "Batch の tx JSON を全文検索（D が受け取ったのは Condition だけ）"
+    },
+    {
+      "item": "✅ 確認7: 期限前に D が EscrowCancel（v1）",
+      "expected": "tecNO_PERMISSION（validated）",
+      "actual": "tecNO_PERMISSION / validated=true",
+      "evidence": "[0B39337B5EC954D3B14EFDE31A08772996F6DBABC4AA55B5D5DEB2306B648B33](https://testnet.xrpl.org/transactions/0B39337B5EC954D3B14EFDE31A08772996F6DBABC4AA55B5D5DEB2306B648B33)。期待は rippled EscrowCancel.cpp（CancelAfter 前）"
+    },
+    {
+      "item": "✅ 確認3: お店 A が account_objects で自店宛ての券を一覧できる",
+      "expected": "6 件",
+      "actual": "6 件",
+      "evidence": "v1〜v4・v6・v7。Escrow は宛先の owner directory にも入る（rippled EscrowCreate.cpp の dirInsert）"
+    },
+    {
+      "item": "✅ 確認3: お店 B の一覧",
+      "expected": "1 件",
+      "actual": "1 件",
+      "evidence": "v5。account_objects"
+    },
+    {
+      "item": "✅ 確認3: 同期した券の持ち主・宛先・Condition が作った内容と一致",
+      "expected": "0 件の不一致",
+      "actual": "0 件の不一致",
+      "evidence": "持ち主 = D（世帯のアドレスは台帳に出ない）"
+    },
+    {
+      "item": "✅ 確認3: 端末の公開鍵のハッシュ（Memo）を同期で取れる",
+      "expected": "3 件",
+      "actual": "3 件",
+      "evidence": "v1〜v3。Escrow には Memo が残らないので、PreviousTxnID の tx から読む"
+    },
+    {
+      "item": "🔎 確認3: 券の QR の大きさ",
+      "expected": "1 枚に収まる",
+      "actual": "187 B → QR 型番 8（L）/ 10（M）<br>58 B → QR 型番 4（L）/ 4（M）",
+      "evidence": "署名なし 58 B = 版・フラグ・持ち主・OfferSequence・preimage / 署名つき 187 B = + 公開鍵 65 B・署名 64 B（qrcode で型番を計算）"
+    }
+  ],
+  "statuses": [
+    "observe",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "observe"
+  ],
+  "errorCodes": [
+    "確認7: 期限前に D が EscrowCancel（v1）: tecNO_PERMISSION"
+  ],
+  "unknowns": [],
+  "accounts": {
+    "V": "rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+    "D": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+    "A": "r3U2EkdFGEdVDvfhw5aNTnk7fNVopB29Ax",
+    "B": "rpZtrM6S7sJAyivUKYgJXynVxLJsNVakGG"
+  },
+  "vouchers": [
+    {
+      "id": "v1",
+      "household": "HH1",
+      "shop": "A",
+      "value": "5",
+      "offerSequence": 22540362,
+      "condition": "A025802085CC2320D0019D188D1B1620C35E5DF12CF4E084B1767884A6AE49FF5DBEB8E6810120",
+      "cancelAfter": 848725752,
+      "signed": true,
+      "qrBytes": 187
+    },
+    {
+      "id": "v2",
+      "household": "HH1",
+      "shop": "A",
+      "value": "10",
+      "offerSequence": 22540363,
+      "condition": "A025802015DEF63D89EC8411426FC8832568AC5AF3724889D7A9DB2438D98776A6AC4917810120",
+      "cancelAfter": 848725752,
+      "signed": true,
+      "qrBytes": 187
+    },
+    {
+      "id": "v3",
+      "household": "HH1",
+      "shop": "A",
+      "value": "10",
+      "offerSequence": 22540364,
+      "condition": "A025802043CAC97D308DB6B751F43A2C53E4A73D5722388FC920FC88E02C221E3C06C7B9810120",
+      "cancelAfter": 848725752,
+      "signed": true,
+      "qrBytes": 187
+    },
+    {
+      "id": "v4",
+      "household": "HH2",
+      "shop": "A",
+      "value": "5",
+      "offerSequence": 22540365,
+      "condition": "A025802015A54B153D93264DACCFB1F982FA784957523822B011BE87C0D38E0F3047360A810120",
+      "cancelAfter": 848725752,
+      "signed": false,
+      "qrBytes": 58
+    },
+    {
+      "id": "v5",
+      "household": "HH2",
+      "shop": "B",
+      "value": "10",
+      "offerSequence": 22540366,
+      "condition": "A02580209B953139B1C1C882B69BB4C75564DAF1A301DCC9D01074902680DEDF759E5896810120",
+      "cancelAfter": 848725752,
+      "signed": false,
+      "qrBytes": 58
+    },
+    {
+      "id": "v6",
+      "household": "HH2",
+      "shop": "A",
+      "value": "5",
+      "offerSequence": 22540367,
+      "condition": "A0258020AF89A8B600F69E7D335EA23506C7B79551475460C3D1AA0C0A0649EAC5231B7B810120",
+      "cancelAfter": 848722452,
+      "signed": false,
+      "qrBytes": 58
+    },
+    {
+      "id": "v7",
+      "household": "HH2",
+      "shop": "A",
+      "value": "5",
+      "offerSequence": 22540368,
+      "condition": "A02580206DAA665029C05FA5F48DECDB3D21A832E97BC0580A447EAA92D051E4F59635C8810120",
+      "cancelAfter": 848725752,
+      "signed": false,
+      "qrBytes": 58
+    }
+  ],
+  "batch": {
+    "hash": "619EF0FE71389CC6AC03212BB8D80C89023BB909808C5AF467C35D15E4053587",
+    "fee": "90",
+    "formula": "10×2 + Σ内側(10+10+10+10+10+10+10) = 90",
+    "inner": [
+      {
+        "index": 1,
+        "hash": "CD5EB30A1F185DB4517B42CA8433E27727EB73153C3B0D1A8E99CA47BE9F6C21",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540362,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 2,
+        "hash": "4B8CBC1FFA8E57704D7D49016AC6D49C3B49D50B224C6E9CE64A964FCDEC6522",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540363,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 3,
+        "hash": "1FDE3A318D8078A5FFC120B72276C45C530B7518F887BB0909EF7499B7C7A4E0",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540364,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 4,
+        "hash": "C76C05CB5BF852AF9ED036C6908FD6F2003D9B27280E19244787A23A3D041C32",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540365,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 5,
+        "hash": "5712C65B32AB3283B994C2517FF2C16148B931273416E79541FDE76F484ED58E",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540366,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 6,
+        "hash": "A6B20EC4D959994365EB8E41A8AF3B280C1227A68EA898683DABB63999D9DD23",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540367,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      },
+      {
+        "index": 7,
+        "hash": "C37201B5AF4DD757D060234BF12C4B954878D4933D30D9C52A34EE8DCDFB3B75",
+        "computedHashMatches": false,
+        "type": "EscrowCreate",
+        "sequence": 22540368,
+        "result": "tesSUCCESS",
+        "parentBatchId": "外側と一致"
+      }
+    ]
+  }
+}

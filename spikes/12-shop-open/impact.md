@@ -1,0 +1,7 @@
+- **開店の届けに使う取引:** 設定を何も変えない AccountSet に Memo（MemoType "todoke/open"）を付けるだけで足りる。5 件とも tesSUCCESS で、account_info（残高・Sequence・PreviousTxn・OwnerCount を除く）は前後で同じだった。代わりの Payment は不要
+- **台帳だけで「券を作ってよいお店」を選べるか:** 選べる。候補は自治体 G の account_objects（type: credential）から作り、外す理由は次の 4 つ。a 地区・種類が違う／発行者が G ではない／Credential がない、b 受け取っていない（lsfAccepted なし）、c Credential の期限切れ（close_time > Expiration）、d 有効時間内の届けがない。G が Credential を取り消すと、次の選び直しでそのお店は外れた
+- **自治体以外が出した Credential を外せるか:** 外せる。G2 も同じ CredentialType（todoke:shop:z13）を X に出せて、X も受け取れた。ただし候補を G の account_objects から作るので、X は最初から候補に出ない。「誰が自治体か」は G のアドレスで決める（公開して固定する）
+- **選ぶ時間:** お店 30 件で約 5 秒（account_tx 30 回・account_objects 1 回・約 230 KB）。時間とデータ量はお店の数にほぼ比例し、1 件あたり約 150 ms・約 7.6 KB（1 件ずつ順に読んだ場合）。1,000 件なら順に読んで約 2.5 分・約 7.6 MB の見積もり。並列に読めば短くなる（未計測）
+- **誰でもやり直せる:** 鍵も .env.local も使わず、公開の Testnet サーバーだけで同じ判定になった（確認 8）。ピッチで「券を作るお店の判定は、台帳を読めば誰でも同じ結果になる」と言える
+- **選んだお店にだけ券を作れる:** 選ばれた A 宛てにだけ、11c と同じ券（受給証 Escrow）を Batch で作れた。他のお店宛ての券は 0 枚
+- **注意:** 条件 d は「有効時間内に届けがあるか」だけを見る。Credential を取り消して出し直したお店は、出し直す前に送った届けも数えられる（今回は出し直し後にも届けを送った）。厳しくするなら「Credential を受け取った後の届け」に限る（Credential の PreviousTxnID の時刻と比べる）

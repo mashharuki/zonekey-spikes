@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-23T05:44:02.423Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "✅ 確認9: お店 5 件のとき、全件が選ばれる",
+      "expected": "5",
+      "actual": "5",
+      "evidence": "1242 ms / account_objects 1 回・account_tx 5 回・ledger 1 回 / 受け取り 38321 B"
+    },
+    {
+      "item": "✅ 確認9: お店 15 件のとき、全件が選ばれる",
+      "expected": "15",
+      "actual": "15",
+      "evidence": "2742 ms / account_objects 1 回・account_tx 15 回・ledger 1 回 / 受け取り 114719 B"
+    },
+    {
+      "item": "✅ 確認9: お店 30 件のとき、全件が選ばれる",
+      "expected": "30",
+      "actual": "30",
+      "evidence": "4946 ms / account_objects 1 回・account_tx 30 回・ledger 1 回 / 受け取り 229336 B"
+    },
+    {
+      "item": "🔎 確認9: 件数と選ぶ時間",
+      "expected": "-",
+      "actual": "5 件: 1242 ms・account_tx 5 回・account_objects 1 回・38321 B<br>15 件: 2742 ms・account_tx 15 回・account_objects 1 回・114719 B<br>30 件: 4946 ms・account_tx 30 回・account_objects 1 回・229336 B",
+      "evidence": "G=r3K7zbRWxd8Jy7QXhzGNY2b6u9zu7sx5wd。有効時間 3600 秒。Mac から公開 Testnet サーバーへ、お店を 1 件ずつ順に読む"
+    }
+  ],
+  "statuses": [
+    "pass",
+    "pass",
+    "pass",
+    "observe"
+  ],
+  "errorCodes": [],
+  "unknowns": [],
+  "table": [
+    {
+      "shops": 5,
+      "account_objects": 1,
+      "account_tx": 5,
+      "ledger": 1,
+      "bytes": 38321,
+      "ms": 1242,
+      "selected": 5
+    },
+    {
+      "shops": 15,
+      "account_objects": 1,
+      "account_tx": 15,
+      "ledger": 1,
+      "bytes": 114719,
+      "ms": 2742,
+      "selected": 15
+    },
+    {
+      "shops": 30,
+      "account_objects": 1,
+      "account_tx": 30,
+      "ledger": 1,
+      "bytes": 229336,
+      "ms": 4946,
+      "selected": 30
+    }
+  ]
+}

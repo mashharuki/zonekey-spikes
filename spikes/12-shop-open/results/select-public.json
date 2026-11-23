@@ -1,0 +1,56 @@
+{
+  "server": "wss://s.altnet.rippletest.net:51233",
+  "input": {
+    "district": "z13",
+    "issuer": "rPN8H5GfHe9pFWFrSeytUBQR2Sc7cNr3Bn",
+    "windowSec": 600,
+    "check": [
+      "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+      "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+      "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+      "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+      "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK"
+    ]
+  },
+  "closeTime": 848727420,
+  "selected": [
+    {
+      "shop": "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+      "lastNotice": 848727410,
+      "lastNoticeTx": "C9EE1C6EEAFF616433CA025831B7C2DF642990E35B29E0689A9F80F98A0AF280"
+    }
+  ],
+  "excluded": [
+    {
+      "shop": "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+      "reasons": [
+        "c: Credential の期限切れ（Expiration 848727281 < close_time 848727420）"
+      ]
+    },
+    {
+      "shop": "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+      "reasons": [
+        "a: 地区・種類が違う（todoke:shop:z14）"
+      ]
+    },
+    {
+      "shop": "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+      "reasons": [
+        "b: Credential を受け取っていない（lsfAccepted なし）"
+      ]
+    },
+    {
+      "shop": "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK",
+      "reasons": [
+        "a: 発行者が G ではない（rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk の todoke:shop:z13）。G の候補に出ない"
+      ]
+    }
+  ],
+  "stats": {
+    "account_objects": 2,
+    "account_tx": 3,
+    "ledger": 1,
+    "bytes": 43443,
+    "ms": 836
+  }
+}

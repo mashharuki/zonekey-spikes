@@ -1,0 +1,22 @@
+{
+  "name": "12-shop-open",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "spike": "tsx src/run.ts",
+    "select-shops": "tsx src/select-shops.ts",
+    "measure": "tsx src/measure.ts",
+    "report": "tsx src/report.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

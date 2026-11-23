@@ -1,0 +1,557 @@
+{
+  "at": "2026-11-23T05:37:02.259Z",
+  "verdict": "合格",
+  "rows": [
+    {
+      "item": "🔎 準備: Testnet",
+      "expected": "-",
+      "actual": "rippled 3.4.1",
+      "evidence": "server_info"
+    },
+    {
+      "item": "🔎 準備: 口座（Faucet）",
+      "expected": "-",
+      "actual": "G=rPN8H5GfHe9pFWFrSeytUBQR2Sc7cNr3Bn<br>G2=rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk<br>A=rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT<br>B=rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv<br>C=rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq<br>E=rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3<br>X=rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK",
+      "evidence": "G = 自治体（模擬）、G2 = 第三者、A・B・C = 地区13、E = 地区14、X = Credential を G から受けていない"
+    },
+    {
+      "item": "🔎 確認1: CredentialType",
+      "expected": "64 バイト以内",
+      "actual": "todoke:shop:z13 → 746F646F6B653A73686F703A7A3133（15 B）",
+      "evidence": "rippled Protocol.h kMaxCredentialTypeLength = 64"
+    },
+    {
+      "item": "✅ 確認1: G → A CredentialCreate（todoke:shop:z13）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[16A008B01AE531D6658D552B6B2543463DFD9312599CA4E61CE1776F84B625A1](https://testnet.xrpl.org/transactions/16A008B01AE531D6658D552B6B2543463DFD9312599CA4E61CE1776F84B625A1)"
+    },
+    {
+      "item": "✅ 確認1: G → B CredentialCreate（todoke:shop:z13、Expiration 180 秒後）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[5DFAD2C7BEA05E1DCD73F53ACC79069A9461C66AC9250AEBED1775296B25C37D](https://testnet.xrpl.org/transactions/5DFAD2C7BEA05E1DCD73F53ACC79069A9461C66AC9250AEBED1775296B25C37D)"
+    },
+    {
+      "item": "✅ 確認1: G → C CredentialCreate（todoke:shop:z13）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[DDA9D408027A3B180AD29294EE7EFD4977AF6272A790F95D7E2DC51C5C4C0FD5](https://testnet.xrpl.org/transactions/DDA9D408027A3B180AD29294EE7EFD4977AF6272A790F95D7E2DC51C5C4C0FD5)"
+    },
+    {
+      "item": "✅ 確認1: G → E CredentialCreate（todoke:shop:z14）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[E9736101B27FFE1D52D9544963C4952FDFD8A8FEFCF63F59E1EE9B0231078D0E](https://testnet.xrpl.org/transactions/E9736101B27FFE1D52D9544963C4952FDFD8A8FEFCF63F59E1EE9B0231078D0E)"
+    },
+    {
+      "item": "✅ 確認1: A が CredentialAccept",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[FA5AA784C9ADBE8786E1896B1F2B67EAD20877DC97F78993FAF4EC6161021A24](https://testnet.xrpl.org/transactions/FA5AA784C9ADBE8786E1896B1F2B67EAD20877DC97F78993FAF4EC6161021A24)"
+    },
+    {
+      "item": "✅ 確認1: B が CredentialAccept",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[90E7C0CA53B521E46399A8D0F86363296974B89435CC61E7B169DE0513809704](https://testnet.xrpl.org/transactions/90E7C0CA53B521E46399A8D0F86363296974B89435CC61E7B169DE0513809704)"
+    },
+    {
+      "item": "✅ 確認1: E が CredentialAccept",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[553C69E8193DB92C40636CBD8A27A3922E5F8646E98EA277465B1E4B9E3E4AFF](https://testnet.xrpl.org/transactions/553C69E8193DB92C40636CBD8A27A3922E5F8646E98EA277465B1E4B9E3E4AFF)"
+    },
+    {
+      "item": "✅ 確認1: A の Credential（G の account_objects）",
+      "expected": "lsfAccepted=true",
+      "actual": "Flags=0x10000（lsfAccepted=true）/ Expiration=なし / todoke:shop:z13",
+      "evidence": "lsfAccepted = 0x00010000（rippled LedgerFormats.h）。未受け取りでも発行者とお店の両方の owner directory に入る"
+    },
+    {
+      "item": "✅ 確認1: B の Credential（G の account_objects）",
+      "expected": "lsfAccepted=true",
+      "actual": "Flags=0x10000（lsfAccepted=true）/ Expiration=848727281 / todoke:shop:z13",
+      "evidence": "lsfAccepted = 0x00010000（rippled LedgerFormats.h）。未受け取りでも発行者とお店の両方の owner directory に入る"
+    },
+    {
+      "item": "✅ 確認1: C の Credential（G の account_objects）",
+      "expected": "lsfAccepted=false",
+      "actual": "Flags=0x0（lsfAccepted=false）/ Expiration=なし / todoke:shop:z13",
+      "evidence": "lsfAccepted = 0x00010000（rippled LedgerFormats.h）。未受け取りでも発行者とお店の両方の owner directory に入る"
+    },
+    {
+      "item": "✅ 確認1: E の Credential（G の account_objects）",
+      "expected": "lsfAccepted=true",
+      "actual": "Flags=0x10000（lsfAccepted=true）/ Expiration=なし / todoke:shop:z14",
+      "evidence": "lsfAccepted = 0x00010000（rippled LedgerFormats.h）。未受け取りでも発行者とお店の両方の owner directory に入る"
+    },
+    {
+      "item": "✅ 確認2: G2 → X CredentialCreate（todoke:shop:z13）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[E8670129DF9E3BC24060F0072FAD75479BC50942DB0C8E032B8C4DD0755C06CC](https://testnet.xrpl.org/transactions/E8670129DF9E3BC24060F0072FAD75479BC50942DB0C8E032B8C4DD0755C06CC)"
+    },
+    {
+      "item": "✅ 確認2: X が CredentialAccept（発行者 G2）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[50EC91AA18FE0B6FD74C1F7FB327F38BF6E06D59F08656CCF45793CFFFAAA59C](https://testnet.xrpl.org/transactions/50EC91AA18FE0B6FD74C1F7FB327F38BF6E06D59F08656CCF45793CFFFAAA59C)"
+    },
+    {
+      "item": "✅ 確認3: A が開店の届け（AccountSet・設定なし・Memo todoke/open）",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[EE37C192DDEB15B34934E3508C19FFEC5C1FBC4145E49C3B2C36A27F0BC73AFB](https://testnet.xrpl.org/transactions/EE37C192DDEB15B34934E3508C19FFEC5C1FBC4145E49C3B2C36A27F0BC73AFB)"
+    },
+    {
+      "item": "✅ 確認3: A が開店の届け（AccountSet・設定なし・Memo todoke/open）: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認3: B が開店の届け",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[093B86CCDFC80177B3EFFF24F3C4970EF91870EA7E2EEACBA64A2EFF17411989](https://testnet.xrpl.org/transactions/093B86CCDFC80177B3EFFF24F3C4970EF91870EA7E2EEACBA64A2EFF17411989)"
+    },
+    {
+      "item": "✅ 確認3: B が開店の届け: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認3: C が開店の届け",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[B363D518F6537B780909531801A316CE8F35F40B041CE8BB37F81E40AB5BD793](https://testnet.xrpl.org/transactions/B363D518F6537B780909531801A316CE8F35F40B041CE8BB37F81E40AB5BD793)"
+    },
+    {
+      "item": "✅ 確認3: C が開店の届け: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認3: E が開店の届け",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[45966C6CDCAD03A5A8191BA104CC9394CF918289CC676E58F91950621136C81A](https://testnet.xrpl.org/transactions/45966C6CDCAD03A5A8191BA104CC9394CF918289CC676E58F91950621136C81A)"
+    },
+    {
+      "item": "✅ 確認3: E が開店の届け: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認3: X が開店の届け",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[E9E5B67CEADC4AF6DD46223970566BF491F792EAF87A7077D3A1CDA7BDAE1FC4](https://testnet.xrpl.org/transactions/E9E5B67CEADC4AF6DD46223970566BF491F792EAF87A7077D3A1CDA7BDAE1FC4)"
+    },
+    {
+      "item": "✅ 確認3: X が開店の届け: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認4: A が 2 回目の開店の届け",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[11B846F7413960D69544475D09C70F35E23152DC440741D45ECCAE3A3F3B1868](https://testnet.xrpl.org/transactions/11B846F7413960D69544475D09C70F35E23152DC440741D45ECCAE3A3F3B1868)"
+    },
+    {
+      "item": "✅ 確認4: A が 2 回目の開店の届け: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認5: 選ばれたお店",
+      "expected": "A",
+      "actual": "A",
+      "evidence": "close_time 848727381 / 有効時間 600 秒 / 呼び出し account_objects 2・account_tx 3・26904 B・836 ms"
+    },
+    {
+      "item": "✅ 確認5: B が外れた理由",
+      "expected": "c: で外れる",
+      "actual": "c: Credential の期限切れ（Expiration 848727281 < close_time 848727381）",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認5: C が外れた理由",
+      "expected": "b: で外れる",
+      "actual": "b: Credential を受け取っていない（lsfAccepted なし）",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認5: E が外れた理由",
+      "expected": "a: で外れる",
+      "actual": "a: 地区・種類が違う（todoke:shop:z14）",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認5: X が外れた理由",
+      "expected": "a: で外れる",
+      "actual": "a: 発行者が G ではない（rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk の todoke:shop:z13）。G の候補に出ない",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認4: 選ぶときに A の最新の届けを取れる",
+      "expected": "11B846F7413960D69544475D09C70F35E23152DC440741D45ECCAE3A3F3B1868",
+      "actual": "11B846F7413960D69544475D09C70F35E23152DC440741D45ECCAE3A3F3B1868",
+      "evidence": "1 回目 EE37C192DDEB15B3… / 2 回目 11B846F7413960D6…（account_tx を新しい順に読む）"
+    },
+    {
+      "item": "✅ 確認6: G が A の Credential を CredentialDelete",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[FA1A0906B1E31A9045D38A09C6B80AD4F972C86C8C97BDCA769970624B374EC9](https://testnet.xrpl.org/transactions/FA1A0906B1E31A9045D38A09C6B80AD4F972C86C8C97BDCA769970624B374EC9)"
+    },
+    {
+      "item": "✅ 確認6（取り消し後）: 選ばれたお店",
+      "expected": "なし",
+      "actual": "なし",
+      "evidence": "close_time 848727390 / 有効時間 600 秒 / 呼び出し account_objects 3・account_tx 2・17115 B・819 ms"
+    },
+    {
+      "item": "✅ 確認6（取り消し後）: A が外れた理由",
+      "expected": "a: で外れる",
+      "actual": "a: Credential がない。G の候補に出ない",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認6: G が A に Credential を出し直す",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[147918D0AAED793EEA0691B71C6DF78BF68FE06D3D6A1A8D38433FF379DFD531](https://testnet.xrpl.org/transactions/147918D0AAED793EEA0691B71C6DF78BF68FE06D3D6A1A8D38433FF379DFD531)"
+    },
+    {
+      "item": "✅ 確認6: A が受け取る",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[702D2B72628F91F4B878A427838C97F356597851F25DDE1A07B659C0606A039C](https://testnet.xrpl.org/transactions/702D2B72628F91F4B878A427838C97F356597851F25DDE1A07B659C0606A039C)"
+    },
+    {
+      "item": "✅ 確認6: A が届けを出し直す",
+      "expected": "tesSUCCESS（validated）",
+      "actual": "tesSUCCESS / validated=true",
+      "evidence": "[C9EE1C6EEAFF616433CA025831B7C2DF642990E35B29E0689A9F80F98A0AF280](https://testnet.xrpl.org/transactions/C9EE1C6EEAFF616433CA025831B7C2DF642990E35B29E0689A9F80F98A0AF280)"
+    },
+    {
+      "item": "✅ 確認6: A が届けを出し直す: 設定が変わっていない",
+      "expected": "account_info（Balance・Sequence・PreviousTxn・OwnerCount を除く）が同じ",
+      "actual": "同じ",
+      "evidence": "account_info"
+    },
+    {
+      "item": "✅ 確認6（出し直し後）: 選ばれたお店",
+      "expected": "A",
+      "actual": "A",
+      "evidence": "close_time 848727410 / 有効時間 600 秒 / 呼び出し account_objects 2・account_tx 3・35675 B・825 ms"
+    },
+    {
+      "item": "✅ 確認6（出し直し後）: B が外れた理由",
+      "expected": "c: で外れる",
+      "actual": "c: Credential の期限切れ（Expiration 848727281 < close_time 848727410）",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認6（出し直し後）: C が外れた理由",
+      "expected": "b: で外れる",
+      "actual": "b: Credential を受け取っていない（lsfAccepted なし）",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認6（出し直し後）: E が外れた理由",
+      "expected": "a: で外れる",
+      "actual": "a: 地区・種類が違う（todoke:shop:z14）",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認6（出し直し後）: X が外れた理由",
+      "expected": "a: で外れる",
+      "actual": "a: 発行者が G ではない（rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk の todoke:shop:z13）。G の候補に出ない",
+      "evidence": "select.ts"
+    },
+    {
+      "item": "✅ 確認7: D が選ばれたお店（A）宛ての券 2 枚を Batch で作る",
+      "expected": "外側・内側すべて tesSUCCESS",
+      "actual": "外側 tesSUCCESS / 内側 [tesSUCCESS, tesSUCCESS]",
+      "evidence": "[ED321030066A0001EE5F730B37BD5860C671B55B15A67ED4E2A5AB51950F1E3B](https://testnet.xrpl.org/transactions/ED321030066A0001EE5F730B37BD5860C671B55B15A67ED4E2A5AB51950F1E3B)。CancelAfter 15 分（D が後で回収できる）"
+    },
+    {
+      "item": "✅ 確認7: A 宛ての券の枚数",
+      "expected": "2",
+      "actual": "2",
+      "evidence": "account_objects（type: escrow）"
+    },
+    {
+      "item": "✅ 確認7: B 宛ての券の枚数",
+      "expected": "0",
+      "actual": "0",
+      "evidence": "account_objects（type: escrow）"
+    },
+    {
+      "item": "✅ 確認7: C 宛ての券の枚数",
+      "expected": "0",
+      "actual": "0",
+      "evidence": "account_objects（type: escrow）"
+    },
+    {
+      "item": "✅ 確認7: E 宛ての券の枚数",
+      "expected": "0",
+      "actual": "0",
+      "evidence": "account_objects（type: escrow）"
+    },
+    {
+      "item": "✅ 確認7: X 宛ての券の枚数",
+      "expected": "0",
+      "actual": "0",
+      "evidence": "account_objects（type: escrow）"
+    },
+    {
+      "item": "✅ 確認8: 鍵・.env.local なしで、確認6（出し直し後）と同じ判定になる",
+      "expected": "同じ",
+      "actual": "同じ",
+      "evidence": "接続先 wss://s.altnet.rippletest.net:51233。環境変数は PATH・HOME だけ。選ばれた A（close_time 848727420）。results/select-public.json"
+    }
+  ],
+  "statuses": [
+    "observe",
+    "observe",
+    "observe",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass"
+  ],
+  "errorCodes": [],
+  "unknowns": [],
+  "accounts": {
+    "G": "rPN8H5GfHe9pFWFrSeytUBQR2Sc7cNr3Bn",
+    "G2": "rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk",
+    "A": "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+    "B": "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+    "C": "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+    "E": "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+    "X": "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK"
+  },
+  "select5": {
+    "input": {
+      "district": "z13",
+      "issuer": "rPN8H5GfHe9pFWFrSeytUBQR2Sc7cNr3Bn",
+      "windowSec": 600,
+      "check": [
+        "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+        "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+        "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+        "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+        "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK"
+      ]
+    },
+    "closeTime": 848727381,
+    "selected": [
+      {
+        "shop": "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+        "lastNotice": 848727381,
+        "lastNoticeTx": "11B846F7413960D69544475D09C70F35E23152DC440741D45ECCAE3A3F3B1868"
+      }
+    ],
+    "excluded": [
+      {
+        "shop": "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+        "reasons": [
+          "c: Credential の期限切れ（Expiration 848727281 < close_time 848727381）"
+        ]
+      },
+      {
+        "shop": "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+        "reasons": [
+          "a: 地区・種類が違う（todoke:shop:z14）"
+        ]
+      },
+      {
+        "shop": "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+        "reasons": [
+          "b: Credential を受け取っていない（lsfAccepted なし）"
+        ]
+      },
+      {
+        "shop": "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK",
+        "reasons": [
+          "a: 発行者が G ではない（rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk の todoke:shop:z13）。G の候補に出ない"
+        ]
+      }
+    ],
+    "stats": {
+      "account_objects": 2,
+      "account_tx": 3,
+      "ledger": 1,
+      "bytes": 26904,
+      "ms": 836
+    }
+  },
+  "select6": {
+    "afterDelete": {
+      "input": {
+        "district": "z13",
+        "issuer": "rPN8H5GfHe9pFWFrSeytUBQR2Sc7cNr3Bn",
+        "windowSec": 600,
+        "check": [
+          "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+          "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+          "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+          "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+          "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK"
+        ]
+      },
+      "closeTime": 848727390,
+      "selected": [],
+      "excluded": [
+        {
+          "shop": "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+          "reasons": [
+            "c: Credential の期限切れ（Expiration 848727281 < close_time 848727390）"
+          ]
+        },
+        {
+          "shop": "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+          "reasons": [
+            "a: 地区・種類が違う（todoke:shop:z14）"
+          ]
+        },
+        {
+          "shop": "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+          "reasons": [
+            "b: Credential を受け取っていない（lsfAccepted なし）"
+          ]
+        },
+        {
+          "shop": "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+          "reasons": [
+            "a: Credential がない。G の候補に出ない"
+          ]
+        },
+        {
+          "shop": "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK",
+          "reasons": [
+            "a: 発行者が G ではない（rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk の todoke:shop:z13）。G の候補に出ない"
+          ]
+        }
+      ],
+      "stats": {
+        "account_objects": 3,
+        "account_tx": 2,
+        "ledger": 1,
+        "bytes": 17115,
+        "ms": 819
+      }
+    },
+    "afterRestore": {
+      "input": {
+        "district": "z13",
+        "issuer": "rPN8H5GfHe9pFWFrSeytUBQR2Sc7cNr3Bn",
+        "windowSec": 600,
+        "check": [
+          "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+          "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+          "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+          "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+          "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK"
+        ]
+      },
+      "closeTime": 848727410,
+      "selected": [
+        {
+          "shop": "rLuMpv7x8gat3qnUwvaUeu4NnpTkGfccuT",
+          "lastNotice": 848727410,
+          "lastNoticeTx": "C9EE1C6EEAFF616433CA025831B7C2DF642990E35B29E0689A9F80F98A0AF280"
+        }
+      ],
+      "excluded": [
+        {
+          "shop": "rDuEUXhZa6iHKkytDaUpP6jRsWVHPhAhv",
+          "reasons": [
+            "c: Credential の期限切れ（Expiration 848727281 < close_time 848727410）"
+          ]
+        },
+        {
+          "shop": "rfbK6ezexVGqbt5szTADpsjVXAaUuY2WN3",
+          "reasons": [
+            "a: 地区・種類が違う（todoke:shop:z14）"
+          ]
+        },
+        {
+          "shop": "rscnJbuUTSfTaDMtoNRmKofuxL8BUtYxmq",
+          "reasons": [
+            "b: Credential を受け取っていない（lsfAccepted なし）"
+          ]
+        },
+        {
+          "shop": "rEWFKxXSmytwNfv4YQ9hgyY1FeiFQhLhoK",
+          "reasons": [
+            "a: 発行者が G ではない（rJn98bTeaiCwe4g8zpban1LGVWW33YWbvk の todoke:shop:z13）。G の候補に出ない"
+          ]
+        }
+      ],
+      "stats": {
+        "account_objects": 2,
+        "account_tx": 3,
+        "ledger": 1,
+        "bytes": 35675,
+        "ms": 825
+      }
+    }
+  }
+}

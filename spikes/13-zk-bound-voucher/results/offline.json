@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-27T14:08:17.638Z",
+  "condition": "QR 画像・カメラ・実機は使わず、QR のバイト列（hex）を直接渡した。同期データは模擬台帳から作った",
+  "failed": 0,
+  "rows": [
+    {
+      "item": "店頭: 別の申請鍵（H1 NGO の鍵）で署名した県の券を出す",
+      "expected": "端末の公開鍵が券と合わない",
+      "actual": "端末の公開鍵が券と合わない",
+      "ok": true,
+      "evidence": "187 B / 2.4 ms"
+    },
+    {
+      "item": "店頭: preimage だけを盗み見して署名なしで出す",
+      "expected": "端末の署名がない",
+      "actual": "端末の署名がない",
+      "ok": true,
+      "evidence": "58 B / 0.2 ms"
+    },
+    {
+      "item": "店頭: 見知らぬ端末の鍵で署名した券を出す",
+      "expected": "端末の公開鍵が券と合わない",
+      "actual": "端末の公開鍵が券と合わない",
+      "ok": true,
+      "evidence": "187 B / 0.1 ms"
+    },
+    {
+      "item": "店頭: H1 県の券（正規の券と鍵）",
+      "expected": "使える",
+      "actual": "使える",
+      "ok": true,
+      "evidence": "187 B / 1.3 ms"
+    },
+    {
+      "item": "店頭: H1 県の券をもう一度出す",
+      "expected": "使用済み",
+      "actual": "使用済み",
+      "ok": true,
+      "evidence": "187 B / 0.0 ms"
+    },
+    {
+      "item": "店頭: H1 NGO の券の preimage を 1 ビット書き換える",
+      "expected": "preimage が条件と合わない",
+      "actual": "preimage が条件と合わない",
+      "ok": true,
+      "evidence": "187 B / 0.1 ms"
+    },
+    {
+      "item": "店頭: H1 NGO の券（正規の券と鍵）",
+      "expected": "使える",
+      "actual": "使える",
+      "ok": true,
+      "evidence": "187 B / 0.4 ms"
+    },
+    {
+      "item": "店頭: H2 県の券（店 B 宛て）を店 A で出す",
+      "expected": "このお店宛ての券ではない（または未同期）",
+      "actual": "このお店宛ての券ではない（または未同期）",
+      "ok": true,
+      "evidence": "187 B / 0.0 ms"
+    },
+    {
+      "item": "店頭: H2 県の券（店 B 宛て）を店 B で出す",
+      "expected": "使える",
+      "actual": "使える",
+      "ok": true,
+      "evidence": "187 B / 0.3 ms"
+    },
+    {
+      "item": "店頭: 確認中のネットワーク利用の試み",
+      "expected": "0",
+      "actual": "0",
+      "ok": true,
+      "evidence": "fetch・ソケット・DNS・TLS を遮断して実行"
+    }
+  ]
+}

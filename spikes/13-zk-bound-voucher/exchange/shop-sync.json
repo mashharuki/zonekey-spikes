@@ -1,0 +1,119 @@
+{
+  "kind": "todoke-13-shop-sync（模擬台帳・ローカル検証）",
+  "shopA": {
+    "shop": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+    "list": [
+      {
+        "index": "B065597C1F6AAACEA47CAED95C0D6BB2B3C090038C01CFA60D4DD69CC777D498",
+        "owner": "rHUFbw9bWwRMo1EdKG3J9G7UEjzvJATrBo",
+        "offerSequence": 1001,
+        "destination": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "5"
+        },
+        "condition": "A02580201F80749D04A5177DFE6137297D55EFC97EE9105F2A4CE53D5A44B087DA9F9F08810120",
+        "cancelAfter": 849708496,
+        "pkHash": "51D6A549631D3A994AB444604BBE643453270D57D468D459F9BCA4080415A976",
+        "createTx": "63FC01635813E5D57C39ACB2BCB052BBFBF73AB63946919C85C3AC51A9506577"
+      },
+      {
+        "index": "2CEA0BB1872DC58554E7998F50BFAF2D81EABA13BB8FE94648C53B8509E7B790",
+        "owner": "rH1cgFjMcsifx47npfaibVbUd7v9LDWCd8",
+        "offerSequence": 1001,
+        "destination": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "10"
+        },
+        "condition": "A0258020A83A754C019853F7290E7072665312EC399955BA098B198F7A30EF2E52D945D3810120",
+        "cancelAfter": 849708496,
+        "pkHash": "F5BEA5C3B845776777C4ECF0CFBFE72DF5B1C2A98AEE595EA751268548F16361",
+        "createTx": "FA47E1B4554B07CE6474AA2DC20B134C09394E0FF7BEF44980EF9EA78C900A40"
+      },
+      {
+        "index": "04104C8729A7AC57BCB9A84BC27EBF359C2AB7DB978C713B89D95EDC20AEE37F",
+        "owner": "rHUFbw9bWwRMo1EdKG3J9G7UEjzvJATrBo",
+        "offerSequence": 1003,
+        "destination": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "5"
+        },
+        "condition": "A025802022CFF7B60724E52F3585D5EE6C320269E441E4B674E4065A20525A03D868A074810120",
+        "cancelAfter": 849708496,
+        "pkHash": "EA66FDBD7DEA48ACF49531FE4D541080234B8D1D462DE513C45700229AC614E0",
+        "createTx": "1BBA377D7648A75C19882FEB05851DC28A3DF41AAE47DC2168BE7316B189B2EA"
+      },
+      {
+        "index": "A8267A53C8260C1CD9083C24EF17ADADE3EC6C930ED409CE9A4FDC0418936967",
+        "owner": "rHUFbw9bWwRMo1EdKG3J9G7UEjzvJATrBo",
+        "offerSequence": 1004,
+        "destination": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "5"
+        },
+        "condition": "A02580206E63C6B29CDC5AB404030A645A94F8631A4875E20B1B61E2C5814E93CB024EFE810120",
+        "cancelAfter": 849708496,
+        "pkHash": "92C1E3ADA3757B00652C902FC561FF52692E4268D5589E771BD72201DE54778D",
+        "createTx": "D65BA12BCA949304A6A7E357E018C30CC0ECA82888922C5E7DFA57F626FD2415"
+      },
+      {
+        "index": "A438B279B443D23DB76C6DAB7FF09BBA906AB4E2121A7863C1148A8C86C8BD18",
+        "owner": "rHUFbw9bWwRMo1EdKG3J9G7UEjzvJATrBo",
+        "offerSequence": 1005,
+        "destination": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "5"
+        },
+        "condition": "A0258020D88D35EA9A47982646A23E5728949B294D1044B2AD708F274F43D00C1DFADB9D810120",
+        "cancelAfter": 849708496,
+        "pkHash": "F9BF8E7C12A242081A9491B785B0641F9A3BACD5FAD4004EDAACFA551445CACC",
+        "createTx": "F18BDB1D4A1DA859D1F1712987AF5FA141D8234B44C793E6C6A9313B11D8C991"
+      },
+      {
+        "index": "8DA0CA655DFD0832929B9389EF2228D874D032437872FEC8992E610A7930168D",
+        "owner": "rHUFbw9bWwRMo1EdKG3J9G7UEjzvJATrBo",
+        "offerSequence": 1006,
+        "destination": "rKuEq3LY8vhfHB2hjYQ6xGSvSHQ9HhrZZb",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "5"
+        },
+        "condition": "A02580201CA431E2DD83A81C10E2A3BB3BFB384F1658C443AEF79049DF33F045CDF356B3810120",
+        "cancelAfter": 849708497,
+        "pkHash": "C95BA62F2E9D7B9AFB77BB8ABE5FA3D90A88080804BC7F65141E80584D231B60",
+        "createTx": "33C03EBA34FE543DBE16648429A69D1F0219D2E877C9430FA63B60D6A14D4269"
+      }
+    ]
+  },
+  "shopB": {
+    "shop": "rpsyYGfrigi6LZ48t7MXhqKGZB8L6xmbuX",
+    "list": [
+      {
+        "index": "B34120A15D32D3AB574EA92AE186906D220D796A3FEDC8F758B4817607A18BCC",
+        "owner": "rHUFbw9bWwRMo1EdKG3J9G7UEjzvJATrBo",
+        "offerSequence": 1002,
+        "destination": "rpsyYGfrigi6LZ48t7MXhqKGZB8L6xmbuX",
+        "amount": {
+          "currency": "ZKV",
+          "issuer": "rD8nYJSqZNFvdiDEcJb9WptkyjiGrqhMXB",
+          "value": "5"
+        },
+        "condition": "A0258020540E0467F2FDBCCBA94BE54EECFD3563BD45B07B2A4A398B085FCCFFE6E15EBA810120",
+        "cancelAfter": 849708496,
+        "pkHash": "4CAC0AE109029B26C14B1DD1F129E5085104ED1343B3C465BFE8AB7DF9F451F6",
+        "createTx": "6B5B77312082A9DE7C1C46EC41BD74104400949ABCDA59B134E4AA9792984F4D"
+      }
+    ]
+  },
+  "nowRipple": 849103697
+}

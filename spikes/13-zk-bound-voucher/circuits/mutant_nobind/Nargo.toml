@@ -1,0 +1,8 @@
+[package]
+name = "mutant_nobind"
+type = "bin"
+authors = ["zonekey-spikes"]
+compiler_version = ">=1.0.0"
+
+[dependencies]
+zkv_lib = { path = "../zkv_lib" }

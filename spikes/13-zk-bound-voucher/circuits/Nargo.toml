@@ -1,0 +1,3 @@
+[workspace]
+members = ["zkv_lib", "eligibility_bound", "fixture13", "mutant_nobind"]
+default-member = "eligibility_bound"

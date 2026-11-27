@@ -1,0 +1,625 @@
+{
+  "at": "2026-11-27T14:08:17.483Z",
+  "failed": 0,
+  "total": 71,
+  "rows": [
+    {
+      "id": "V0",
+      "item": "固定ベクトル: SHA-256 の上位・下位 16B → Field が TS と Noir で一致",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "sha256=B647EC59648641274C719D1F41BF1906815A5CD32504D42DAEB00251ADCAF97D hi=0x00000000000000000000000000000000b647ec59648641274c719d1f41bf1906 lo=0x00000000000000000000000000000000815a5cd32504d42daeb00251adcaf97d"
+    },
+    {
+      "id": "V0",
+      "item": "固定ベクトル: 申請の正規バイト列の長さ",
+      "expected": "191",
+      "actual": "191",
+      "ok": true,
+      "evidence": "vectors/bytes-field.json"
+    },
+    {
+      "id": "T1",
+      "item": "H1→県: 実際の証明を生成し、検証器が受理",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "証明 14656 B / 公開入力 17 個 / prove 68.1 ms / verify 6.2 ms"
+    },
+    {
+      "id": "T1",
+      "item": "H1→県: 発券 1 枚",
+      "expected": "created",
+      "actual": "created",
+      "ok": true,
+      "evidence": "台帳の記録 1 件"
+    },
+    {
+      "id": "T1",
+      "item": "発券された内容から作り直した申請ダイジェスト = 証明の公開入力",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "発券前の申請と証明の対応"
+    },
+    {
+      "id": "T1",
+      "item": "発券記録から再構成した申請のダイジェスト = 発券前の申請のダイジェスト",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "実際に発行される券の内容が証明の結び付け先と同じ"
+    },
+    {
+      "id": "T2",
+      "item": "H1→県（別の鍵）: 証明は有効（回路は同じ世帯を拒まない）",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "止めるのは発券側の nullifier 照合"
+    },
+    {
+      "id": "T2",
+      "item": "同じ制度の nullifier が一致",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "nullifier=0x2dafd2b47be4ee57058928a1f0f79fc490164467da32e1012a67d22a6bb83536"
+    },
+    {
+      "id": "T2",
+      "item": "別の鍵（pkHash・Condition）になっている",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T2",
+      "item": "新しい券は 0 枚",
+      "expected": "reject:duplicate",
+      "actual": "reject:duplicate",
+      "ok": true,
+      "evidence": "this household already has a voucher for this program"
+    },
+    {
+      "id": "T2",
+      "item": "県×H1 の記録数",
+      "expected": "1",
+      "actual": "1",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T3",
+      "item": "H1→NGO: 発券 1 枚",
+      "expected": "created",
+      "actual": "created",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T3",
+      "item": "H1 の県と NGO の nullifier は別の値",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "県=0x2dafd2b47be4… NGO=0x01ad1daea2f5…"
+    },
+    {
+      "id": "T3",
+      "item": "H2→県（店 B）: 発券 1 枚",
+      "expected": "created",
+      "actual": "created",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T3",
+      "item": "ここまでの記録数（H1県・H1NGO・H2県）",
+      "expected": "3",
+      "actual": "3",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4a",
+      "item": "同じ申請を 8 件同時に送る: created / replayed",
+      "expected": "1 / 7",
+      "actual": "1 / 7",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4a",
+      "item": "返った券の OfferSequence は 1 種類",
+      "expected": "1",
+      "actual": "1",
+      "ok": true,
+      "evidence": "1003"
+    },
+    {
+      "id": "T4a",
+      "item": "H6×県 の記録数",
+      "expected": "1",
+      "actual": "1",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4b",
+      "item": "別の鍵 2 種×4 件を同時に送る: created / replayed / duplicate",
+      "expected": "1 / 3 / 4",
+      "actual": "1 / 3 / 4",
+      "ok": true,
+      "evidence": "先に入った鍵だけが発券される。どちらが先かは実行ごとに変わりうる"
+    },
+    {
+      "id": "T4b",
+      "item": "H7×県 の記録数",
+      "expected": "1",
+      "actual": "1",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4c",
+      "item": "発券記録を作った後に応答を返せない",
+      "expected": "response lost（コミット済み・応答なし）",
+      "actual": "response lost（コミット済み・応答なし）",
+      "ok": true,
+      "evidence": "記録数 1"
+    },
+    {
+      "id": "T4c",
+      "item": "再試行（証明を作り直す）で最初の結果が返る",
+      "expected": "replayed",
+      "actual": "replayed",
+      "ok": true,
+      "evidence": "証明のバイト列は初回と同じか: false"
+    },
+    {
+      "id": "T4c",
+      "item": "返った券は最初の記録と同一（OfferSequence・Condition・鍵ハッシュ）",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4c",
+      "item": "H8×県 の記録数",
+      "expected": "1",
+      "actual": "1",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4d",
+      "item": "応答喪失の後、端末が鍵を失って別の鍵で申請 → 矛盾する券は出さない",
+      "expected": "reject:duplicate",
+      "actual": "reject:duplicate",
+      "ok": true,
+      "evidence": "世帯が鍵を失うと、その制度では回復できない（REPORT の未解決）"
+    },
+    {
+      "id": "T4e",
+      "item": "送信前に落ちる: 台帳 0 件・記録は approved のまま",
+      "expected": "crash before submit / 0",
+      "actual": "crash before submit / 0",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T4e",
+      "item": "台帳に書いた後・状態更新前に落ちた後の再送: 台帳の件数 = 記録の件数（二重 Escrow なし）",
+      "expected": "6",
+      "actual": "6",
+      "ok": true,
+      "evidence": "途中で台帳 1 件 / 再送で状態更新 6 件 / crash after ledger insert, before state update"
+    },
+    {
+      "id": "T4e",
+      "item": "全記録が submitted",
+      "expected": "0",
+      "actual": "0",
+      "ok": true,
+      "evidence": "approved が残っていない"
+    },
+    {
+      "id": "T5",
+      "item": "H3（対象ゾーン外）: 回路が証明を作らせない",
+      "expected": "失敗: zone not in zone_set",
+      "actual": "失敗: zone not in zone_set",
+      "ok": true,
+      "evidence": "止まった場所: 回路（実行）"
+    },
+    {
+      "id": "T5",
+      "item": "H3: 証明なしで発券側へ送っても発券 0 枚",
+      "expected": "reject",
+      "actual": "reject",
+      "ok": true,
+      "evidence": "public_input: public input count 0"
+    },
+    {
+      "id": "T5",
+      "item": "H4（区分が最低未満）: 回路が証明を作らせない",
+      "expected": "失敗: tier below min_tier",
+      "actual": "失敗: tier below min_tier",
+      "ok": true,
+      "evidence": "止まった場所: 回路（実行）"
+    },
+    {
+      "id": "T5",
+      "item": "H4: 証明なしで発券側へ送っても発券 0 枚",
+      "expected": "reject",
+      "actual": "reject",
+      "ok": true,
+      "evidence": "public_input: public input count 0"
+    },
+    {
+      "id": "T5",
+      "item": "H5（高齢者でない）: 回路が証明を作らせない",
+      "expected": "失敗: senior required",
+      "actual": "失敗: senior required",
+      "ok": true,
+      "evidence": "止まった場所: 回路（実行）"
+    },
+    {
+      "id": "T5",
+      "item": "H5: 証明なしで発券側へ送っても発券 0 枚",
+      "expected": "reject",
+      "actual": "reject",
+      "ok": true,
+      "evidence": "public_input: public input count 0"
+    },
+    {
+      "id": "T5",
+      "item": "H3: 対象ゾーンを自分のゾーンに書き換えた証明 → 回路と検証器は通る",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "証明は「その条件を満たす」ことしか言わない"
+    },
+    {
+      "id": "T5",
+      "item": "H3: 書き換えた条件は発券側が止める",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: zone_set[0]"
+    },
+    {
+      "id": "T5",
+      "item": "未承認の名簿 root: 回路と検証器は通る",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "検証器は root が正規かを知らない"
+    },
+    {
+      "id": "T5",
+      "item": "未承認の名簿 root: 発券側が止める",
+      "expected": "reject:root",
+      "actual": "reject:root",
+      "ok": true,
+      "evidence": "root not approved"
+    },
+    {
+      "id": "T5",
+      "item": "登録されていない秘密（H1 の経路を流用）: 回路が止める",
+      "expected": "失敗: merkle root mismatch",
+      "actual": "失敗: merkle root mismatch",
+      "ok": true,
+      "evidence": "止まった場所: 回路（実行）"
+    },
+    {
+      "id": "T5",
+      "item": "req_tag を書き換える: 回路が止める",
+      "expected": "失敗: request tag mismatch",
+      "actual": "失敗: request tag mismatch",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T5",
+      "item": "秘密を知らない者が自分の秘密で作った tag・nullifier を H10 の葉に付ける: 回路が止める",
+      "expected": "失敗",
+      "actual": "失敗",
+      "ok": true,
+      "evidence": "失敗: Circuit execution failed: nullifier mismatch"
+    },
+    {
+      "id": "T6",
+      "item": "受取鍵（pkHash）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: req_hi"
+    },
+    {
+      "id": "T6",
+      "item": "受取鍵（pkHash）: 公開入力を書き換えて合わせる → 検証器が拒否",
+      "expected": "reject:proof",
+      "actual": "reject:proof",
+      "ok": true,
+      "evidence": "proof invalid"
+    },
+    {
+      "id": "T6",
+      "item": "店（shop）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: req_hi"
+    },
+    {
+      "id": "T6",
+      "item": "店（shop）: 公開入力を書き換えて合わせる → 検証器が拒否",
+      "expected": "reject:proof",
+      "actual": "reject:proof",
+      "ok": true,
+      "evidence": "proof invalid"
+    },
+    {
+      "id": "T6",
+      "item": "額面（value 5→10）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: req_hi"
+    },
+    {
+      "id": "T6",
+      "item": "額面（value 5→10）: 公開入力を書き換えて合わせる → 検証器が拒否",
+      "expected": "reject:proof",
+      "actual": "reject:proof",
+      "ok": true,
+      "evidence": "proof invalid"
+    },
+    {
+      "id": "T6",
+      "item": "期限（cancelAfter +1 時間）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: req_hi"
+    },
+    {
+      "id": "T6",
+      "item": "期限（cancelAfter +1 時間）: 公開入力を書き換えて合わせる → 検証器が拒否",
+      "expected": "reject:proof",
+      "actual": "reject:proof",
+      "ok": true,
+      "evidence": "proof invalid"
+    },
+    {
+      "id": "T6",
+      "item": "Condition（conditionHash）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: req_hi"
+    },
+    {
+      "id": "T6",
+      "item": "Condition（conditionHash）: 公開入力を書き換えて合わせる → 検証器が拒否",
+      "expected": "reject:proof",
+      "actual": "reject:proof",
+      "ok": true,
+      "evidence": "proof invalid"
+    },
+    {
+      "id": "T6",
+      "item": "持ち主（owner = NGO の D）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:policy",
+      "actual": "reject:policy",
+      "ok": true,
+      "evidence": "policy:owner"
+    },
+    {
+      "id": "T6",
+      "item": "資産の発行者（issuer）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:policy",
+      "actual": "reject:policy",
+      "ok": true,
+      "evidence": "policy:asset"
+    },
+    {
+      "id": "T6",
+      "item": "制度（program_id = NGO）を変えた申請 + 元の証明 → 拒否",
+      "expected": "reject:policy",
+      "actual": "reject:policy",
+      "ok": true,
+      "evidence": "policy:owner"
+    },
+    {
+      "id": "T6",
+      "item": "req_hi を hi + 2^128 に書き換えた公開入力 → 発券側の照合が拒否",
+      "expected": "reject:public_input",
+      "actual": "reject:public_input",
+      "ok": true,
+      "evidence": "public input mismatch: req_hi"
+    },
+    {
+      "id": "T6",
+      "item": "拒否のあと H10 の記録は 0 件（途中で何も作られない）",
+      "expected": "0",
+      "actual": "0",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T6",
+      "item": "元の申請 + 元の証明 → 発券",
+      "expected": "created",
+      "actual": "created",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T6",
+      "item": "実際に発行される券（記録）のダイジェスト = 証明の公開入力",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "鍵・店・額面・期限・Condition・持ち主・資産・制度のすべてが 1 つのダイジェストに入っている"
+    },
+    {
+      "id": "T8",
+      "item": "証明の公開入力（H1 県・H1 NGO・H2 県） に世帯の秘密・hh_id・salt・氏名・住所が出ない",
+      "expected": "なし",
+      "actual": "なし",
+      "ok": true,
+      "evidence": "検索対象 45 値"
+    },
+    {
+      "id": "T8",
+      "item": "発券記録（返却分） に世帯の秘密・hh_id・salt・氏名・住所が出ない",
+      "expected": "なし",
+      "actual": "なし",
+      "ok": true,
+      "evidence": "検索対象 45 値"
+    },
+    {
+      "id": "T8",
+      "item": "店舗の同期データ（A・B） に世帯の秘密・hh_id・salt・氏名・住所が出ない",
+      "expected": "なし",
+      "actual": "なし",
+      "ok": true,
+      "evidence": "検索対象 45 値"
+    },
+    {
+      "id": "T8",
+      "item": "QR（全種） に世帯の秘密・hh_id・salt・氏名・住所が出ない",
+      "expected": "なし",
+      "actual": "なし",
+      "ok": true,
+      "evidence": "検索対象 45 値"
+    },
+    {
+      "id": "T8",
+      "item": "想定する公開取引（EscrowCreate 相当） に世帯の秘密・hh_id・salt・氏名・住所が出ない",
+      "expected": "なし",
+      "actual": "なし",
+      "ok": true,
+      "evidence": "検索対象 45 値"
+    },
+    {
+      "id": "T8",
+      "item": "発券サービスの DB（全表） に世帯の秘密・hh_id・salt・氏名・住所が出ない",
+      "expected": "なし",
+      "actual": "なし",
+      "ok": true,
+      "evidence": "検索対象 45 値"
+    },
+    {
+      "id": "T8",
+      "item": "公開取引に現れる XRPL アカウントは支援元 D と店舗だけ",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "4 件"
+    },
+    {
+      "id": "T8",
+      "item": "H1 の県と NGO で、端末鍵（pkHash）が別",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T8",
+      "item": "H1 の県と NGO で、Condition（券固有の秘密）が別",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T8",
+      "item": "H1 の県と NGO で、持ち主（支援元のアカウント）が別",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T8",
+      "item": "H1 の県と NGO で、nullifier が別（公開入力）",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "id": "T8",
+      "item": "H1 の県への再申請でも pkHash・Condition は使い回さない",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "同じ制度の再申請で見える共通点は nullifier だけ"
+    },
+    {
+      "id": "T8",
+      "item": "公開入力 17 個はすべて「制度の設定・申請ダイジェスト・nullifier・tag」で説明できる（世帯の属性の値は入らない）",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "H1→県の証明で照合"
+    }
+  ],
+  "stats": {
+    "proof": {
+      "bytes": 14656,
+      "publicInputs": 17,
+      "publicInputsBytes": 544,
+      "vkBytes": 3680
+    },
+    "proveMs": {
+      "n": 13,
+      "avg": 66.3,
+      "min": 59.8,
+      "max": 122
+    },
+    "verifyMs": {
+      "n": 6,
+      "avg": 5.4,
+      "min": 5.2,
+      "max": 6.2
+    },
+    "zk": {
+      "initMs": 71.2,
+      "vkMs": 15.6,
+      "vkBytes": 3680,
+      "gates": {
+        "numGates": 1593,
+        "numGatesDyadic": 2048,
+        "numAcirOpcodes": 150
+      }
+    },
+    "env": {
+      "platform": "darwin/arm64",
+      "node": "v24.20.0",
+      "cpus": 10,
+      "cpuModel": "Apple M1 Pro",
+      "memGB": 16,
+      "bb": "@aztec-foundation/bb.js 6.0.0 native",
+      "noir": "1.0.0（noir_wasm でコンパイル）"
+    },
+    "roster": {
+      "root": "0x12dd6a1427d07fab1a1ff59175078585847aef67d3301eac5f22efd6dde2ca93",
+      "members": 9,
+      "depth": 12
+    },
+    "nullifiers": {
+      "H1_county": "0x2dafd2b47be4ee57058928a1f0f79fc490164467da32e1012a67d22a6bb83536",
+      "H1_ngo": "0x01ad1daea2f5211dce9d0bd21de7f5b427e22ad45a24d8c45b6058c06a69e322",
+      "H2_county": "0x239fbca319a6090196b71732ade6cd061bd6a4fb88ac30183800118f4da8adfd"
+    }
+  },
+  "ledger": "模擬（SQLite の mock_escrow 表。XRPL には送っていない）"
+}

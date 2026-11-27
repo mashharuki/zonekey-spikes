@@ -1,0 +1,29 @@
+{
+  "name": "13-zk-bound-voucher",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "compile": "tsx scripts/compile.ts",
+    "test": "tsx src/run.ts && tsx src/offline.ts",
+    "offline": "tsx src/offline.ts",
+    "mutant": "tsx src/mutant.ts",
+    "testnet": "tsx src/testnet.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aztec-foundation/bb.js": "6.0.0",
+    "@noir-lang/acvm_js": "1.0.0",
+    "@noir-lang/noir_js": "1.0.0",
+    "@noir-lang/noirc_abi": "1.0.0",
+    "@noir-lang/noir_wasm": "1.0.0",
+    "ripple-address-codec": "latest",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

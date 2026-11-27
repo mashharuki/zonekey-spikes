@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-27T14:08:18.469Z",
+  "out": {
+    "変異体: 元の証明は有効": true,
+    "変異体: 公開入力を申請 B に書き換えた証明（秘密なし・再証明なし）": false,
+    "変異体: 秘密を持つ世帯が申請 B で作った証明は有効": true,
+    "変異体: 秘密を持たない者が証明を作れるか（hh_secret を知らない値で execute）": "作れない: Circuit execution failed: merkle root mismatch",
+    "回路の大きさ（変異体）": {
+      "numGates": 1442,
+      "numGatesDyadic": 2048,
+      "numAcirOpcodes": 143
+    },
+    "回路の大きさ（本番）": {
+      "numGates": 1593,
+      "numGatesDyadic": 2048,
+      "numAcirOpcodes": 150
+    }
+  }
+}

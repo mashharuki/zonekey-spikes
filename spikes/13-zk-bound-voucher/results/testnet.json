@@ -1,0 +1,104 @@
+{
+  "at": "2026-11-27T14:08:04.198Z",
+  "failed": 0,
+  "rows": [
+    {
+      "item": "準備: 店の口座を作る",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "ok": true,
+      "evidence": "8D4F213563923994096513BCA4097FE2838198A169ECB0FF0F49540352ADAA72"
+    },
+    {
+      "item": "ZK 証明の検証と発券（ローカルの発券記録）",
+      "expected": "created",
+      "actual": "created",
+      "ok": true,
+      "evidence": "prove 88.6 ms"
+    },
+    {
+      "item": "EscrowCreate の結果",
+      "expected": "tesSUCCESS",
+      "actual": "tesSUCCESS",
+      "ok": true,
+      "evidence": "59D62A064CF498C4D31E87E48F2659322C6F31A2BC6A886582D7FDF90B79C0FB https://testnet.xrpl.org/transactions/59D62A064CF498C4D31E87E48F2659322C6F31A2BC6A886582D7FDF90B79C0FB"
+    },
+    {
+      "item": "台帳の Escrow: 持ち主（Account）",
+      "expected": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+      "actual": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の Escrow: 宛先（Destination）",
+      "expected": "rfFrM1oN6jZnCvG6Ade5z6RZrbP8WruVeF",
+      "actual": "rfFrM1oN6jZnCvG6Ade5z6RZrbP8WruVeF",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の Escrow: 資産（通貨・発行者）",
+      "expected": "ZKV/rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+      "actual": "ZKV/rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の Escrow: 額面",
+      "expected": "5000000",
+      "actual": "5000000",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の Escrow: 期限（CancelAfter）",
+      "expected": "849110872",
+      "actual": "849110872",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の Escrow: Condition",
+      "expected": "A0258020E241202630A1475909839ADE1EB10CAF3EB122B27206C7E2586401EA2A040DC8810120",
+      "actual": "A0258020E241202630A1475909839ADE1EB10CAF3EB122B27206C7E2586401EA2A040DC8810120",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の tx の Memo: 端末の鍵のハッシュ",
+      "expected": "F09B497A4A692CBD4F8A3C14AAEC0939E29569BB6ACE92992D1D846495884FBE",
+      "actual": "F09B497A4A692CBD4F8A3C14AAEC0939E29569BB6ACE92992D1D846495884FBE",
+      "ok": true,
+      "evidence": "XRPL は Memo の中身を強制しない。店のオフライン検証が強制する"
+    },
+    {
+      "item": "台帳の OfferSequence（tx の Sequence）= 発券側が採番した値",
+      "expected": "40369",
+      "actual": "40369",
+      "ok": true,
+      "evidence": ""
+    },
+    {
+      "item": "台帳の内容から作った申請ダイジェスト = ZK 証明の公開入力",
+      "expected": "true",
+      "actual": "true",
+      "ok": true,
+      "evidence": "検証済みの申請 = 台帳の Escrow"
+    },
+    {
+      "item": "台帳由来の同期データで、店が QR を確かめる",
+      "expected": "使える",
+      "actual": "使える",
+      "ok": true,
+      "evidence": ""
+    }
+  ],
+  "issuerHadAllowTrustLineLocking": false,
+  "createTx": "59D62A064CF498C4D31E87E48F2659322C6F31A2BC6A886582D7FDF90B79C0FB",
+  "accounts": {
+    "D": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+    "V": "rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+    "shop": "rfFrM1oN6jZnCvG6Ade5z6RZrbP8WruVeF"
+  }
+}

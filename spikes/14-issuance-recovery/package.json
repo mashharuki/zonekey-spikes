@@ -1,0 +1,24 @@
+{
+  "name": "14-issuance-recovery",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "tsx src/run.ts",
+    "local": "tsx src/local.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aztec-foundation/bb.js": "6.0.0",
+    "@noir-lang/noir_js": "1.0.0",
+    "@noir-lang/noirc_abi": "1.0.0",
+    "ripple-address-codec": "latest",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

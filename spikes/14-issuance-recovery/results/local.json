@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-27T14:40:46.418Z",
+  "kind": "ローカル試験（模擬ノード。Testnet ではない）",
+  "failed": 0,
+  "rows": [
+    {
+      "step": "申請を受け付け、署名済み取引を保存して停止",
+      "expected": "stopped",
+      "actual": "stopped",
+      "ok": true
+    },
+    {
+      "step": "searched_all=false（検索範囲を最後まで見られない）: 保留",
+      "expected": "held",
+      "actual": "held",
+      "ok": true
+    },
+    {
+      "step": "保留中に新しい試行を作っていない",
+      "expected": "1",
+      "actual": "1",
+      "ok": true
+    },
+    {
+      "step": "保留中に送信していない",
+      "expected": "0",
+      "actual": "0",
+      "ok": true
+    },
+    {
+      "step": "complete_ledgers に穴（範囲が連続していない）: 保留",
+      "expected": "held",
+      "actual": "held",
+      "ok": true
+    },
+    {
+      "step": "やはり新しい試行を作っていない",
+      "expected": "1",
+      "actual": "1",
+      "ok": true
+    },
+    {
+      "step": "履歴が連続し searched_all=true: 旧取引の不成立を確定して再試行 → 確定",
+      "expected": "confirmed",
+      "actual": "confirmed",
+      "ok": true
+    },
+    {
+      "step": "試行は 2 つ（旧 failed_final・新 validated_success）",
+      "expected": "failed_final,validated_success",
+      "actual": "failed_final,validated_success",
+      "ok": true
+    },
+    {
+      "step": "旧 hash と新 hash は別",
+      "expected": "true",
+      "actual": "true",
+      "ok": true
+    },
+    {
+      "step": "模擬ノードで validated になった取引は 1 件",
+      "expected": "1",
+      "actual": "1",
+      "ok": true
+    },
+    {
+      "step": "発券記録は 1 件",
+      "expected": "1",
+      "actual": "1",
+      "ok": true
+    }
+  ],
+  "evidenceOfHold": [
+    "{\"why\":\"判定不能: searched_all=false complete_ledgers=1-100000 範囲=1000〜1005 履歴を読めた=false\"}",
+    "{\"why\":\"判定不能: searched_all=true complete_ledgers=1-1002,1004-100000 範囲=1000〜1005 履歴を読めた=false\"}"
+  ],
+  "failedFinalEvidence": "{\"reason\":\"last_ledger_sequence_passed\",\"decidedAtValidated\":1005,\"lastLedgerSequence\":1002,\"queryRange\":[1000,1005],\"absentBy\":\"tx の searched_all\",\"completeLedgers\":\"1-100000\",\"accountSequenceValidated\":500,\"sequenceConsumedBy\":null}"
+}

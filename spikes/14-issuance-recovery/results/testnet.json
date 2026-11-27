@@ -1,0 +1,1960 @@
+{
+  "at": "2026-11-27T14:42:49.277Z",
+  "setup": {
+    "issuerHadAllowTrustLineLocking": true,
+    "D": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+    "V": "rEhTGPAGz7pKwoUkHqo3K3M5MKPmsHpmgh",
+    "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+    "shopFundTx": "3B6B08B4A117E2A3CFE7DD69D2A099C682347919294C989002609C06A7E20038",
+    "dXrp": 83.999457
+  },
+  "results": [
+    {
+      "id": "C0",
+      "title": "正常系",
+      "fault": "なし",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "apply（障害なし）",
+          "pid": 3006,
+          "終了": "exit 0",
+          "ms": 8874,
+          "結果": {
+            "status": "confirmed",
+            "offerSequence": 40411,
+            "txHash": "26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83",
+            "escrowIndex": "8D59DFADC20936450CFA14FEAE79C72B7C6F1B501F5F8EB766BC26963391E963",
+            "attempts": 1
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "確定（confirmed）",
+          "ok": true
+        },
+        {
+          "name": "送信の試行 1 回",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C0）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "B17AA7E48E5C4149": {
+          "範囲": [
+            40973,
+            40976
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83",
+              "sequence": 40411,
+              "ledger": 40976
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40411,
+              "escrow_index": "8D59DFADC20936450CFA14FEAE79C72B7C6F1B501F5F8EB766BC26963391E963",
+              "confirmed_tx": "26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112860
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40411,
+              "tx_hash": "26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83",
+              "last_ledger_sequence": 40994,
+              "first_ledger": 40974,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 40976,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40411,
+              "attempt_id": 1,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:41:02.527Z",
+              "pid": 3006,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"750A282D9D646DC6ED0AC3D2534824D6B9CB78B7BB7343C28E40E6870CF24A09\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:02.538Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40411,\"lastLedgerSequence\":40994,\"txHash\":\"26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83\",\"firstLedger\":40974}"
+            },
+            {
+              "at": "2026-11-27T14:41:02.539Z",
+              "pid": 3006,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:02.813Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:02.953Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40974}"
+            },
+            {
+              "at": "2026-11-27T14:41:03.359Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:06.411Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:09.454Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40976}"
+            },
+            {
+              "at": "2026-11-27T14:41:09.455Z",
+              "pid": 3006,
+              "attempt_id": 1,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"26F4F0D4FAA139A548E7C6EC8C237D69663AE6D00FA762A709CCDAED5628DE83\",\"ledger\":40976,\"sequence\":40411}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で署名した QR",
+          "OfferSequence": 40411,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 1
+        }
+      ],
+      "l0": 40973,
+      "l1": 40976,
+      "pass": true
+    },
+    {
+      "id": "C1",
+      "title": "送信前停止",
+      "fault": "after_prepare（保存後・送信前）",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "apply（署名済み取引を保存した直後、送信前に SIGKILL）",
+          "pid": 3453,
+          "終了": "シグナル SIGKILL",
+          "ms": 1739
+        },
+        {
+          "停止直後のDB": {
+            "発券記録": [
+              "approved"
+            ],
+            "試行": [
+              {
+                "state": "prepared",
+                "送信回数": 0,
+                "hash": "701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02",
+                "sequence": 40412,
+                "lls": 40997
+              }
+            ]
+          },
+          "台帳に取引はあるか": false
+        },
+        {
+          "操作": "recover（再起動）",
+          "pid": 3752,
+          "終了": "exit 0",
+          "ms": 8298,
+          "結果": {
+            "1": {
+              "status": "confirmed",
+              "offerSequence": 40412,
+              "txHash": "701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02",
+              "escrowIndex": "95F614A9306F5A1D77FE697B59A33518EB99C07DC29A7A570024E425ACC2EF28",
+              "attempts": 1
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "停止時: 送信 0 回・台帳に取引なし",
+          "ok": true
+        },
+        {
+          "name": "復旧後: 同じ hash で確定・試行は 1 つ",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C1）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "898CF7658FDB3AC3": {
+          "範囲": [
+            40976,
+            40979
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02",
+              "sequence": 40412,
+              "ledger": 40979
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40412,
+              "escrow_index": "95F614A9306F5A1D77FE697B59A33518EB99C07DC29A7A570024E425ACC2EF28",
+              "confirmed_tx": "701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112870
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40412,
+              "tx_hash": "701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02",
+              "last_ledger_sequence": 40997,
+              "first_ledger": 40977,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 40979,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40412,
+              "attempt_id": 1,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:41:13.177Z",
+              "pid": 3453,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"F729AD40CD7839F50A83C051F983876F695B33F6D6ACBDBF0D73108387A53051\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:13.185Z",
+              "pid": 3453,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40412,\"lastLedgerSequence\":40997,\"txHash\":\"701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02\",\"firstLedger\":40977}"
+            },
+            {
+              "at": "2026-11-27T14:41:13.186Z",
+              "pid": 3453,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:13.186Z",
+              "pid": 3453,
+              "attempt_id": null,
+              "event": "FAULT_KILL",
+              "detail": "{\"point\":\"after_prepare\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:14.925Z",
+              "pid": 3752,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:15.067Z",
+              "pid": 3752,
+              "attempt_id": 1,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40977}"
+            },
+            {
+              "at": "2026-11-27T14:41:15.478Z",
+              "pid": 3752,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:18.537Z",
+              "pid": 3752,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:21.597Z",
+              "pid": 3752,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40979}"
+            },
+            {
+              "at": "2026-11-27T14:41:21.600Z",
+              "pid": 3752,
+              "attempt_id": 1,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"701939A9CE1B6AE1476C91582D04786898DBE2406493E04DA15BACD40F9FAD02\",\"ledger\":40979,\"sequence\":40412}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で署名した QR",
+          "OfferSequence": 40412,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 2
+        }
+      ],
+      "l0": 40976,
+      "l1": 40980,
+      "pass": true
+    },
+    {
+      "id": "C2",
+      "title": "送信直後の応答喪失",
+      "fault": "after_submit_response（送信済み・応答受領後・DB 更新前）",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "apply（Testnet へ送信し、応答がソケットに届いた直後・DB 更新前に SIGKILL）",
+          "pid": 4681,
+          "終了": "シグナル SIGKILL",
+          "ms": 2090
+        },
+        {
+          "停止直後のDB": {
+            "発券記録": [
+              "approved"
+            ],
+            "試行": [
+              {
+                "state": "submitting",
+                "送信回数": 1,
+                "最後のengine_result": null,
+                "hash": "328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841",
+                "sequence": 40413,
+                "lls": 41000
+              }
+            ]
+          }
+        },
+        {
+          "世帯の再送": "同じ申請（同じ鍵・preimage）を、新しく作った証明で再送",
+          "証明のバイト列は初回と同じか": false
+        },
+        {
+          "操作": "apply（世帯の再送を新しいプロセスが受ける）",
+          "pid": 4737,
+          "終了": "exit 0",
+          "ms": 5413,
+          "結果": {
+            "status": "confirmed",
+            "offerSequence": 40413,
+            "txHash": "328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841",
+            "escrowIndex": "7A988AFB67A22C900891E2ADA82743DDA7E7EAC4F1D83119D08044D9BB4D8150",
+            "attempts": 1
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "停止時: 送信 1 回・DB は submitting のまま（台帳の結果を DB は知らない）",
+          "ok": true
+        },
+        {
+          "name": "復旧後: 確定。成功 hash は最初の取引と同じ",
+          "ok": true
+        },
+        {
+          "name": "試行は 1 つ（新しい取引を作っていない）",
+          "ok": true
+        },
+        {
+          "name": "発券記録は 1 件（世帯の再送は replay）",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C2）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "F17DC7C0E3CBDFBA": {
+          "範囲": [
+            40980,
+            40982
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841",
+              "sequence": 40413,
+              "ledger": 40982
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40413,
+              "escrow_index": "7A988AFB67A22C900891E2ADA82743DDA7E7EAC4F1D83119D08044D9BB4D8150",
+              "confirmed_tx": "328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112881
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40413,
+              "tx_hash": "328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841",
+              "last_ledger_sequence": 41000,
+              "first_ledger": 40980,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": null,
+              "validated_ledger": 40982,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40413,
+              "attempt_id": 1,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:41:25.432Z",
+              "pid": 4681,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"84B12F363A507796FB215DCBE28613EE44F888D7309BC94DEA830FC4DEE5701C\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:25.447Z",
+              "pid": 4681,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40413,\"lastLedgerSequence\":41000,\"txHash\":\"328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841\",\"firstLedger\":40980}"
+            },
+            {
+              "at": "2026-11-27T14:41:25.448Z",
+              "pid": 4681,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:25.719Z",
+              "pid": 4681,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:25.855Z",
+              "pid": 4681,
+              "attempt_id": 1,
+              "event": "FAULT_KILL",
+              "detail": "{\"point\":\"after_submit_response\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:27.601Z",
+              "pid": 4737,
+              "attempt_id": null,
+              "event": "apply_replay",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:27.605Z",
+              "pid": 4737,
+              "attempt_id": null,
+              "event": "lease_taken_over",
+              "detail": "{\"from\":4681,\"fromAlive\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:28.019Z",
+              "pid": 4737,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:31.074Z",
+              "pid": 4737,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40982}"
+            },
+            {
+              "at": "2026-11-27T14:41:31.074Z",
+              "pid": 4737,
+              "attempt_id": 1,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"328BDE7D5F304138AF1469C5B7AE5461A3686AFFB5A905D5E1718F0643516841\",\"ledger\":40982,\"sequence\":40413}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で署名した QR",
+          "OfferSequence": 40413,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 3
+        }
+      ],
+      "l0": 40980,
+      "l1": 40982,
+      "pass": true
+    },
+    {
+      "id": "C3",
+      "title": "確定後・DB 更新前停止",
+      "fault": "after_validated_before_confirm",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "apply（validated 成功を観測した直後・DB 確定の前に SIGKILL）",
+          "pid": 5860,
+          "終了": "シグナル SIGKILL",
+          "ms": 5778
+        },
+        {
+          "停止直後のDB": {
+            "発券記録": [
+              "approved"
+            ],
+            "試行": [
+              {
+                "state": "submitting",
+                "送信回数": 1,
+                "hash": "221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F"
+              }
+            ]
+          }
+        },
+        {
+          "操作": "recover（照会だけで DB を直す）",
+          "pid": 6322,
+          "終了": "exit 0",
+          "ms": 1716,
+          "結果": {
+            "1": {
+              "status": "confirmed",
+              "offerSequence": 40414,
+              "txHash": "221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F",
+              "escrowIndex": "39E3EFC34FD89C3E02B3BE08DA73649936A301737B58ECE7C722CC764617B2E0",
+              "attempts": 1
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "停止時: DB は未確定（submitting）",
+          "ok": true
+        },
+        {
+          "name": "復旧後: 確定。hash は同じ",
+          "ok": true
+        },
+        {
+          "name": "復旧で送信していない（送信回数の合計は最初の 1 回のまま）",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C3）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "30B98132732C196F": {
+          "範囲": [
+            40983,
+            40985
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F",
+              "sequence": 40414,
+              "ledger": 40985
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40414,
+              "escrow_index": "39E3EFC34FD89C3E02B3BE08DA73649936A301737B58ECE7C722CC764617B2E0",
+              "confirmed_tx": "221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112891
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40414,
+              "tx_hash": "221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F",
+              "last_ledger_sequence": 41003,
+              "first_ledger": 40983,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 40985,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40414,
+              "attempt_id": 1,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:41:35.306Z",
+              "pid": 5860,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"772CC3E4B648116A79DE105F7898B67FD7CE529CFE41401484B3DAD9D14D21E1\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:35.318Z",
+              "pid": 5860,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40414,\"lastLedgerSequence\":41003,\"txHash\":\"221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F\",\"firstLedger\":40983}"
+            },
+            {
+              "at": "2026-11-27T14:41:35.318Z",
+              "pid": 5860,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:35.590Z",
+              "pid": 5860,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:35.728Z",
+              "pid": 5860,
+              "attempt_id": 1,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40984}"
+            },
+            {
+              "at": "2026-11-27T14:41:36.138Z",
+              "pid": 5860,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:39.212Z",
+              "pid": 5860,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40985}"
+            },
+            {
+              "at": "2026-11-27T14:41:39.212Z",
+              "pid": 5860,
+              "attempt_id": 1,
+              "event": "FAULT_KILL",
+              "detail": "{\"point\":\"after_validated_before_confirm\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:40.239Z",
+              "pid": 6322,
+              "attempt_id": null,
+              "event": "lease_taken_over",
+              "detail": "{\"from\":5860,\"fromAlive\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:40.654Z",
+              "pid": 6322,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40985}"
+            },
+            {
+              "at": "2026-11-27T14:41:40.656Z",
+              "pid": 6322,
+              "attempt_id": 1,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"221F671BB08F3D89A6664E507F417BAB253324F602A086A008C9E20171AB792F\",\"ledger\":40985,\"sequence\":40414}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で署名した QR",
+          "OfferSequence": 40414,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 4
+        }
+      ],
+      "l0": 40983,
+      "l1": 40985,
+      "pass": true
+    },
+    {
+      "id": "C4a",
+      "title": "ワーカー競合（同一申請）",
+      "fault": "なし（2 プロセスの同時処理）",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "同じ DB を開く 2 プロセスが同じ申請を同時に処理",
+          "プロセス1": {
+            "pid": 6417,
+            "終了": "exit 0",
+            "ms": 1947,
+            "結果": {
+              "status": "in_progress",
+              "reason": "別のワーカーが処理中（lease）"
+            }
+          },
+          "プロセス2": {
+            "pid": 6418,
+            "終了": "exit 0",
+            "ms": 8858,
+            "結果": {
+              "status": "confirmed",
+              "offerSequence": 40415,
+              "txHash": "7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE",
+              "escrowIndex": "41A0E7800723A551CDA8284BBCAFB2846D37D05F120F638AF6E9D9A822EBA800",
+              "attempts": 1
+            }
+          }
+        },
+        {
+          "操作": "recover（念のため）",
+          "pid": 6789,
+          "終了": "exit 0",
+          "ms": 1297,
+          "結果": {}
+        }
+      ],
+      "checks": [
+        {
+          "name": "発券記録 1 件・確定",
+          "ok": true
+        },
+        {
+          "name": "試行は 1 つ",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C4a）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "4D22F47C0E366BE3": {
+          "範囲": [
+            40986,
+            40989
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE",
+              "sequence": 40415,
+              "ledger": 40988
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40415,
+              "escrow_index": "41A0E7800723A551CDA8284BBCAFB2846D37D05F120F638AF6E9D9A822EBA800",
+              "confirmed_tx": "7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112901
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40415,
+              "tx_hash": "7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE",
+              "last_ledger_sequence": 41006,
+              "first_ledger": 40986,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 40988,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40415,
+              "attempt_id": 1,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:41:44.700Z",
+              "pid": 6418,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"EFB65B4F835575627255C06D72BF34A970B48248B889BB38CF2DDD709D9A6920\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:44.713Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40415,\"lastLedgerSequence\":41006,\"txHash\":\"7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE\",\"firstLedger\":40986}"
+            },
+            {
+              "at": "2026-11-27T14:41:44.714Z",
+              "pid": 6418,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:44.717Z",
+              "pid": 6417,
+              "attempt_id": null,
+              "event": "apply_replay",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:44.987Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:45.122Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40986}"
+            },
+            {
+              "at": "2026-11-27T14:41:45.532Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:48.578Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:51.627Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40988}"
+            },
+            {
+              "at": "2026-11-27T14:41:51.629Z",
+              "pid": 6418,
+              "attempt_id": 1,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"7506EE8D4CF0B832B0C7DAC873D4E938882082DDC7FFBE967C51FCDFDF04DAAE\",\"ledger\":40988,\"sequence\":40415}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で署名した QR",
+          "OfferSequence": 40415,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 5
+        }
+      ],
+      "l0": 40986,
+      "l1": 40989,
+      "pass": true
+    },
+    {
+      "id": "C4b",
+      "title": "ワーカー競合（異なる 2 申請・配布口座共有）",
+      "fault": "なし（2 プロセス・Sequence 採番の競合）",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "同じ DB・同じ配布口座 D を使う 2 プロセスが、異なる 2 申請を同時に処理",
+          "プロセス1": {
+            "pid": 7507,
+            "終了": "exit 0",
+            "ms": 8922,
+            "結果": {
+              "status": "confirmed",
+              "offerSequence": 40417,
+              "txHash": "13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C",
+              "escrowIndex": "83F4402E7FB3B3FC5720B47B6890E77D6E002D7902487D13DE2FD4BA37737D4A",
+              "attempts": 1
+            }
+          },
+          "プロセス2": {
+            "pid": 7508,
+            "終了": "exit 0",
+            "ms": 8919,
+            "結果": {
+              "status": "confirmed",
+              "offerSequence": 40416,
+              "txHash": "54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6",
+              "escrowIndex": "27ACAD4EC4855C8E2AFDD2E2815392B1DFDE2C65C1F0EDC931028C81A852C24E",
+              "attempts": 1
+            }
+          }
+        },
+        {
+          "操作": "recover",
+          "pid": 7956,
+          "終了": "exit 0",
+          "ms": 1277,
+          "結果": {}
+        },
+        {
+          "確定した OfferSequence": {
+            "申請1": 40417,
+            "申請2": 40416
+          },
+          "台帳上の Sequence": {
+            "申請1": 40417,
+            "申請2": 40416
+          },
+          "試行の Sequence": [
+            40416,
+            40417
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "2 件とも確定",
+          "ok": true
+        },
+        {
+          "name": "試行の Sequence が重ならない",
+          "ok": true
+        },
+        {
+          "name": "確定 OfferSequence = 台帳上のその申請の Sequence（取り違えなし）",
+          "ok": true
+        },
+        {
+          "name": "店舗: 申請1 の元鍵の QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "店舗: 申請2 の元鍵の QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "店舗: 申請1 の鍵・preimage で、申請2 の OfferSequence に署名した QR → preimage が条件と合わない",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C4ba）",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C4bb）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "AE26CD9CE3DD5474": {
+          "範囲": [
+            40989,
+            40993
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C",
+              "sequence": 40417,
+              "ledger": 40992
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        },
+        "AE1FC1914FE44336": {
+          "範囲": [
+            40989,
+            40993
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6",
+              "sequence": 40416,
+              "ledger": 40992
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40416,
+              "escrow_index": "27ACAD4EC4855C8E2AFDD2E2815392B1DFDE2C65C1F0EDC931028C81A852C24E",
+              "confirmed_tx": "54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112911
+            },
+            {
+              "id": 2,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40417,
+              "escrow_index": "83F4402E7FB3B3FC5720B47B6890E77D6E002D7902487D13DE2FD4BA37737D4A",
+              "confirmed_tx": "13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112911
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40416,
+              "tx_hash": "54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6",
+              "last_ledger_sequence": 41010,
+              "first_ledger": 40990,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 40992,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            },
+            {
+              "id": 2,
+              "attempt_no": 1,
+              "sequence": 40417,
+              "tx_hash": "13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C",
+              "last_ledger_sequence": 41010,
+              "first_ledger": 40990,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 40992,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40416,
+              "attempt_id": 1,
+              "state": "consumed"
+            },
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40417,
+              "attempt_id": 2,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:41:57.463Z",
+              "pid": 7508,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"ECE6A2320304CFD82C6620416E50FAE8EA70EDAC6B41973B4B4D414B737C8C07\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.469Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40416,\"lastLedgerSequence\":41010,\"txHash\":\"54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6\",\"firstLedger\":40990}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.469Z",
+              "pid": 7508,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.473Z",
+              "pid": 7507,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"209F24051D7357DCAD70CD602A942421A226CD8B4097B242682560B3642F907F\"}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.479Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40417,\"lastLedgerSequence\":41010,\"txHash\":\"13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C\",\"firstLedger\":40990}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.479Z",
+              "pid": 7507,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.744Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.755Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.884Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40990}"
+            },
+            {
+              "at": "2026-11-27T14:41:57.894Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40990}"
+            },
+            {
+              "at": "2026-11-27T14:41:58.298Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:41:58.305Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:01.353Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:01.355Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:04.411Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40992}"
+            },
+            {
+              "at": "2026-11-27T14:42:04.412Z",
+              "pid": 7508,
+              "attempt_id": 1,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"54E018F7EBB672AB23FEB383978610B13507811BA5AE5218EBC91891214F74A6\",\"ledger\":40992,\"sequence\":40416}"
+            },
+            {
+              "at": "2026-11-27T14:42:04.411Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":40992}"
+            },
+            {
+              "at": "2026-11-27T14:42:04.415Z",
+              "pid": 7507,
+              "attempt_id": 2,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"13789C3AE22E33771449DCCB11A162680E1256874FB811D70A19665DF188B73C\",\"ledger\":40992,\"sequence\":40417}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "申請1 の元鍵の QR",
+          "OfferSequence": 40417,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 7
+        },
+        {
+          "確認": "申請2 の元鍵の QR",
+          "OfferSequence": 40416,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 7
+        },
+        {
+          "確認": "申請1 の鍵・preimage で、申請2 の OfferSequence に署名した QR",
+          "OfferSequence": 40416,
+          "期待": "preimage が条件と合わない",
+          "判定": "preimage が条件と合わない",
+          "通信の試行数": 0,
+          "同期データの件数": 7
+        }
+      ],
+      "l0": 40989,
+      "l1": 40993,
+      "pass": true
+    },
+    {
+      "id": "C5",
+      "title": "有効ledger期限切れ（未送信のまま）",
+      "fault": "STOP_AFTER_PREPARE（未送信）+ LLS_OFFSET=2",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "apply（署名済み取引を LastLedgerSequence = validated+2 で保存し、送信せず正常終了）",
+          "pid": 8052,
+          "終了": "exit 0",
+          "ms": 1948,
+          "結果": {
+            "status": "stopped",
+            "reason": "prepared, not submitted"
+          }
+        },
+        {
+          "待機": "validated=40997 が LastLedgerSequence=40996 を越えた"
+        },
+        {
+          "操作": "recover（旧取引の不成立を照会で確定 → 新しい試行）",
+          "pid": 8570,
+          "終了": "exit 0",
+          "ms": 9112,
+          "結果": {
+            "1": {
+              "status": "confirmed",
+              "offerSequence": 40418,
+              "txHash": "CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692",
+              "escrowIndex": "3B0DDF57E624F9451CE1CFDF99E874F3A14DC361418F65E24491B5FC95321323",
+              "attempts": 2
+            }
+          }
+        },
+        {
+          "旧hashを最後に照会": {
+            "見つからない": true,
+            "searched_all": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "旧取引: 送信 0 回、failed_final。根拠（範囲・searched_all・履歴の連続性）を保存",
+          "ok": true
+        },
+        {
+          "name": "新しい試行で 1 枚確定（別 hash）",
+          "ok": true
+        },
+        {
+          "name": "旧 hash は最後まで台帳に現れない",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C5）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "141BDE85E5475399": {
+          "範囲": [
+            40994,
+            41000
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692",
+              "sequence": 40418,
+              "ledger": 41000
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40418,
+              "escrow_index": "3B0DDF57E624F9451CE1CFDF99E874F3A14DC361418F65E24491B5FC95321323",
+              "confirmed_tx": "CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112930
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40418,
+              "tx_hash": "B20963E9734F6B27542487939FB33D584700709193800436EB5698A7AD27F5C0",
+              "last_ledger_sequence": 40996,
+              "first_ledger": 40994,
+              "state": "failed_final",
+              "submit_count": 0,
+              "last_engine_result": null,
+              "validated_ledger": null,
+              "validated_result": null,
+              "evidence": "{\"reason\":\"last_ledger_sequence_passed\",\"decidedAtValidated\":40998,\"lastLedgerSequence\":40996,\"queryRange\":[40994,40998],\"absentBy\":\"tx の searched_all\",\"completeLedgers\":\"16111-40998\",\"accountSequenceValidated\":40418,\"sequenceConsumedBy\":null}"
+            },
+            {
+              "id": 2,
+              "attempt_no": 2,
+              "sequence": 40418,
+              "tx_hash": "CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692",
+              "last_ledger_sequence": 41018,
+              "first_ledger": 40998,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 41000,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40418,
+              "attempt_id": 1,
+              "state": "released"
+            },
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40418,
+              "attempt_id": 2,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:42:10.728Z",
+              "pid": 8052,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"5E6D3C8F3364EABBD654DC4394CC7170ABB31E73100C25F861F9C46E076773DC\"}"
+            },
+            {
+              "at": "2026-11-27T14:42:10.736Z",
+              "pid": 8052,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40418,\"lastLedgerSequence\":40996,\"txHash\":\"B20963E9734F6B27542487939FB33D584700709193800436EB5698A7AD27F5C0\",\"firstLedger\":40994}"
+            },
+            {
+              "at": "2026-11-27T14:42:10.736Z",
+              "pid": 8052,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:42:21.696Z",
+              "pid": 8570,
+              "attempt_id": 1,
+              "event": "skip_submit_lls_passed",
+              "detail": "{\"validated\":40997,\"lastLedgerSequence\":40996}"
+            },
+            {
+              "at": "2026-11-27T14:42:22.097Z",
+              "pid": 8570,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":false,\"searchedAll\":true,\"error\":\"txnNotFound\",\"range\":[40994,40998],\"validated\":40998}"
+            },
+            {
+              "at": "2026-11-27T14:42:22.098Z",
+              "pid": 8570,
+              "attempt_id": 1,
+              "event": "failed_final",
+              "detail": "{\"reason\":\"last_ledger_sequence_passed\",\"decidedAtValidated\":40998,\"lastLedgerSequence\":40996,\"queryRange\":[40994,40998],\"absentBy\":\"tx の searched_all\",\"completeLedgers\":\"16111-40998\",\"accountSequenceValidated\":40418,\"sequenceConsumedBy\":null}"
+            },
+            {
+              "at": "2026-11-27T14:42:22.372Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":2,\"sequence\":40418,\"lastLedgerSequence\":41018,\"txHash\":\"CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692\",\"firstLedger\":40998}"
+            },
+            {
+              "at": "2026-11-27T14:42:22.639Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:42:22.774Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":40998}"
+            },
+            {
+              "at": "2026-11-27T14:42:23.176Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:26.211Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:29.246Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":41000}"
+            },
+            {
+              "at": "2026-11-27T14:42:29.246Z",
+              "pid": 8570,
+              "attempt_id": 2,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"CA1A443B0C66D4EB23FFFD0F6D6CD963CB71F2390E501D5D46F9B3AF0AECF692\",\"ledger\":41000,\"sequence\":40418}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で署名した QR",
+          "OfferSequence": 40418,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 8
+        }
+      ],
+      "l0": 40994,
+      "l1": 41000,
+      "pass": true
+    },
+    {
+      "id": "C6",
+      "title": "Sequence 競合",
+      "fault": "別の正規の取引が予定 Sequence を先に消費",
+      "kind": "Testnet実測",
+      "steps": [
+        {
+          "操作": "apply（署名済み取引を保存し、送信せず正常終了）",
+          "pid": 8828,
+          "終了": "exit 0",
+          "ms": 1904,
+          "結果": {
+            "status": "stopped",
+            "reason": "prepared, not submitted"
+          }
+        },
+        {
+          "競合取引": {
+            "hash": "2FECDDC7F345D7A796203E8CB00CE800DBA30ECBD241FC599D819F00AC2B6A94",
+            "sequence": 40419,
+            "engine_result": "tesSUCCESS",
+            "予定していた Sequence": 40419
+          }
+        },
+        {
+          "操作": "recover（元取引は送れるか → 不成立の根拠 → 再採番）",
+          "pid": 9190,
+          "終了": "exit 0",
+          "ms": 9481,
+          "結果": {
+            "1": {
+              "status": "confirmed",
+              "offerSequence": 40420,
+              "txHash": "0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D",
+              "escrowIndex": "9E7D8E94E460011B5636DA00AA6B1EE80AE9E3FFFBC7EA32F4141B7C8E4D4744",
+              "attempts": 2
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "競合取引が予定 Sequence を消費した",
+          "ok": true
+        },
+        {
+          "name": "旧取引の不成立: Sequence 消費元 = 競合取引（hash 一致）",
+          "ok": true
+        },
+        {
+          "name": "再採番して確定（OfferSequence が変わった）",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で、確定した OfferSequence に署名した QR → 使える",
+          "ok": true
+        },
+        {
+          "name": "店舗: 元の鍵で、旧 OfferSequence（競合で失われた値）に署名した QR → このお店宛ての券ではない（または未同期）",
+          "ok": true
+        },
+        {
+          "name": "台帳の履歴: 成功した EscrowCreate が 1 件・hash 1 種類（C6）",
+          "ok": true
+        },
+        {
+          "name": "DB1: 発券記録の件数 = 申請数",
+          "ok": true
+        }
+      ],
+      "chain": {
+        "1A6FB871F4A9C1AB": {
+          "範囲": [
+            41001,
+            41005
+          ],
+          "履歴を最後まで読めた": true,
+          "ページ数": 1,
+          "成功": [
+            {
+              "hash": "0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D",
+              "sequence": 40420,
+              "ledger": 41005
+            }
+          ],
+          "成功の件数": 1,
+          "成功のhashの種類": 1,
+          "tec等の失敗": [],
+          "判定": "確認済み"
+        }
+      },
+      "db": [
+        {
+          "issuance": [
+            {
+              "id": 1,
+              "program_id": "279006856766017909006963947007302980811531965880451963754312740495833632612",
+              "state": "confirmed",
+              "state_reason": null,
+              "offer_sequence": 40420,
+              "escrow_index": "9E7D8E94E460011B5636DA00AA6B1EE80AE9E3FFFBC7EA32F4141B7C8E4D4744",
+              "confirmed_tx": "0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D",
+              "shop": "r4gBWdGn6SzcCVSsKn4Q5SPEPtwHdUMmt5",
+              "cancel_after": 849112951
+            }
+          ],
+          "attempts": [
+            {
+              "id": 1,
+              "attempt_no": 1,
+              "sequence": 40419,
+              "tx_hash": "63D13FCF0FF1A5C1F7E8FEB83DE4F8730E7DFD9B5C24505D9731878488F537ED",
+              "last_ledger_sequence": 41021,
+              "first_ledger": 41001,
+              "state": "failed_final",
+              "submit_count": 1,
+              "last_engine_result": "tefPAST_SEQ",
+              "validated_ledger": null,
+              "validated_result": null,
+              "evidence": "{\"reason\":\"sequence_consumed_by_other\",\"decidedAtValidated\":41003,\"lastLedgerSequence\":41021,\"queryRange\":[41001,41003],\"absentBy\":\"account_tx 履歴（tx は未 validated の記録だけ返した）\",\"completeLedgers\":\"16111-41003\",\"accountSequenceValidated\":40420,\"sequenceConsumedBy\":{\"hash\":\"2FECDDC7F345D7A796203E8CB00CE800DBA30ECBD241FC599D819F00AC2B6A94\",\"type\":\"Payment\",\"result\":\"tesSUCCESS\",\"ledger\":41003,\"historyPages\":1}}"
+            },
+            {
+              "id": 2,
+              "attempt_no": 2,
+              "sequence": 40420,
+              "tx_hash": "0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D",
+              "last_ledger_sequence": 41023,
+              "first_ledger": 41003,
+              "state": "validated_success",
+              "submit_count": 1,
+              "last_engine_result": "tesSUCCESS",
+              "validated_ledger": 41005,
+              "validated_result": "tesSUCCESS",
+              "evidence": null
+            }
+          ],
+          "seq_alloc": [
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40419,
+              "attempt_id": 1,
+              "state": "consumed"
+            },
+            {
+              "owner": "rDAHcwJbtQMUgdwkNNZvrzHuQvki57xiUn",
+              "sequence": 40420,
+              "attempt_id": 2,
+              "state": "consumed"
+            }
+          ],
+          "events": [
+            {
+              "at": "2026-11-27T14:42:34.179Z",
+              "pid": 8828,
+              "attempt_id": null,
+              "event": "approved",
+              "detail": "{\"programId\":\"279006856766017909006963947007302980811531965880451963754312740495833632612\",\"reqDigest\":\"31403B593B711E079C91AEF8ED9EDAD6FAB9F0ECB9CE480A3EE733B9B38E04D7\"}"
+            },
+            {
+              "at": "2026-11-27T14:42:34.186Z",
+              "pid": 8828,
+              "attempt_id": 1,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":1,\"sequence\":40419,\"lastLedgerSequence\":41021,\"txHash\":\"63D13FCF0FF1A5C1F7E8FEB83DE4F8730E7DFD9B5C24505D9731878488F537ED\",\"firstLedger\":41001}"
+            },
+            {
+              "at": "2026-11-27T14:42:34.186Z",
+              "pid": 8828,
+              "attempt_id": null,
+              "event": "apply_created",
+              "detail": "{}"
+            },
+            {
+              "at": "2026-11-27T14:42:38.728Z",
+              "pid": 9190,
+              "attempt_id": 1,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"63D13FCF0FF1A5C1F7E8FEB83DE4F8730E7DFD9B5C24505D9731878488F537ED\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:42:38.865Z",
+              "pid": 9190,
+              "attempt_id": 1,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tefPAST_SEQ\",\"applied\":false,\"accepted\":true,\"validated_ledger_index\":41003}"
+            },
+            {
+              "at": "2026-11-27T14:42:39.274Z",
+              "pid": 9190,
+              "attempt_id": 1,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:39.411Z",
+              "pid": 9190,
+              "attempt_id": 1,
+              "event": "failed_final",
+              "detail": "{\"reason\":\"sequence_consumed_by_other\",\"decidedAtValidated\":41003,\"lastLedgerSequence\":41021,\"queryRange\":[41001,41003],\"absentBy\":\"account_tx 履歴（tx は未 validated の記録だけ返した）\",\"completeLedgers\":\"16111-41003\",\"accountSequenceValidated\":40420,\"sequenceConsumedBy\":{\"hash\":\"2FECDDC7F345D7A796203E8CB00CE800DBA30ECBD241FC599D819F00AC2B6A94\",\"type\":\"Payment\",\"result\":\"tesSUCCESS\",\"ledger\":41003,\"historyPages\":1}}"
+            },
+            {
+              "at": "2026-11-27T14:42:39.689Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "attempt_prepared",
+              "detail": "{\"attemptNo\":2,\"sequence\":40420,\"lastLedgerSequence\":41023,\"txHash\":\"0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D\",\"firstLedger\":41003}"
+            },
+            {
+              "at": "2026-11-27T14:42:39.963Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "submit_start",
+              "detail": "{\"txHash\":\"0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D\",\"count\":1}"
+            },
+            {
+              "at": "2026-11-27T14:42:40.103Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "submit_response",
+              "detail": "{\"engine_result\":\"tesSUCCESS\",\"applied\":true,\"accepted\":true,\"validated_ledger_index\":41003}"
+            },
+            {
+              "at": "2026-11-27T14:42:40.513Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:43.564Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":false}"
+            },
+            {
+              "at": "2026-11-27T14:42:46.614Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "tx_query",
+              "detail": "{\"found\":true,\"validated\":true,\"result\":\"tesSUCCESS\",\"ledger\":41005}"
+            },
+            {
+              "at": "2026-11-27T14:42:46.615Z",
+              "pid": 9190,
+              "attempt_id": 2,
+              "event": "confirmed",
+              "detail": "{\"txHash\":\"0F24AFA146735AA5678BEE98C869698D807402C1688306696836BAB7654EC21D\",\"ledger\":41005,\"sequence\":40420}"
+            }
+          ]
+        }
+      ],
+      "shop": [
+        {
+          "確認": "元の鍵で、確定した OfferSequence に署名した QR",
+          "OfferSequence": 40420,
+          "期待": "使える",
+          "判定": "使える",
+          "通信の試行数": 0,
+          "同期データの件数": 9
+        },
+        {
+          "確認": "元の鍵で、旧 OfferSequence（競合で失われた値）に署名した QR",
+          "OfferSequence": 40419,
+          "期待": "このお店宛ての券ではない（または未同期）",
+          "判定": "このお店宛ての券ではない（または未同期）",
+          "通信の試行数": 0,
+          "同期データの件数": 9
+        }
+      ],
+      "l0": 41001,
+      "l1": 41005,
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+ "schema": "todoke-spike17-manifest/1",
+ "generatedAt": "2026-11-28T09:24:39.675Z",
+ "network": {
+  "endpoint": "wss://s.altnet.rippletest.net:51233",
+  "network_id": 1,
+  "build_version": "3.5.0-rc6",
+  "complete_ledgers": "16200-61194",
+  "ledgerAtStart": {
+   "index": 61194,
+   "closeTime": 849173070,
+   "hash": "7377FE43C065DFF7A065B207267F9898E3297C4C1CD8BABB68368AC10D173CA3"
+  }
+ },
+ "official": {
+  "source": "https://tryrlusd.com/addresses（XRPL Testnet 欄）",
+  "httpStatus": 200,
+  "fetchedAt": "2026-11-28T09:24:30.705Z",
+  "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+  "currency": "524C555344000000000000000000000000000000",
+  "knownFromSpike16": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+ },
+ "asset": {
+  "currency": "524C555344000000000000000000000000000000",
+  "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+ },
+ "accounts": {
+  "P": "rMz8Si2Me8aVZxS7CZBFUQH9qJHJwY3DL2",
+  "N": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+  "S": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+  "K": "rLCpEm6HwS3AEg1VDqEfyviM5QWX9UhTFt"
+ },
+ "baseline": {
+  "ledger": 61032,
+  "hash": "52EC87A25ED1F9F008577E37012253266C610429DEB69D89F9841482A711E3BB",
+  "closeTime": 849172522,
+  "balances": {
+   "P": "0.1",
+   "N": "0.1",
+   "S": "0"
+  }
+ },
+ "end": {
+  "ledger": 61164,
+  "hash": "554AAF7A0DDABCDCB24DAD0E1B1E80D7436E144C4C3ACE3BE9D6C9D4404CC75D",
+  "closeTime": 849172970
+ },
+ "beforeExpiryC": {
+  "ledger": 61044,
+  "hash": "44C4F9004C24D370FE2C5D735ECB95A7D8F7D0A2A6F71AF08F72CE7B7B5E478C",
+  "closeTime": 849172562,
+  "cancelAfter": 849172960,
+  "escrowExists": true,
+  "sRlusd": "0.15",
+  "nRlusd": "0"
+ },
+ "expiryC": {
+  "ledger": 61162,
+  "hash": "5915B792E042C3FD87E481FF7634C5620B382969BA3EF08DFDB8EDC0ADDDF9E3",
+  "closeTime": 849172961
+ },
+ "vkSha256": "410957403D707104704BE368075C3934912C649373FF97093916C70F4A8BA438",
+ "tickets": [
+  {
+   "id": "A",
+   "program": "P",
+   "donor": "rMz8Si2Me8aVZxS7CZBFUQH9qJHJwY3DL2",
+   "household": "H1",
+   "shop": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+   "value": "0.1",
+   "cancelAfter": 849179722,
+   "condition": "A025802027604D8E7244A13C7D3144A15A1DF5E6B2B2D902C32FDDD764CE2C27250321BF810120",
+   "pkHash": "0E95A631F369AE29507FD65AE4243AAD1B7E32EC0A8162C2287A66141BE67F87",
+   "offerSequence": 61018,
+   "escrowIndex": "2D1DBB7CD12CC222D7AE0A214F159DB735C92780109B64BC4926B8E188D2A7B5",
+   "createTx": "374DD4A2D7331BD20372B721F7BE3095F12F0997DAAA7412C4135BA2F7DF4A65",
+   "createLedger": 61034,
+   "attempts": 1,
+   "proofSha256": "18FD9E0E9932BC578459424CE7ADA7A93A00155372D2EF9484558422F9462DEF",
+   "nullifier": "21436743632045692613544272638741424445855554992857968744804114564210047885734",
+   "reqDigestV2": "9CE10637541D94302E9BCB9AC5015EEF161C783470BC8779A9E344D117D44BCC",
+   "outcome": "used",
+   "finalRecipient": "S",
+   "finishTx": "95BC0F62F3D83BA3E91790498F48B01F04463662E6679DE8FAA8D2B2B1CB7546",
+   "cancelTx": null
+  },
+  {
+   "id": "B",
+   "program": "N",
+   "donor": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "household": "H1",
+   "shop": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+   "value": "0.05",
+   "cancelAfter": 849179730,
+   "condition": "A0258020519300E6B8FA121755949EE97880E63FA28C7FEF0EB26775FD1CAAC74227C78D810120",
+   "pkHash": "9FFA0BC9983DF1411EA1E87839917E8431C1F5688D2944B09D51808139884838",
+   "offerSequence": 61020,
+   "escrowIndex": "64E280EAA71B8C16C2901AF645DFDDB01B00F1E324C0C819D9AD601462C79E42",
+   "createTx": "5777578DBEDF7185A338225A8E5DEC7AAFDBAD352A22B474C75E0A30E93AF5B4",
+   "createLedger": 61036,
+   "attempts": 1,
+   "proofSha256": "CE25BF7902B13684E25B065159D7E47A38C62C6B55CDC86526DBF9BF14CE363E",
+   "nullifier": "4511586686672174754914240917711066784860526962250289325086880135557958794127",
+   "reqDigestV2": "0C2C33DB43BBAF154A4C926DAA658C9240EC27B889E3DFC91373F9BFFC91CA8F",
+   "outcome": "used",
+   "finalRecipient": "S",
+   "finishTx": "899B801307CCBE48CB013E547AF8254B4A536F6FE397B9F65BB1E2296167E1A5",
+   "cancelTx": null
+  },
+  {
+   "id": "C",
+   "program": "N",
+   "donor": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "household": "H2",
+   "shop": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+   "value": "0.05",
+   "cancelAfter": 849172960,
+   "condition": "A02580206B54731C5BBC7C4A53018F5AFD5B30AB86F3A08E7BF1540FAAE2A16A1BECA7EA810120",
+   "pkHash": "151FB77733222BA7E2410EC581FF6443442AA1AAC13B2E49D2F43674B9C3F4BC",
+   "offerSequence": 61021,
+   "escrowIndex": "419F8A75A5352A7727D771C877F3CD96E3510BBA8E690C786DA905B21465D2EC",
+   "createTx": "0F9DDC14D1F95ED19D9439D07272ECC2BBA4D7A6C742F1F93C09B284D562AC6F",
+   "createLedger": 61038,
+   "attempts": 1,
+   "proofSha256": "2A7645FEEF865F410F9F2DD7E1F79275E8143C8D3DC2E50E10B1ADA1753E0FE9",
+   "nullifier": "2347708068853462146352976874723348441223673001444703134739258929306003727834",
+   "reqDigestV2": "73E9440A79386D433C9C970292DCBEC22F150359A46294A0A97AE343880A482A",
+   "outcome": "expired",
+   "finalRecipient": "N",
+   "finishTx": null,
+   "cancelTx": "52E1092193E993B45BBEA56A2C5483BA2BE673C7420657790158B0B6FB31E039"
+  }
+ ],
+ "acceptance": {
+  "A": {
+   "reason": "使える",
+   "netAttempts": 0,
+   "syncEscrowCount": 3,
+   "syncSha256": "19585D79A5694893F10F0953BCCF2CB5D900C4947181D65F38F1B298382CC6EF",
+   "syncIncludesTicket": true,
+   "acceptedEscrowIndex": "2D1DBB7CD12CC222D7AE0A214F159DB735C92780109B64BC4926B8E188D2A7B5",
+   "checkedAtRipple": 849172550,
+   "fulfillmentSha256": "27604D8E7244A13C7D3144A15A1DF5E6B2B2D902C32FDDD764CE2C27250321BF",
+   "精算の入力": "店頭受付が保存した Escrow・Fulfillment（QR のペイロードで実施。カメラ・実機は使っていない）",
+   "finishSDelta": "+0.1"
+  },
+  "B": {
+   "reason": "使える",
+   "netAttempts": 0,
+   "syncEscrowCount": 2,
+   "syncSha256": "ABBC9BA0DC10EF8FAFA0121791D6DB9F05223CA9736FAFE2DC392A26DF74A1EC",
+   "syncIncludesTicket": true,
+   "acceptedEscrowIndex": "64E280EAA71B8C16C2901AF645DFDDB01B00F1E324C0C819D9AD601462C79E42",
+   "checkedAtRipple": 849172560,
+   "fulfillmentSha256": "519300E6B8FA121755949EE97880E63FA28C7FEF0EB26775FD1CAAC74227C78D",
+   "精算の入力": "店頭受付が保存した Escrow・Fulfillment（QR のペイロードで実施。カメラ・実機は使っていない）",
+   "finishSDelta": "+0.05"
+  }
+ },
+ "negativeControls": {
+  "H1_duplicate_to_P": {
+   "outcome": {
+    "status": "rejected",
+    "stage": "duplicate",
+    "reason": "same program and nullifier, different request"
+   },
+   "発券記録_前後": [
+    1,
+    1
+   ],
+   "試行_前後": [
+    1,
+    1
+   ],
+   "署名者Sequence_前後": [
+    61019,
+    61019
+   ]
+  },
+  "H3_to_N": {
+   "proofCreated": false,
+   "error": "Circuit execution failed: senior required",
+   "発券記録_前後N": [
+    2,
+    2
+   ]
+  }
+ },
+ "transactions": [
+  {
+   "label": "prep:P:TrustSet RLUSD",
+   "phase": "prep",
+   "ticket": null,
+   "account": "rMz8Si2Me8aVZxS7CZBFUQH9qJHJwY3DL2",
+   "type": "TrustSet",
+   "hash": "3FC30F56F1751C66F21415B45BF04C7A9E2C917992AE4B67D3462E48DB76E02F",
+   "expect": "tesSUCCESS",
+   "ledger": 61024
+  },
+  {
+   "label": "prep:N:TrustSet RLUSD",
+   "phase": "prep",
+   "ticket": null,
+   "account": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "type": "TrustSet",
+   "hash": "821197A0E2EBDD6D637A41B0E9EEB19B7C59D475091F3FF08D781E52D639C91F",
+   "expect": "tesSUCCESS",
+   "ledger": 61026
+  },
+  {
+   "label": "prep:S:TrustSet RLUSD",
+   "phase": "prep",
+   "ticket": null,
+   "account": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+   "type": "TrustSet",
+   "hash": "C76B62D0D0435AF1060340B9079F2B4E1CAC812D53DE1BC01503BA24AF29B037",
+   "expect": "tesSUCCESS",
+   "ledger": 61028
+  },
+  {
+   "label": "prep:P:buy RLUSD 0.1 via AMM",
+   "phase": "prep",
+   "ticket": null,
+   "account": "rMz8Si2Me8aVZxS7CZBFUQH9qJHJwY3DL2",
+   "type": "Payment",
+   "hash": "9A30FD975F8D97DA79177099949A0EA44D3A92BF789B882BC1C5A735405275F3",
+   "expect": "tesSUCCESS",
+   "ledger": 61030
+  },
+  {
+   "label": "prep:N:buy RLUSD 0.1 via AMM",
+   "phase": "prep",
+   "ticket": null,
+   "account": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "type": "Payment",
+   "hash": "2A397517EC2DCC9B3EDD353C429BD7602CF385D34C6F3A362E46B271F4682F95",
+   "expect": "tesSUCCESS",
+   "ledger": 61032
+  },
+  {
+   "label": "issue:A",
+   "phase": "scenario",
+   "ticket": "A",
+   "account": "rMz8Si2Me8aVZxS7CZBFUQH9qJHJwY3DL2",
+   "type": "EscrowCreate",
+   "hash": "374DD4A2D7331BD20372B721F7BE3095F12F0997DAAA7412C4135BA2F7DF4A65",
+   "expect": "tesSUCCESS",
+   "ledger": 61034
+  },
+  {
+   "label": "issue:B",
+   "phase": "scenario",
+   "ticket": "B",
+   "account": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "type": "EscrowCreate",
+   "hash": "5777578DBEDF7185A338225A8E5DEC7AAFDBAD352A22B474C75E0A30E93AF5B4",
+   "expect": "tesSUCCESS",
+   "ledger": 61036
+  },
+  {
+   "label": "issue:C",
+   "phase": "scenario",
+   "ticket": "C",
+   "account": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "type": "EscrowCreate",
+   "hash": "0F9DDC14D1F95ED19D9439D07272ECC2BBA4D7A6C742F1F93C09B284D562AC6F",
+   "expect": "tesSUCCESS",
+   "ledger": 61038
+  },
+  {
+   "label": "finish:A",
+   "phase": "scenario",
+   "ticket": "A",
+   "account": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+   "type": "EscrowFinish",
+   "hash": "95BC0F62F3D83BA3E91790498F48B01F04463662E6679DE8FAA8D2B2B1CB7546",
+   "expect": "tesSUCCESS",
+   "ledger": 61042
+  },
+  {
+   "label": "finish:B",
+   "phase": "scenario",
+   "ticket": "B",
+   "account": "r9nESGetj4J6jH5vpBAo43QddGHqUFjXEk",
+   "type": "EscrowFinish",
+   "hash": "899B801307CCBE48CB013E547AF8254B4A536F6FE397B9F65BB1E2296167E1A5",
+   "expect": "tesSUCCESS",
+   "ledger": 61044
+  },
+  {
+   "label": "cancel:C",
+   "phase": "scenario",
+   "ticket": "C",
+   "account": "rLCpEm6HwS3AEg1VDqEfyviM5QWX9UhTFt",
+   "type": "EscrowCancel",
+   "hash": "52E1092193E993B45BBEA56A2C5483BA2BE673C7420657790158B0B6FB31E039",
+   "expect": "tesSUCCESS",
+   "ledger": 61164
+  }
+ ],
+ "expectedNet": {
+  "P": "-0.1",
+  "N": "-0.05",
+  "S": "+0.15"
+ }
+}

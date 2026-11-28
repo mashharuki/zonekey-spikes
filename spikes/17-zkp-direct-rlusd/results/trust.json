@@ -1,0 +1,47 @@
+{
+ "schema": "todoke-spike17-trust/1",
+ "注意": "検算コマンドが外部から信頼する入力: 承認済みの名簿 root、制度 ID と条件、制度とドナーの対応、資産。世帯の秘密は含まない",
+ "rosterRoot": "0x119d6634f3ec403b887ad0277bbced205e31559825e503683f5fe88f3d6f263d",
+ "asset": {
+  "currency": "524C555344000000000000000000000000000000",
+  "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+ },
+ "programs": {
+  "P": {
+   "id": "0x47ce62e787c335ad7783b214afe1e99c5c86b8e7854f162fc52a1ba2cb8e4f",
+   "owner": "rMz8Si2Me8aVZxS7CZBFUQH9qJHJwY3DL2",
+   "zoneSet": [
+    "13101",
+    "13102",
+    "13103",
+    "13104",
+    "13105",
+    "13106",
+    "13107",
+    "13108"
+   ],
+   "needSenior": false,
+   "needRevictim": false,
+   "minTier": 1,
+   "name": "県 P 基本給付（対象地区）"
+  },
+  "N": {
+   "id": "0x45fd17fea0cd08a0383fb6cdf88000e95d070b67be4aee5084239cc079f849",
+   "owner": "r4Vr8uZR6L7uRRN5rC5x2qdTFxukEMdo8b",
+   "zoneSet": [
+    "13101",
+    "13102",
+    "13103",
+    "13104",
+    "13105",
+    "13106",
+    "13107",
+    "13108"
+   ],
+   "needSenior": true,
+   "needRevictim": false,
+   "minTier": 1,
+   "name": "NGO N 追加給付（対象地区・高齢者要件）"
+  }
+ }
+}

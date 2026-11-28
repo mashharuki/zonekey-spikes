@@ -1,0 +1,379 @@
+{
+ "at": "2026-11-28T09:12:36.217Z",
+ "kind": "ローカル検証（Testnet なし・模擬ノード）",
+ "total": 53,
+ "failed": 0,
+ "rows": [
+  {
+   "group": "v1 互換",
+   "step": "既知ベクトルの正規バイト列（191 B）が一致",
+   "expected": "746F646F6B652D31332D726571756573742D7631000000000000000000000000000000000000000000000000000000000000900119B8A465EDCA36429C468FCFD9E57AA1EB30E44F3534AE5AEC9C90A1FBA4FAA9538181CC8AEEEB545A4B567A322F95149B3133DFBFFC01AEEBFB14C443CC9E00000000004C4B4035A4E90011111111111111111111111111111111111111111111111111111111111111112222222222222222222222222222222222222222222222222222222222222222",
+   "actual": "746F646F6B652D31332D726571756573742D7631000000000000000000000000000000000000000000000000000000000000900119B8A465EDCA36429C468FCFD9E57AA1EB30E44F3534AE5AEC9C90A1FBA4FAA9538181CC8AEEEB545A4B567A322F95149B3133DFBFFC01AEEBFB14C443CC9E00000000004C4B4035A4E90011111111111111111111111111111111111111111111111111111111111111112222222222222222222222222222222222222222222222222222222222222222",
+   "ok": true
+  },
+  {
+   "group": "v1 互換",
+   "step": "既知ベクトルの SHA-256 が一致",
+   "expected": "B647EC59648641274C719D1F41BF1906815A5CD32504D42DAEB00251ADCAF97D",
+   "actual": "B647EC59648641274C719D1F41BF1906815A5CD32504D42DAEB00251ADCAF97D",
+   "ok": true
+  },
+  {
+   "group": "v1 互換",
+   "step": "req_hi / req_lo が一致",
+   "expected": "0x00000000000000000000000000000000b647ec59648641274c719d1f41bf1906|0x00000000000000000000000000000000815a5cd32504d42daeb00251adcaf97d",
+   "actual": "0x00000000000000000000000000000000b647ec59648641274c719d1f41bf1906|0x00000000000000000000000000000000815a5cd32504d42daeb00251adcaf97d",
+   "ok": true
+  },
+  {
+   "group": "v1 互換",
+   "step": "v1 は 40 桁の通貨を受け付けない（v1 のコードは変更していない）",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "長さ",
+   "expected": "208",
+   "actual": "208",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "タグ（別の固定タグ・v1 と異なる）",
+   "expected": "todoke-17-request-v2",
+   "actual": "todoke-17-request-v2",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "program_id 32 B（BE）",
+   "expected": "0000…9001",
+   "actual": "0000…9001",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "owner・shop は AccountID 20 B",
+   "expected": "1517CB45BA39992A3A9EF2BBA8DF3C4741CBA089|70B14B410254327283BBE950B27ACCD5EF77F906",
+   "actual": "1517CB45BA39992A3A9EF2BBA8DF3C4741CBA089|70B14B410254327283BBE950B27ACCD5EF77F906",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "通貨は台帳上の 20 B（40 桁 hex を ASCII 40 B にしない）",
+   "expected": "524C555344000000000000000000000000000000",
+   "actual": "524C555344000000000000000000000000000000",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "issuer は AccountID 20 B",
+   "expected": "11BE32C4CE4C093E623A7D34B2AF27B3E6683DB2",
+   "actual": "11BE32C4CE4C093E623A7D34B2AF27B3E6683DB2",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "額面は 8 B BE・10^-6 単位（0.1 → 100000）",
+   "expected": "00000000000186A0",
+   "actual": "00000000000186A0",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "cancelAfter 4 B BE",
+   "expected": "35A4E900",
+   "actual": "35A4E900",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "pkHash・conditionHash 各 32 B",
+   "expected": "1111111111111111111111111111111111111111111111111111111111111111|2222222222222222222222222222222222222222222222222222222222222222",
+   "actual": "1111111111111111111111111111111111111111111111111111111111111111|2222222222222222222222222222222222222222222222222222222222222222",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "SHA-256 は正規バイト列のもの",
+   "expected": "EBF1A6CD6129A5211AAABD1ED6F5F04AC0AB1808C588EA9AACB3BE5940AC2286",
+   "actual": "EBF1A6CD6129A5211AAABD1ED6F5F04AC0AB1808C588EA9AACB3BE5940AC2286",
+   "ok": true
+  },
+  {
+   "group": "v2 形式",
+   "step": "v1 の申請は v2 と同じバイト列・同じダイジェストにならない（ZKV 申請でも）",
+   "expected": "別",
+   "actual": "別",
+   "ok": true
+  },
+  {
+   "group": "XRPL codec",
+   "step": "非標準コード（RLUSD、40 桁大文字）: codec の Amount 直列化に「通貨 20 B ‖ issuer 20 B」が現れ、直前が Amount の値 8 B（先頭 0xC…）・その前が 0x61",
+   "expected": "true",
+   "actual": "true",
+   "ok": true
+  },
+  {
+   "group": "XRPL codec",
+   "step": "標準 ISO（USD）: codec の Amount 直列化に「通貨 20 B ‖ issuer 20 B」が現れ、直前が Amount の値 8 B（先頭 0xC…）・その前が 0x61",
+   "expected": "true",
+   "actual": "true",
+   "ok": true
+  },
+  {
+   "group": "XRPL codec",
+   "step": "通貨表記: 'USD' と 40 桁の標準形式 hex は同じ 20 B",
+   "expected": "同じ",
+   "actual": "同じ",
+   "ok": true
+  },
+  {
+   "group": "正規化",
+   "step": "hex の大小文字で同じバイト列・同じダイジェスト",
+   "expected": "EBF1A6CD6129A5211AAABD1ED6F5F04AC0AB1808C588EA9AACB3BE5940AC2286",
+   "actual": "EBF1A6CD6129A5211AAABD1ED6F5F04AC0AB1808C588EA9AACB3BE5940AC2286",
+   "ok": true
+  },
+  {
+   "group": "資産拘束",
+   "step": "異なる通貨ならダイジェストが異なる",
+   "expected": "別",
+   "actual": "別",
+   "ok": true
+  },
+  {
+   "group": "資産拘束",
+   "step": "異なる issuer ならダイジェストが異なる",
+   "expected": "別",
+   "actual": "別",
+   "ok": true
+  },
+  {
+   "group": "資産拘束",
+   "step": "異なる額面ならダイジェストが異なる",
+   "expected": "別",
+   "actual": "別",
+   "ok": true
+  },
+  {
+   "group": "資産拘束",
+   "step": "異なる制度・owner・店・期限・鍵ハッシュ・Condition でもダイジェストが異なる",
+   "expected": "6/6",
+   "actual": "6/6",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "通貨 39 桁",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "通貨 41 桁",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "通貨 4 文字",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "通貨が空",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "非 16 進（G を含む 40 桁）",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "XRP",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "全ゼロ 40 桁",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "標準形式の崩れ（先頭 00 で予約領域に値）",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "ISO に使えない文字",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "pkHash が 63 桁",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "conditionHash が非 16 進",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "owner が不正なアドレス",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "額面 0",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "不正入力",
+   "step": "額面が 8 B を超える",
+   "expected": "拒否",
+   "actual": "拒否",
+   "ok": true
+  },
+  {
+   "group": "対応入力",
+   "step": "3 文字 ISO（USD）・40 桁 hex（大文字／小文字）を受理",
+   "expected": "受理|受理|受理",
+   "actual": "受理|受理|受理",
+   "ok": true
+  },
+  {
+   "group": "v2 発券",
+   "step": "v2 の申請・証明は受理される（発券記録/試行/台帳送信 = 1/1/0。stopAfterPrepare なので送信しない）",
+   "expected": "stopped|1/1/0",
+   "actual": "stopped|1/1/0",
+   "ok": true
+  },
+  {
+   "group": "v2 発券",
+   "step": "公開入力 req_hi/req_lo が v2 ダイジェストのもの",
+   "expected": "true",
+   "actual": "true",
+   "ok": true
+  },
+  {
+   "group": "v2 発券",
+   "step": "同じ申請の再送（新しく作り直した証明）は新しい発券記録・新しい取引を作らない（発券記録/試行/一意な送信取引 = 1/1/1。同じ署名済み取引の再送のみ）",
+   "expected": "pending|1/1/1",
+   "actual": "pending|1/1/1",
+   "ok": true
+  },
+  {
+   "group": "資産拘束（回路・ダイジェスト）",
+   "step": "通貨だけ違う（TEST）: 方針が通る設定でも、元の証明は拒否される（public_input / req_hi）。発券記録・試行・送信は増えない",
+   "expected": "rejected|public_input|public input mismatch: req_hi|0/0/0",
+   "actual": "rejected|public_input|public input mismatch: req_hi|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "資産拘束（回路・ダイジェスト）",
+   "step": "issuer だけ違う: 方針が通る設定でも、元の証明は拒否される（public_input / req_hi）。発券記録・試行・送信は増えない",
+   "expected": "rejected|public_input|public input mismatch: req_hi|0/0/0",
+   "actual": "rejected|public_input|public input mismatch: req_hi|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "資産拘束（回路・ダイジェスト）",
+   "step": "額面だけ違う（0.11）: 方針が通る設定でも、元の証明は拒否される（public_input / req_hi）。発券記録・試行・送信は増えない",
+   "expected": "rejected|public_input|public input mismatch: req_hi|0/0/0",
+   "actual": "rejected|public_input|public input mismatch: req_hi|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "資産拘束（通常の方針）",
+   "step": "通貨だけ違う（TEST）: 通常の方針でも拒否（policy）。増えない",
+   "expected": "rejected|policy|0/0/0",
+   "actual": "rejected|policy|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "資産拘束（通常の方針）",
+   "step": "issuer だけ違う: 通常の方針でも拒否（policy）。増えない",
+   "expected": "rejected|policy|0/0/0",
+   "actual": "rejected|policy|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "資産拘束（通常の方針）",
+   "step": "額面だけ違う（0.11）: 通常の方針でも拒否（policy）。増えない",
+   "expected": "rejected|policy|0/0/0",
+   "actual": "rejected|policy|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "v1 互換",
+   "step": "v1 の既存の経路（digest 指定なし）で v1 の証明は今も受理される",
+   "expected": "stopped|1/1/0",
+   "actual": "stopped|1/1/0",
+   "ok": true
+  },
+  {
+   "group": "v1 互換",
+   "step": "v1 の証明の検証そのもの（bb.js）は通る",
+   "expected": "true",
+   "actual": "true",
+   "ok": true
+  },
+  {
+   "group": "v1 互換",
+   "step": "v1 の証明を v2 として受理しない（public_input: req_hi）。増えない",
+   "expected": "rejected|public_input|0/0/0",
+   "actual": "rejected|public_input|0/0/0",
+   "ok": true
+  },
+  {
+   "group": "nullifier",
+   "step": "同じ世帯・同じ制度は、版を変えて（v1→v2）申請しても再発券できない（duplicate）。記録は 1 件のまま",
+   "expected": "rejected|duplicate|1",
+   "actual": "rejected|duplicate|1",
+   "ok": true
+  },
+  {
+   "group": "nullifier",
+   "step": "別の世帯は同じ制度でも別の nullifier で発券できる（1 世帯 1 回は制度単位）",
+   "expected": "stopped|2",
+   "actual": "stopped|2",
+   "ok": true
+  },
+  {
+   "group": "Noir 変換",
+   "step": "fixture の hi/lo = TS の hi/lo（v2 ダイジェスト）",
+   "expected": "313623305704200036904758546218968543306|256100145426303159609487192369199325830",
+   "actual": "313623305704200036904758546218968543306|256100145426303159609487192369199325830",
+   "ok": true
+  }
+ ]
+}

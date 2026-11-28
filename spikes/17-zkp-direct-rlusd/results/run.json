@@ -1,0 +1,373 @@
+{
+  "schema": "todoke-spike17-run/1",
+  "startedAt": "2026-11-28T09:24:30.225Z",
+  "finishedAt": "2026-11-28T09:24:39.678Z",
+  "network": {
+    "endpoint": "wss://s.altnet.rippletest.net:51233",
+    "network_id": 1,
+    "build_version": "3.5.0-rc6",
+    "complete_ledgers": "16200-61194",
+    "ledgerAtStart": {
+      "index": 61194,
+      "closeTime": 849173070,
+      "hash": "7377FE43C065DFF7A065B207267F9898E3297C4C1CD8BABB68368AC10D173CA3"
+    }
+  },
+  "official": {
+    "source": "https://tryrlusd.com/addresses（XRPL Testnet 欄）",
+    "httpStatus": 200,
+    "fetchedAt": "2026-11-28T09:24:30.705Z",
+    "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+    "currency": "524C555344000000000000000000000000000000",
+    "knownFromSpike16": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+  },
+  "preflight": {
+    "issuer": {
+      "account": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+      "flagsHex": "c19a0000",
+      "flags": {
+        "DefaultRipple": true,
+        "AllowTrustLineLocking": true,
+        "AllowTrustLineClawback": true,
+        "DepositAuth": true,
+        "RequireAuth": false,
+        "GlobalFreeze": false
+      },
+      "TransferRate": null,
+      "Domain": "https://ripple.com/"
+    },
+    "tokenEscrowAmendment": "enabled=true",
+    "trustLines": {
+      "P": {
+        "balance": "0.1",
+        "limit": "1000000",
+        "freeze": false,
+        "freeze_peer": false
+      },
+      "N": {
+        "balance": "0.1",
+        "limit": "1000000",
+        "freeze": false,
+        "freeze_peer": false
+      },
+      "S": {
+        "balance": "0",
+        "limit": "1000000",
+        "freeze": false,
+        "freeze_peer": false
+      }
+    },
+    "balancesAtBaseline": {
+      "P": "0.1",
+      "N": "0.1",
+      "S": "0"
+    },
+    "xrpDropsAtBaseline": {
+      "P": "99899975",
+      "N": "99899975",
+      "S": "99999988",
+      "K": "100000000"
+    }
+  },
+  "基準点": {
+    "ledger": 61032,
+    "hash": "52EC87A25ED1F9F008577E37012253266C610429DEB69D89F9841482A711E3BB",
+    "closeTime": 849172522,
+    "balances": {
+      "P": "0.1",
+      "N": "0.1",
+      "S": "0"
+    },
+    "xrp": {
+      "P": "99899975",
+      "N": "99899975",
+      "S": "99999988",
+      "K": "100000000"
+    }
+  },
+  "終了": {
+    "ledger": 61164,
+    "hash": "554AAF7A0DDABCDCB24DAD0E1B1E80D7436E144C4C3ACE3BE9D6C9D4404CC75D"
+  },
+  "終了残高": {
+    "P": "0",
+    "N": "0.05",
+    "S": "0.15"
+  },
+  "純増減": {
+    "P": "-0.1",
+    "N": "-0.05",
+    "S": "+0.15",
+    "合計": "0"
+  },
+  "未決Escrow": [],
+  "escrowChecks": [
+    {
+      "ticket": "A",
+      "checks": {
+        "Escrow の持ち主 = 申請の支援元": true,
+        "宛先 = 店舗 S": true,
+        "資産 = 公式 RLUSD（通貨・issuer）": true,
+        "額面が一致": true,
+        "CancelAfter が一致": true,
+        "Condition が一致": true,
+        "Memo の鍵ハッシュ = 申請の pkHash": true,
+        "OfferSequence = 台帳上の Sequence": true,
+        "公開入力の制度 ID = 申請の制度": true
+      }
+    },
+    {
+      "ticket": "B",
+      "checks": {
+        "Escrow の持ち主 = 申請の支援元": true,
+        "宛先 = 店舗 S": true,
+        "資産 = 公式 RLUSD（通貨・issuer）": true,
+        "額面が一致": true,
+        "CancelAfter が一致": true,
+        "Condition が一致": true,
+        "Memo の鍵ハッシュ = 申請の pkHash": true,
+        "OfferSequence = 台帳上の Sequence": true,
+        "公開入力の制度 ID = 申請の制度": true
+      }
+    },
+    {
+      "ticket": "C",
+      "checks": {
+        "Escrow の持ち主 = 申請の支援元": true,
+        "宛先 = 店舗 S": true,
+        "資産 = 公式 RLUSD（通貨・issuer）": true,
+        "額面が一致": true,
+        "CancelAfter が一致": true,
+        "Condition が一致": true,
+        "Memo の鍵ハッシュ = 申請の pkHash": true,
+        "OfferSequence = 台帳上の Sequence": true,
+        "公開入力の制度 ID = 申請の制度": true
+      }
+    }
+  ],
+  "acceptance": {
+    "A": {
+      "reason": "使える",
+      "netAttempts": 0,
+      "syncEscrowCount": 3,
+      "syncSha256": "19585D79A5694893F10F0953BCCF2CB5D900C4947181D65F38F1B298382CC6EF",
+      "syncIncludesTicket": true,
+      "acceptedEscrowIndex": "2D1DBB7CD12CC222D7AE0A214F159DB735C92780109B64BC4926B8E188D2A7B5",
+      "checkedAtRipple": 849172550,
+      "fulfillmentSha256": "27604D8E7244A13C7D3144A15A1DF5E6B2B2D902C32FDDD764CE2C27250321BF",
+      "精算の入力": "店頭受付が保存した Escrow・Fulfillment（QR のペイロードで実施。カメラ・実機は使っていない）",
+      "finishSDelta": "+0.1"
+    },
+    "B": {
+      "reason": "使える",
+      "netAttempts": 0,
+      "syncEscrowCount": 2,
+      "syncSha256": "ABBC9BA0DC10EF8FAFA0121791D6DB9F05223CA9736FAFE2DC392A26DF74A1EC",
+      "syncIncludesTicket": true,
+      "acceptedEscrowIndex": "64E280EAA71B8C16C2901AF645DFDDB01B00F1E324C0C819D9AD601462C79E42",
+      "checkedAtRipple": 849172560,
+      "fulfillmentSha256": "519300E6B8FA121755949EE97880E63FA28C7FEF0EB26775FD1CAAC74227C78D",
+      "精算の入力": "店頭受付が保存した Escrow・Fulfillment（QR のペイロードで実施。カメラ・実機は使っていない）",
+      "finishSDelta": "+0.05"
+    }
+  },
+  "negativeControls": {
+    "H1_duplicate_to_P": {
+      "outcome": {
+        "status": "rejected",
+        "stage": "duplicate",
+        "reason": "same program and nullifier, different request"
+      },
+      "発券記録_前後": [
+        1,
+        1
+      ],
+      "試行_前後": [
+        1,
+        1
+      ],
+      "署名者Sequence_前後": [
+        61019,
+        61019
+      ]
+    },
+    "H3_to_N": {
+      "proofCreated": false,
+      "error": "Circuit execution failed: senior required",
+      "発券記録_前後N": [
+        2,
+        2
+      ]
+    }
+  },
+  "steps": [
+    {
+      "label": "issue:A",
+      "ticket": "A",
+      "hash": "374DD4A2D7331BD20372B721F7BE3095F12F0997DAAA7412C4135BA2F7DF4A65",
+      "type": "EscrowCreate",
+      "result": "tesSUCCESS",
+      "ledger": 61034,
+      "ledgerHash": "CA09C8E263FB9C30A577B1C6A4C7A2D1A5B84D0060E8D3989F82A1021E7A1BEB",
+      "closeTime": 849172530,
+      "残高差_台帳L1からL": {
+        "P": "-0.1"
+      },
+      "エスクロー": [
+        {
+          "kind": "created",
+          "index": "2D1DBB7CD12CC222D7AE0A214F159DB735C92780109B64BC4926B8E188D2A7B5"
+        }
+      ],
+      "メタデータの増減": [
+        {
+          "口座": "P",
+          "差": "-0.1"
+        }
+      ]
+    },
+    {
+      "label": "issue:B",
+      "ticket": "B",
+      "hash": "5777578DBEDF7185A338225A8E5DEC7AAFDBAD352A22B474C75E0A30E93AF5B4",
+      "type": "EscrowCreate",
+      "result": "tesSUCCESS",
+      "ledger": 61036,
+      "ledgerHash": "82097BD2E6AA8839EC61235BF6D76076C23CF8CA49075281C02A8493872EF974",
+      "closeTime": 849172540,
+      "残高差_台帳L1からL": {
+        "N": "-0.05"
+      },
+      "エスクロー": [
+        {
+          "kind": "created",
+          "index": "64E280EAA71B8C16C2901AF645DFDDB01B00F1E324C0C819D9AD601462C79E42"
+        }
+      ],
+      "メタデータの増減": [
+        {
+          "口座": "N",
+          "差": "-0.05"
+        }
+      ]
+    },
+    {
+      "label": "issue:C",
+      "ticket": "C",
+      "hash": "0F9DDC14D1F95ED19D9439D07272ECC2BBA4D7A6C742F1F93C09B284D562AC6F",
+      "type": "EscrowCreate",
+      "result": "tesSUCCESS",
+      "ledger": 61038,
+      "ledgerHash": "A136DF5D79E2506BF2F8B3DFF8901982F83301941AAADD06EC4968E4D8979999",
+      "closeTime": 849172542,
+      "残高差_台帳L1からL": {
+        "N": "-0.05"
+      },
+      "エスクロー": [
+        {
+          "kind": "created",
+          "index": "419F8A75A5352A7727D771C877F3CD96E3510BBA8E690C786DA905B21465D2EC"
+        }
+      ],
+      "メタデータの増減": [
+        {
+          "口座": "N",
+          "差": "-0.05"
+        }
+      ]
+    },
+    {
+      "label": "finish:A",
+      "ticket": "A",
+      "hash": "95BC0F62F3D83BA3E91790498F48B01F04463662E6679DE8FAA8D2B2B1CB7546",
+      "type": "EscrowFinish",
+      "result": "tesSUCCESS",
+      "ledger": 61042,
+      "ledgerHash": "CD5CB35168E6F8D488D0B2BEBC97F7EDC6C7493955BDCB3DA6E75244330FC9BD",
+      "closeTime": 849172560,
+      "残高差_台帳L1からL": {
+        "S": "+0.1"
+      },
+      "エスクロー": [
+        {
+          "kind": "deleted",
+          "index": "2D1DBB7CD12CC222D7AE0A214F159DB735C92780109B64BC4926B8E188D2A7B5"
+        }
+      ],
+      "メタデータの増減": [
+        {
+          "口座": "S",
+          "差": "+0.1"
+        }
+      ]
+    },
+    {
+      "label": "finish:B",
+      "ticket": "B",
+      "hash": "899B801307CCBE48CB013E547AF8254B4A536F6FE397B9F65BB1E2296167E1A5",
+      "type": "EscrowFinish",
+      "result": "tesSUCCESS",
+      "ledger": 61044,
+      "ledgerHash": "44C4F9004C24D370FE2C5D735ECB95A7D8F7D0A2A6F71AF08F72CE7B7B5E478C",
+      "closeTime": 849172562,
+      "残高差_台帳L1からL": {
+        "S": "+0.05"
+      },
+      "エスクロー": [
+        {
+          "kind": "deleted",
+          "index": "64E280EAA71B8C16C2901AF645DFDDB01B00F1E324C0C819D9AD601462C79E42"
+        }
+      ],
+      "メタデータの増減": [
+        {
+          "口座": "S",
+          "差": "+0.05"
+        }
+      ]
+    },
+    {
+      "label": "cancel:C",
+      "ticket": "C",
+      "hash": "52E1092193E993B45BBEA56A2C5483BA2BE673C7420657790158B0B6FB31E039",
+      "type": "EscrowCancel",
+      "result": "tesSUCCESS",
+      "ledger": 61164,
+      "ledgerHash": "554AAF7A0DDABCDCB24DAD0E1B1E80D7436E144C4C3ACE3BE9D6C9D4404CC75D",
+      "closeTime": 849172970,
+      "残高差_台帳L1からL": {
+        "N": "+0.05"
+      },
+      "エスクロー": [
+        {
+          "kind": "deleted",
+          "index": "419F8A75A5352A7727D771C877F3CD96E3510BBA8E690C786DA905B21465D2EC"
+        }
+      ],
+      "メタデータの増減": [
+        {
+          "口座": "N",
+          "差": "+0.05"
+        }
+      ]
+    }
+  ],
+  "beforeExpiryC": {
+    "ledger": 61044,
+    "hash": "44C4F9004C24D370FE2C5D735ECB95A7D8F7D0A2A6F71AF08F72CE7B7B5E478C",
+    "closeTime": 849172562,
+    "cancelAfter": 849172960,
+    "escrowExists": true,
+    "sRlusd": "0.15",
+    "nRlusd": "0"
+  },
+  "expiryC": {
+    "ledger": 61162,
+    "hash": "5915B792E042C3FD87E481FF7634C5620B382969BA3EF08DFDB8EDC0ADDDF9E3",
+    "closeTime": 849172961
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "xrpl": "5.3.0"
+  }
+}

@@ -25,6 +25,8 @@ export interface Opts {
   marginSec?: number;
   pollMs?: number;
   waitTimeoutMs?: number;
+  /** 申請ダイジェストの計算（既定は spike 13 の v1）。spike 17 が資産を 20 B で拘束する v2 を渡す */
+  digest?: (r: Req) => Promise<Uint8Array>;
 }
 export type Outcome =
   | { status: "confirmed"; offerSequence: number; txHash: string; escrowIndex: string; attempts: number }
@@ -100,7 +102,7 @@ export class Service {
     const pi = proof.publicInputs.map((x) => BigInt(x));
     if (pi.length !== PUBLIC_NAMES.length) return { status: "rejected", stage: "public_input", reason: "count" };
     if (!this.o.approvedRoots.includes(pi[0]!)) return { status: "rejected", stage: "root", reason: "root not approved" };
-    const digest = await requestDigest(req);
+    const digest = await (this.o.digest ?? requestDigest)(req);
     const { hi, lo } = digestToFields(digest);
     const nIdx = PUBLIC_NAMES.indexOf("nullifier"), tIdx = PUBLIC_NAMES.indexOf("req_tag");
     const exp = expectedPublicInputs({ ...prog.stmt, root: pi[0]!, programId: prog.id }, hi, lo, pi[nIdx]!, pi[tIdx]!);

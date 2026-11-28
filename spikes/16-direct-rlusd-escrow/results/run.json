@@ -1,0 +1,235 @@
+{
+  "schema": "todoke-spike16-run/1",
+  "startedAt": "2026-11-28T08:13:37.535Z",
+  "finishedAt": "2026-11-28T08:13:45.404Z",
+  "verdict": {
+    "直接ロック": "成立",
+    "店舗着金": "成立（額面どおり +0.10）",
+    "期限後のドナー返還": "成立（D +0.05、S 差額 0、B 消滅）"
+  },
+  "総合": "成立",
+  "baseline": {
+    "ledger": 59781,
+    "hash": "E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60",
+    "closeTime": 849168322,
+    "D": "0.15",
+    "S": "0",
+    "xrp": {
+      "D": "99849975",
+      "S": "99999988",
+      "K": "100000000"
+    }
+  },
+  "開始から終了の純増減": {
+    "D": "-0.1",
+    "S": "+0.1"
+  },
+  "未決Escrow": [],
+  "steps": [
+    {
+      "label": "create:A",
+      "hash": "F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83",
+      "type": "EscrowCreate",
+      "result": "tesSUCCESS",
+      "ledger": 59783,
+      "ledgerHash": "F4BA1FF104F65FF5A82069476196D72FD077ACB4493440DD3F8F2F19F9EEDE5F",
+      "closeTime": 849168331,
+      "残高差_D": "-0.1",
+      "残高差_S": "0",
+      "エスクロー": [
+        {
+          "kind": "created",
+          "index": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957"
+        }
+      ],
+      "取引メタデータの増減": [
+        {
+          "口座": "D",
+          "差": "-0.1"
+        }
+      ]
+    },
+    {
+      "label": "create:B",
+      "hash": "ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970",
+      "type": "EscrowCreate",
+      "result": "tesSUCCESS",
+      "ledger": 59785,
+      "ledgerHash": "4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7",
+      "closeTime": 849168340,
+      "残高差_D": "-0.05",
+      "残高差_S": "0",
+      "エスクロー": [
+        {
+          "kind": "created",
+          "index": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576"
+        }
+      ],
+      "取引メタデータの増減": [
+        {
+          "口座": "D",
+          "差": "-0.05"
+        }
+      ]
+    },
+    {
+      "label": "finish:A",
+      "hash": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482",
+      "type": "EscrowFinish",
+      "result": "tesSUCCESS",
+      "ledger": 59787,
+      "ledgerHash": "8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6",
+      "closeTime": 849168342,
+      "残高差_D": "0",
+      "残高差_S": "+0.1",
+      "エスクロー": [
+        {
+          "kind": "deleted",
+          "index": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957"
+        }
+      ],
+      "取引メタデータの増減": [
+        {
+          "口座": "S",
+          "差": "+0.1"
+        }
+      ]
+    },
+    {
+      "label": "cancel:B",
+      "hash": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1",
+      "type": "EscrowCancel",
+      "result": "tesSUCCESS",
+      "ledger": 59896,
+      "ledgerHash": "CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224",
+      "closeTime": 849168702,
+      "残高差_D": "+0.05",
+      "残高差_S": "0",
+      "エスクロー": [
+        {
+          "kind": "deleted",
+          "index": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576"
+        }
+      ],
+      "取引メタデータの増減": [
+        {
+          "口座": "D",
+          "差": "+0.05"
+        }
+      ]
+    }
+  ],
+  "lock": {
+    "ledger": 59785,
+    "hash": "4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7",
+    "closeTime": 849168340,
+    "lockedTotal": "0.15",
+    "dAvailable": "0",
+    "sBalance": "0",
+    "checks": {
+      "A": {
+        "exists": true,
+        "Account": true,
+        "Destination": true,
+        "Amount": true,
+        "Condition": true,
+        "CancelAfter": true,
+        "Sequence": 59773
+      },
+      "B": {
+        "exists": true,
+        "Account": true,
+        "Destination": true,
+        "Amount": true,
+        "Condition": true,
+        "CancelAfter": true,
+        "Sequence": 59774
+      }
+    }
+  },
+  "beforeExpiry": {
+    "ledger": 59787,
+    "hash": "8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6",
+    "closeTime": 849168342,
+    "cancelAfter": 849168691,
+    "bExists": true,
+    "sRlusd": "0.1",
+    "beforeDeadline": true
+  },
+  "expiry": {
+    "ledger": 59894,
+    "hash": "15ED9A8391BF531A9729AF3CE0F717FA848A02D356F47781D39BFB316249E495",
+    "closeTime": 849168700
+  },
+  "preflight": {
+    "issuer": {
+      "account": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+      "flagsHex": "c19a0000",
+      "flags": {
+        "DefaultRipple": true,
+        "AllowTrustLineLocking": true,
+        "AllowTrustLineClawback": true,
+        "DepositAuth": true,
+        "RequireAuth": false,
+        "GlobalFreeze": false,
+        "DisallowIncomingTrustline": false
+      },
+      "TransferRate": null,
+      "TransferRateNote": "なし（手数料なし）",
+      "Domain": "https://ripple.com/"
+    },
+    "tokenEscrowAmendment": "enabled=true",
+    "trustLineD": {
+      "balance": "0.15",
+      "limit": "1000000",
+      "freeze": false,
+      "freeze_peer": false,
+      "authorized": "(RequireAuth なし)",
+      "peer_authorized": null,
+      "no_ripple": false
+    },
+    "trustLineS": {
+      "balance": "0",
+      "limit": "1000000",
+      "freeze": false,
+      "freeze_peer": false,
+      "authorized": "(RequireAuth なし)",
+      "peer_authorized": null,
+      "no_ripple": false
+    },
+    "xrpDropsAtBaseline": {
+      "D": "99849975",
+      "S": "99999988",
+      "K": "100000000"
+    },
+    "reserve": {
+      "base_xrp": 1,
+      "inc_xrp": 0.2
+    },
+    "availableRlusdD": "0.15",
+    "備考": "Escrow の Owner 準備金は XRP 0.2（reserve_inc）。送受の trust line は枠 1,000,000"
+  },
+  "official": {
+    "source": "https://tryrlusd.com/addresses（XRPL Testnet 欄）",
+    "httpStatus": 200,
+    "fetchedAt": "2026-11-28T08:13:38.003Z",
+    "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+    "currency": "524C555344000000000000000000000000000000",
+    "comparisonIssuerFromSpike15": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+  },
+  "network": {
+    "endpoint": "wss://s.altnet.rippletest.net:51233",
+    "network_id": 1,
+    "build_version": "3.5.0-rc6",
+    "complete_ledgers": "16200-59930",
+    "validatedLedger": {
+      "index": 59930,
+      "closeTime": 849168812,
+      "hash": "410EA1E966F4C52DF48BD5795FCA5DDF0FFCB281E9C898F8C26603688E4E01B8"
+    }
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "xrpl": "5.3.0"
+  }
+}

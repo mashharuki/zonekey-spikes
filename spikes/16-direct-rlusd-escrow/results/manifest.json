@@ -1,0 +1,183 @@
+{
+ "schema": "todoke-spike16-manifest/1",
+ "generatedAt": "2026-11-28T08:13:45.404Z",
+ "network": {
+  "endpoint": "wss://s.altnet.rippletest.net:51233",
+  "network_id": 1,
+  "build_version": "3.5.0-rc6",
+  "complete_ledgers": "16200-59930"
+ },
+ "official": {
+  "source": "https://tryrlusd.com/addresses（XRPL Testnet 欄）",
+  "httpStatus": 200,
+  "fetchedAt": "2026-11-28T08:13:38.003Z",
+  "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+  "currency": "524C555344000000000000000000000000000000",
+  "comparisonIssuerFromSpike15": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+ },
+ "asset": {
+  "currency": "524C555344000000000000000000000000000000",
+  "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+ },
+ "accounts": {
+  "D": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+  "S": "rnEvvTu2nHbRbCGpWLms4L2wuShkHLgeQs",
+  "K": "rHLE2TtnbKcLErtgJmtSvmcH2sepjaeNYK"
+ },
+ "baseline": {
+  "ledger": 59781,
+  "hash": "E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60",
+  "closeTime": 849168322
+ },
+ "lock": {
+  "ledger": 59785,
+  "hash": "4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7",
+  "closeTime": 849168340,
+  "lockedTotal": "0.15",
+  "dAvailable": "0",
+  "sBalance": "0",
+  "checks": {
+   "A": {
+    "exists": true,
+    "Account": true,
+    "Destination": true,
+    "Amount": true,
+    "Condition": true,
+    "CancelAfter": true,
+    "Sequence": 59773
+   },
+   "B": {
+    "exists": true,
+    "Account": true,
+    "Destination": true,
+    "Amount": true,
+    "Condition": true,
+    "CancelAfter": true,
+    "Sequence": 59774
+   }
+  }
+ },
+ "expiry": {
+  "ledger": 59894,
+  "hash": "15ED9A8391BF531A9729AF3CE0F717FA848A02D356F47781D39BFB316249E495",
+  "closeTime": 849168700
+ },
+ "beforeExpiry": {
+  "ledger": 59787,
+  "hash": "8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6",
+  "closeTime": 849168342,
+  "cancelAfter": 849168691,
+  "bExists": true,
+  "sRlusd": "0.1",
+  "beforeDeadline": true
+ },
+ "end": {
+  "ledger": 59896,
+  "hash": "CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224",
+  "closeTime": 849168702
+ },
+ "escrows": [
+  {
+   "id": "A",
+   "value": "0.1",
+   "cancelAfter": 849175522,
+   "condition": "A02580200EFC13011B937DB4D1067AA5C1A794DAB5F8929B420B214A3F7C9C099CF271FB810120",
+   "owner": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+   "destination": "rnEvvTu2nHbRbCGpWLms4L2wuShkHLgeQs",
+   "escrowIndex": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957",
+   "sequence": 59773,
+   "createTx": "F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83",
+   "createResult": "tesSUCCESS",
+   "outcome": "finish",
+   "finishTx": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482",
+   "cancelTx": null
+  },
+  {
+   "id": "B",
+   "value": "0.05",
+   "cancelAfter": 849168691,
+   "condition": "A02580202D9C14B4CD4FE02313D431C7B5D59472D1C66A39CFEFD95E6A2A664EE3A27A83810120",
+   "owner": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+   "destination": "rnEvvTu2nHbRbCGpWLms4L2wuShkHLgeQs",
+   "escrowIndex": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576",
+   "sequence": 59774,
+   "createTx": "ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970",
+   "createResult": "tesSUCCESS",
+   "outcome": "cancel",
+   "finishTx": null,
+   "cancelTx": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1"
+  }
+ ],
+ "transactions": [
+  {
+   "label": "prep:D:TrustSet RLUSD",
+   "phase": "prep",
+   "account": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+   "type": "TrustSet",
+   "hash": "B373BF4C06D3F8380C4F191F1D24FC4A912B0B00A1F0C3C6A4A0316C161025F1",
+   "expect": "tesSUCCESS",
+   "ledger": 59777,
+   "observedResult": "tesSUCCESS"
+  },
+  {
+   "label": "prep:S:TrustSet RLUSD",
+   "phase": "prep",
+   "account": "rnEvvTu2nHbRbCGpWLms4L2wuShkHLgeQs",
+   "type": "TrustSet",
+   "hash": "13AC9E3C66A7ADA22D5A39C005048823E480BC52E0E3FB8302801442419172D6",
+   "expect": "tesSUCCESS",
+   "ledger": 59779,
+   "observedResult": "tesSUCCESS"
+  },
+  {
+   "label": "prep:D:buy RLUSD 0.15 via AMM",
+   "phase": "prep",
+   "account": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+   "type": "Payment",
+   "hash": "7E84D4524CF17300510DC618430A4F5EB2225451BC710C19FCD7805A1A4A5FA1",
+   "expect": "tesSUCCESS",
+   "ledger": 59781,
+   "observedResult": "tesSUCCESS"
+  },
+  {
+   "label": "create:A",
+   "phase": "scenario",
+   "account": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+   "type": "EscrowCreate",
+   "hash": "F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83",
+   "expect": "tesSUCCESS",
+   "ledger": 59783,
+   "observedResult": "tesSUCCESS"
+  },
+  {
+   "label": "create:B",
+   "phase": "scenario",
+   "account": "rEYjZHYxPjnpEEYyFQfkBg7T47W1XYzWFv",
+   "type": "EscrowCreate",
+   "hash": "ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970",
+   "expect": "tesSUCCESS",
+   "ledger": 59785,
+   "observedResult": "tesSUCCESS"
+  },
+  {
+   "label": "finish:A",
+   "phase": "scenario",
+   "account": "rnEvvTu2nHbRbCGpWLms4L2wuShkHLgeQs",
+   "type": "EscrowFinish",
+   "hash": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482",
+   "expect": "tesSUCCESS",
+   "ledger": 59787,
+   "observedResult": "tesSUCCESS"
+  },
+  {
+   "label": "cancel:B",
+   "phase": "scenario",
+   "account": "rHLE2TtnbKcLErtgJmtSvmcH2sepjaeNYK",
+   "type": "EscrowCancel",
+   "hash": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1",
+   "expect": "tesSUCCESS",
+   "ledger": 59896,
+   "observedResult": "tesSUCCESS"
+  }
+ ]
+}

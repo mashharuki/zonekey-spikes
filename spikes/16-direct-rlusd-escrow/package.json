@@ -1,0 +1,25 @@
+{
+  "name": "16-direct-rlusd-escrow",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "run:scenario": "tsx src/run.ts",
+    "verify": "tsx src/verify.ts",
+    
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aztec-foundation/bb.js": "6.0.0",
+    "@noir-lang/noir_js": "1.0.0",
+    "@noir-lang/noirc_abi": "1.0.0",
+    "ripple-address-codec": "latest",
+    "xrpl": "latest",
+    "xrpl-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

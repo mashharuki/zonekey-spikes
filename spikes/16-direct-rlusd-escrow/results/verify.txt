@@ -1,0 +1,110 @@
+# 検算: spike 16 直接 RLUSD Escrow  manifest=/Users/harukikondo/git/zonekey-spikes/spikes/16-direct-rlusd-escrow/results/manifest.json
+  開始 ledger 59781 → 終了 59896。読み取りのみ。
+
+■ 0 前提
+  ✓ ネットワーク（network_id=1）
+      期待=1  実際=1  根拠=rippled 3.5.0-rc6（実行時は 3.5.0-rc6）
+  ✓ 履歴が開始〜終了で連続
+      期待=true  実際=true  根拠=complete_ledgers=16200-59933
+  ✓ ledger 59781（開始）の hash・close_time が記録と一致
+      期待=E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60 / 849168322  実際=E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60 / 849168322  根拠=ledger 59781
+  ✓ ledger 59785（ロック中）の hash・close_time が記録と一致
+      期待=4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7 / 849168340  実際=4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7 / 849168340  根拠=ledger 59785
+  ✓ ledger 59894（期限到来）の hash・close_time が記録と一致
+      期待=15ED9A8391BF531A9729AF3CE0F717FA848A02D356F47781D39BFB316249E495 / 849168700  実際=15ED9A8391BF531A9729AF3CE0F717FA848A02D356F47781D39BFB316249E495 / 849168700  根拠=ledger 59894
+  ✓ ledger 59896（終了）の hash・close_time が記録と一致
+      期待=CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224 / 849168702  実際=CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224 / 849168702  根拠=ledger 59896
+  ✓ RLUSD の発行者（公式に案内された組）が台帳に実在・Domain あり
+      期待=実在  実際=実在 Domain=https://ripple.com/  根拠=rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG
+  ✓ 実行時に公式ページで確認した発行者 = 資産の発行者
+      期待=rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG  実際=rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG  根拠=https://tryrlusd.com/addresses（XRPL Testnet 欄） 取得 2026-11-28T08:13:38.003Z
+  ✓ （--official）今の公式ページの発行者
+      期待=rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG  実際=rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG  根拠=tryrlusd.com/addresses
+  ✓ TransferRate（手数料）
+      期待=なし  実際=なし  根拠=account_info @59896
+
+■ 1 取引の確定
+  ✓ prep:D:TrustSet RLUSD
+      期待=tesSUCCESS / validated / ledger 59777  実際=tesSUCCESS / validated / ledger 59777  根拠=B373BF4C06D3F8380C4F191F1D24FC4A912B0B00A1F0C3C6A4A0316C161025F1（ledger hash A377815364CF102BF2BD99E3BDC9B49257574FF7D88881F82C99F03450FB5C49）
+  ✓ prep:S:TrustSet RLUSD
+      期待=tesSUCCESS / validated / ledger 59779  実際=tesSUCCESS / validated / ledger 59779  根拠=13AC9E3C66A7ADA22D5A39C005048823E480BC52E0E3FB8302801442419172D6（ledger hash 6E30D6DC6E1D63B588EFF9536B1A6C9916C641D6C44B577849AE4E3F2436D65A）
+  ✓ prep:D:buy RLUSD 0.15 via AMM
+      期待=tesSUCCESS / validated / ledger 59781  実際=tesSUCCESS / validated / ledger 59781  根拠=7E84D4524CF17300510DC618430A4F5EB2225451BC710C19FCD7805A1A4A5FA1（ledger hash E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60）
+  ✓ create:A
+      期待=tesSUCCESS / validated / ledger 59783  実際=tesSUCCESS / validated / ledger 59783  根拠=F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83（ledger hash F4BA1FF104F65FF5A82069476196D72FD077ACB4493440DD3F8F2F19F9EEDE5F）
+  ✓ create:B
+      期待=tesSUCCESS / validated / ledger 59785  実際=tesSUCCESS / validated / ledger 59785  根拠=ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970（ledger hash 4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7）
+  ✓ finish:A
+      期待=tesSUCCESS / validated / ledger 59787  実際=tesSUCCESS / validated / ledger 59787  根拠=3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482（ledger hash 8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6）
+  ✓ cancel:B
+      期待=tesSUCCESS / validated / ledger 59896  実際=tesSUCCESS / validated / ledger 59896  根拠=C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1（ledger hash CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224）
+
+■ 2 券 A（0.1 RLUSD）
+  ✓ EscrowCreate の結果（直接ロックの可否）
+      期待=tesSUCCESS なら成立  実際=tesSUCCESS  根拠=F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83
+  ✓ Owner・Destination（D ≠ S）・Amount(currency/issuer/value)・Condition・CancelAfter
+      期待=一致  実際=一致  根拠=Sequence 59773
+  ✓ Escrow オブジェクトの生成（メタデータの CreatedNode = 記録した ID）
+      期待=D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957  実際=D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957  根拠=Escrow D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957
+  ✓ 作成で D の RLUSD 利用可能残高が額面ぶん減る（ロック。S には動かない）
+      期待=-0.1  実際=-0.1 / S 0  根拠=F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83
+  ✓ ロック中の ledger 59785 に Escrow が存在
+      期待=存在  実際=存在  根拠=D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957
+  ✓ EscrowFinish: 結果・送信者 S・Owner・OfferSequence
+      期待=tesSUCCESS / S / D / Sequence  実際=tesSUCCESS / S / D / 59773  根拠=3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482
+  ✓ Fulfillment の SHA-256 が Condition と一致（72 桁）
+      期待=一致  実際=一致  根拠=3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482
+  ✓ 期限前に Finish（Finish ledger の close_time < CancelAfter）
+      期待=true  実際=true  根拠=close_time=849168342 CancelAfter=849175522
+  ✓ 【店舗着金】S の RLUSD の実際の増加（確定残高の差 / メタデータ）。額面どおりか
+      期待=+0.1 / +0.1  実際=+0.1 / +0.1  根拠=3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482
+  ✓ Finish で Escrow が消える（DeletedNode = 記録した ID）
+      期待=D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957  実際=D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957  根拠=3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482
+
+■ 2 券 B（0.05 RLUSD）
+  ✓ EscrowCreate の結果（直接ロックの可否）
+      期待=tesSUCCESS なら成立  実際=tesSUCCESS  根拠=ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970
+  ✓ Owner・Destination（D ≠ S）・Amount(currency/issuer/value)・Condition・CancelAfter
+      期待=一致  実際=一致  根拠=Sequence 59774
+  ✓ Escrow オブジェクトの生成（メタデータの CreatedNode = 記録した ID）
+      期待=152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576  実際=152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576  根拠=Escrow 152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576
+  ✓ 作成で D の RLUSD 利用可能残高が額面ぶん減る（ロック。S には動かない）
+      期待=-0.05  実際=-0.05 / S 0  根拠=ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970
+  ✓ ロック中の ledger 59785 に Escrow が存在
+      期待=存在  実際=存在  根拠=152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576
+  ✓ EscrowCancel: 結果・送信者 K（D・S 以外）・Owner・OfferSequence
+      期待=tesSUCCESS / K / D / Sequence  実際=tesSUCCESS / K / D / 59774  根拠=C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1
+  ✓ 【期限到来】記録した期限到来 ledger（close_time > CancelAfter）が取消 ledger 以前
+      期待=true  実際=true  根拠=ledger 59894 close_time=849168700 CancelAfter=849168691
+  ✓ 【返還取引の確定】取消 ledger の close_time > CancelAfter
+      期待=true  実際=true  根拠=ledger 59896 close_time=849168702
+  ✓ 【ドナー返還】取消前後の D の RLUSD 差 / S の差
+      期待=+0.05 / 0  実際=+0.05 / 0  根拠=C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1
+  ✓ 取消で Escrow が消える
+      期待=152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576  実際=152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576  根拠=C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1
+
+■ 3 ロック中
+  ✓ ロック中の Escrow 合計（ledger_entry の Amount の和）
+      期待=0.15  実際=0.15  根拠=ledger 59785
+
+■ 4 未使用・返還
+  ✓ 期限前（ledger 59787、close_time < CancelAfter）に B が存在し、B 由来の S 着金がない（S は A の 0.1 のまま）
+      期待=存在 / true / 0.1  実際=存在 / true / 0.1  根拠=ledger hash 8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6
+
+■ 5 最終検算
+  ✓ D の RLUSD 純増減（開始 → 終了）
+      期待=-0.1  実際=-0.1  根拠=ledger 59781→59896
+  ✓ S の RLUSD 純増減
+      期待=+0.1  実際=+0.1  根拠=同上
+  ✓ 確定残高の差 − 取引メタデータの合計（D / S の説明できない差額）
+      期待=0 / 0  実際=0 / 0  根拠=独立した 2 つの集計
+  ✓ D+S の純増減（RLUSD 移転手数料なしなら −額 + 額 = 返還分を除いて 0）
+      期待=0  実際=0  根拠=TransferRate なし
+  ✓ 未決 Escrow（D のオブジェクト）
+      期待=0  実際=0  根拠=account_objects @59896
+  ✓ 開始後に D・S・K に触れた manifest 外の取引
+      期待=0 件  実際=0 件  根拠=account_tx
+
+■ XRP 手数料（別表・今回分）: {"D":"24 drops","S":"423 drops","K":"12 drops"}
+
+結果: 45/45 項目が期待どおり。 D -0.1 / S +0.1 / 未決 Escrow 0

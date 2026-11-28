@@ -1,0 +1,379 @@
+{
+ "schema": "todoke-spike16-verify/1",
+ "verifiedAt": "2026-11-28T08:13:54.270Z",
+ "manifest": "/Users/harukikondo/git/zonekey-spikes/spikes/16-direct-rlusd-escrow/results/manifest.json",
+ "passed": true,
+ "total": 45,
+ "failed": 0,
+ "純増減": {
+  "D": "-0.1",
+  "S": "+0.1"
+ },
+ "XRP手数料": {
+  "D": "24 drops",
+  "S": "423 drops",
+  "K": "12 drops"
+ },
+ "checks": [
+  {
+   "section": "0 前提",
+   "name": "ネットワーク（network_id=1）",
+   "expected": "1",
+   "actual": "1",
+   "ok": true,
+   "evidence": "rippled 3.5.0-rc6（実行時は 3.5.0-rc6）"
+  },
+  {
+   "section": "0 前提",
+   "name": "履歴が開始〜終了で連続",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "complete_ledgers=16200-59933"
+  },
+  {
+   "section": "0 前提",
+   "name": "ledger 59781（開始）の hash・close_time が記録と一致",
+   "expected": "E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60 / 849168322",
+   "actual": "E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60 / 849168322",
+   "ok": true,
+   "evidence": "ledger 59781"
+  },
+  {
+   "section": "0 前提",
+   "name": "ledger 59785（ロック中）の hash・close_time が記録と一致",
+   "expected": "4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7 / 849168340",
+   "actual": "4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7 / 849168340",
+   "ok": true,
+   "evidence": "ledger 59785"
+  },
+  {
+   "section": "0 前提",
+   "name": "ledger 59894（期限到来）の hash・close_time が記録と一致",
+   "expected": "15ED9A8391BF531A9729AF3CE0F717FA848A02D356F47781D39BFB316249E495 / 849168700",
+   "actual": "15ED9A8391BF531A9729AF3CE0F717FA848A02D356F47781D39BFB316249E495 / 849168700",
+   "ok": true,
+   "evidence": "ledger 59894"
+  },
+  {
+   "section": "0 前提",
+   "name": "ledger 59896（終了）の hash・close_time が記録と一致",
+   "expected": "CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224 / 849168702",
+   "actual": "CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224 / 849168702",
+   "ok": true,
+   "evidence": "ledger 59896"
+  },
+  {
+   "section": "0 前提",
+   "name": "RLUSD の発行者（公式に案内された組）が台帳に実在・Domain あり",
+   "expected": "実在",
+   "actual": "実在 Domain=https://ripple.com/",
+   "ok": true,
+   "evidence": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+  },
+  {
+   "section": "0 前提",
+   "name": "実行時に公式ページで確認した発行者 = 資産の発行者",
+   "expected": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+   "actual": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+   "ok": true,
+   "evidence": "https://tryrlusd.com/addresses（XRPL Testnet 欄） 取得 2026-11-28T08:13:38.003Z"
+  },
+  {
+   "section": "0 前提",
+   "name": "（--official）今の公式ページの発行者",
+   "expected": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+   "actual": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+   "ok": true,
+   "evidence": "tryrlusd.com/addresses"
+  },
+  {
+   "section": "0 前提",
+   "name": "TransferRate（手数料）",
+   "expected": "なし",
+   "actual": "なし",
+   "ok": true,
+   "evidence": "account_info @59896"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:D:TrustSet RLUSD",
+   "expected": "tesSUCCESS / validated / ledger 59777",
+   "actual": "tesSUCCESS / validated / ledger 59777",
+   "ok": true,
+   "evidence": "B373BF4C06D3F8380C4F191F1D24FC4A912B0B00A1F0C3C6A4A0316C161025F1（ledger hash A377815364CF102BF2BD99E3BDC9B49257574FF7D88881F82C99F03450FB5C49）"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:S:TrustSet RLUSD",
+   "expected": "tesSUCCESS / validated / ledger 59779",
+   "actual": "tesSUCCESS / validated / ledger 59779",
+   "ok": true,
+   "evidence": "13AC9E3C66A7ADA22D5A39C005048823E480BC52E0E3FB8302801442419172D6（ledger hash 6E30D6DC6E1D63B588EFF9536B1A6C9916C641D6C44B577849AE4E3F2436D65A）"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:D:buy RLUSD 0.15 via AMM",
+   "expected": "tesSUCCESS / validated / ledger 59781",
+   "actual": "tesSUCCESS / validated / ledger 59781",
+   "ok": true,
+   "evidence": "7E84D4524CF17300510DC618430A4F5EB2225451BC710C19FCD7805A1A4A5FA1（ledger hash E2B8ED4F12C91C8EA7A487C757FF42015942201A2F520B1CAFF17AA0D58DCC60）"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "create:A",
+   "expected": "tesSUCCESS / validated / ledger 59783",
+   "actual": "tesSUCCESS / validated / ledger 59783",
+   "ok": true,
+   "evidence": "F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83（ledger hash F4BA1FF104F65FF5A82069476196D72FD077ACB4493440DD3F8F2F19F9EEDE5F）"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "create:B",
+   "expected": "tesSUCCESS / validated / ledger 59785",
+   "actual": "tesSUCCESS / validated / ledger 59785",
+   "ok": true,
+   "evidence": "ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970（ledger hash 4E50B80F23924F99378182795B470F303598B1089D0EF9207BB1E1D159960EE7）"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "finish:A",
+   "expected": "tesSUCCESS / validated / ledger 59787",
+   "actual": "tesSUCCESS / validated / ledger 59787",
+   "ok": true,
+   "evidence": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482（ledger hash 8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6）"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "cancel:B",
+   "expected": "tesSUCCESS / validated / ledger 59896",
+   "actual": "tesSUCCESS / validated / ledger 59896",
+   "ok": true,
+   "evidence": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1（ledger hash CBF5301E6EE493295EA172BD09D2D306E34EF6368C692AEB3B0E70FD52700224）"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "EscrowCreate の結果（直接ロックの可否）",
+   "expected": "tesSUCCESS なら成立",
+   "actual": "tesSUCCESS",
+   "ok": true,
+   "evidence": "F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "Owner・Destination（D ≠ S）・Amount(currency/issuer/value)・Condition・CancelAfter",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "Sequence 59773"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "Escrow オブジェクトの生成（メタデータの CreatedNode = 記録した ID）",
+   "expected": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957",
+   "actual": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957",
+   "ok": true,
+   "evidence": "Escrow D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "作成で D の RLUSD 利用可能残高が額面ぶん減る（ロック。S には動かない）",
+   "expected": "-0.1",
+   "actual": "-0.1 / S 0",
+   "ok": true,
+   "evidence": "F8E5C4CEC8FF0C5F8CCE6BE99AEF4391BCC83BCA7928329DC6E5F502CF2C6A83"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "ロック中の ledger 59785 に Escrow が存在",
+   "expected": "存在",
+   "actual": "存在",
+   "ok": true,
+   "evidence": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "EscrowFinish: 結果・送信者 S・Owner・OfferSequence",
+   "expected": "tesSUCCESS / S / D / Sequence",
+   "actual": "tesSUCCESS / S / D / 59773",
+   "ok": true,
+   "evidence": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "Fulfillment の SHA-256 が Condition と一致（72 桁）",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "期限前に Finish（Finish ledger の close_time < CancelAfter）",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "close_time=849168342 CancelAfter=849175522"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "【店舗着金】S の RLUSD の実際の増加（確定残高の差 / メタデータ）。額面どおりか",
+   "expected": "+0.1 / +0.1",
+   "actual": "+0.1 / +0.1",
+   "ok": true,
+   "evidence": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482"
+  },
+  {
+   "section": "2 券 A（0.1 RLUSD）",
+   "name": "Finish で Escrow が消える（DeletedNode = 記録した ID）",
+   "expected": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957",
+   "actual": "D96D7E6FFACD5AA352B2F09B367D2071C5513DAE94ED0C004B59816A3E072957",
+   "ok": true,
+   "evidence": "3FDC113428F0F2E2BAFDA312530DBA3743BC3246632D86B719756F610860B482"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "EscrowCreate の結果（直接ロックの可否）",
+   "expected": "tesSUCCESS なら成立",
+   "actual": "tesSUCCESS",
+   "ok": true,
+   "evidence": "ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "Owner・Destination（D ≠ S）・Amount(currency/issuer/value)・Condition・CancelAfter",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "Sequence 59774"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "Escrow オブジェクトの生成（メタデータの CreatedNode = 記録した ID）",
+   "expected": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576",
+   "actual": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576",
+   "ok": true,
+   "evidence": "Escrow 152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "作成で D の RLUSD 利用可能残高が額面ぶん減る（ロック。S には動かない）",
+   "expected": "-0.05",
+   "actual": "-0.05 / S 0",
+   "ok": true,
+   "evidence": "ACB1D09DCF551EAFB59C9FD6E1C820DA177C889B158A230D0EA835E57981A970"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "ロック中の ledger 59785 に Escrow が存在",
+   "expected": "存在",
+   "actual": "存在",
+   "ok": true,
+   "evidence": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "EscrowCancel: 結果・送信者 K（D・S 以外）・Owner・OfferSequence",
+   "expected": "tesSUCCESS / K / D / Sequence",
+   "actual": "tesSUCCESS / K / D / 59774",
+   "ok": true,
+   "evidence": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "【期限到来】記録した期限到来 ledger（close_time > CancelAfter）が取消 ledger 以前",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "ledger 59894 close_time=849168700 CancelAfter=849168691"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "【返還取引の確定】取消 ledger の close_time > CancelAfter",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "ledger 59896 close_time=849168702"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "【ドナー返還】取消前後の D の RLUSD 差 / S の差",
+   "expected": "+0.05 / 0",
+   "actual": "+0.05 / 0",
+   "ok": true,
+   "evidence": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1"
+  },
+  {
+   "section": "2 券 B（0.05 RLUSD）",
+   "name": "取消で Escrow が消える",
+   "expected": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576",
+   "actual": "152258C764F121D104F5FC96A25197DBECBDAD61A2DFEDE049A984819A9A2576",
+   "ok": true,
+   "evidence": "C34A1B60643BE3E335A4E66167896D3C3DA7751DF11A40875FF50C27CF996BB1"
+  },
+  {
+   "section": "3 ロック中",
+   "name": "ロック中の Escrow 合計（ledger_entry の Amount の和）",
+   "expected": "0.15",
+   "actual": "0.15",
+   "ok": true,
+   "evidence": "ledger 59785"
+  },
+  {
+   "section": "4 未使用・返還",
+   "name": "期限前（ledger 59787、close_time < CancelAfter）に B が存在し、B 由来の S 着金がない（S は A の 0.1 のまま）",
+   "expected": "存在 / true / 0.1",
+   "actual": "存在 / true / 0.1",
+   "ok": true,
+   "evidence": "ledger hash 8DB2182822D0FCC62CB9A85FEFB0C767BAF5F4A5B543F3377A8B4195D95176F6"
+  },
+  {
+   "section": "5 最終検算",
+   "name": "D の RLUSD 純増減（開始 → 終了）",
+   "expected": "-0.1",
+   "actual": "-0.1",
+   "ok": true,
+   "evidence": "ledger 59781→59896"
+  },
+  {
+   "section": "5 最終検算",
+   "name": "S の RLUSD 純増減",
+   "expected": "+0.1",
+   "actual": "+0.1",
+   "ok": true,
+   "evidence": "同上"
+  },
+  {
+   "section": "5 最終検算",
+   "name": "確定残高の差 − 取引メタデータの合計（D / S の説明できない差額）",
+   "expected": "0 / 0",
+   "actual": "0 / 0",
+   "ok": true,
+   "evidence": "独立した 2 つの集計"
+  },
+  {
+   "section": "5 最終検算",
+   "name": "D+S の純増減（RLUSD 移転手数料なしなら −額 + 額 = 返還分を除いて 0）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "TransferRate なし"
+  },
+  {
+   "section": "5 最終検算",
+   "name": "未決 Escrow（D のオブジェクト）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_objects @59896"
+  },
+  {
+   "section": "5 最終検算",
+   "name": "開始後に D・S・K に触れた manifest 外の取引",
+   "expected": "0 件",
+   "actual": "0 件",
+   "ok": true,
+   "evidence": "account_tx"
+  }
+ ]
+}

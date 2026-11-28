@@ -1,0 +1,1023 @@
+{
+ "schema": "todoke-spike15-verify/1",
+ "verifiedAt": "2026-11-28T07:36:01.724Z",
+ "manifest": "/Users/harukikondo/git/zonekey-spikes/spikes/15-multi-donor-rlusd/results/manifest.json",
+ "zkChecked": true,
+ "passed": true,
+ "total": 116,
+ "failed": 0,
+ "純増減": [
+  {
+   "account": "P",
+   "RLUSD開始": "0.1",
+   "RLUSD終了": "0",
+   "RLUSD純増減": "-0.1",
+   "期待": "-0.1",
+   "ZKV純増減": "0"
+  },
+  {
+   "account": "N",
+   "RLUSD開始": "0.1",
+   "RLUSD終了": "0.05",
+   "RLUSD純増減": "-0.05",
+   "期待": "-0.05",
+   "ZKV純増減": "0"
+  },
+  {
+   "account": "S",
+   "RLUSD開始": "0",
+   "RLUSD終了": "0.15",
+   "RLUSD純増減": "+0.15",
+   "期待": "+0.15",
+   "ZKV純増減": "0"
+  },
+  {
+   "account": "V",
+   "RLUSD開始": "0",
+   "RLUSD終了": "0",
+   "RLUSD純増減": "0",
+   "期待": "0",
+   "ZKV純増減": "0"
+  }
+ ],
+ "券ごとの流れ": {
+  "A": {
+   "create": {
+    "ZKV_donor": "-0.1"
+   },
+   "finish": {
+    "S_ZKV": "+0.1"
+   },
+   "redeem": {
+    "S_ZKV": "-0.1",
+    "S_RLUSD": "+0.1",
+    "V_RLUSD": "-0.1"
+   }
+  },
+  "B": {
+   "create": {
+    "ZKV_donor": "-0.05"
+   },
+   "finish": {
+    "S_ZKV": "+0.05"
+   },
+   "redeem": {
+    "S_ZKV": "-0.05",
+    "S_RLUSD": "+0.05",
+    "V_RLUSD": "-0.05"
+   }
+  },
+  "C": {
+   "create": {
+    "ZKV_donor": "-0.05"
+   },
+   "cancel": {
+    "N_ZKV": "+0.05"
+   },
+   "redeem": {
+    "N_ZKV": "-0.05",
+    "N_RLUSD": "+0.05"
+   }
+  }
+ },
+ "未決Escrow": 0,
+ "未償還ZKV": "0",
+ "説明できない取引": [],
+ "XRP手数料_今回分": {
+  "V": "12 drops",
+  "P": "24 drops",
+  "N": "48 drops",
+  "S": "870 drops",
+  "K": "12 drops"
+ },
+ "checks": [
+  {
+   "section": "0 前提",
+   "name": "接続先は Testnet（network_id=1）",
+   "expected": "1",
+   "actual": "1",
+   "ok": true,
+   "evidence": "server_info"
+  },
+  {
+   "section": "0 前提",
+   "name": "履歴が開始点から終了点まで連続している",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "complete_ledgers=16200-59248"
+  },
+  {
+   "section": "0 前提",
+   "name": "RLUSD の発行者が実在（自前発行の同名資産ではない）",
+   "expected": "実在・Domain あり",
+   "actual": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG Domain=https://ripple.com/",
+   "ok": true,
+   "evidence": "account_info"
+  },
+  {
+   "section": "0 前提",
+   "name": "ZKV の発行者 V は RLUSD の発行者と別口座",
+   "expected": "別",
+   "actual": "別",
+   "ok": true,
+   "evidence": "manifest"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:asfDefaultRipple",
+   "expected": "tesSUCCESS / validated / ledger 58858",
+   "actual": "tesSUCCESS / validated / ledger 58858",
+   "ok": true,
+   "evidence": "C2FD2747C854872A0958652E3CA0997D84B9A3D0FACDB77EFB6793AA3ED50FC2"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:asfDefaultRipple: 署名した口座",
+   "expected": "V",
+   "actual": "V",
+   "ok": true,
+   "evidence": "C2FD2747C854872A0958652E3CA0997D84B9A3D0FACDB77EFB6793AA3ED50FC2"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:asfAllowTrustLineLocking",
+   "expected": "tesSUCCESS / validated / ledger 58860",
+   "actual": "tesSUCCESS / validated / ledger 58860",
+   "ok": true,
+   "evidence": "215B723AF43B4A2C78D2AAF99952BE42B565A17E1FB42E12A9A7B725BC7BE1FD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:asfAllowTrustLineLocking: 署名した口座",
+   "expected": "V",
+   "actual": "V",
+   "ok": true,
+   "evidence": "215B723AF43B4A2C78D2AAF99952BE42B565A17E1FB42E12A9A7B725BC7BE1FD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:P:TrustSet RLUSD",
+   "expected": "tesSUCCESS / validated / ledger 58862",
+   "actual": "tesSUCCESS / validated / ledger 58862",
+   "ok": true,
+   "evidence": "9C5FDB5AAF46C2D5671D4BFA3BA928C9076F3E8CA7DA57136FB50CDCD7A1CC83"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:P:TrustSet RLUSD: 署名した口座",
+   "expected": "P",
+   "actual": "P",
+   "ok": true,
+   "evidence": "9C5FDB5AAF46C2D5671D4BFA3BA928C9076F3E8CA7DA57136FB50CDCD7A1CC83"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:N:TrustSet RLUSD",
+   "expected": "tesSUCCESS / validated / ledger 58864",
+   "actual": "tesSUCCESS / validated / ledger 58864",
+   "ok": true,
+   "evidence": "25BB54B7483131E66CF82DC413E3E2638E60EDB2BF63FF8C5FEFD88CACA3E6C4"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:N:TrustSet RLUSD: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "25BB54B7483131E66CF82DC413E3E2638E60EDB2BF63FF8C5FEFD88CACA3E6C4"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:S:TrustSet RLUSD",
+   "expected": "tesSUCCESS / validated / ledger 58866",
+   "actual": "tesSUCCESS / validated / ledger 58866",
+   "ok": true,
+   "evidence": "AD9D1D263AB022EB9CA8357A7BD8CC19721C5B1B2C5CD331B9AB576628B7A329"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:S:TrustSet RLUSD: 署名した口座",
+   "expected": "S",
+   "actual": "S",
+   "ok": true,
+   "evidence": "AD9D1D263AB022EB9CA8357A7BD8CC19721C5B1B2C5CD331B9AB576628B7A329"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:TrustSet RLUSD",
+   "expected": "tesSUCCESS / validated / ledger 58868",
+   "actual": "tesSUCCESS / validated / ledger 58868",
+   "ok": true,
+   "evidence": "650731740242C1A7864401AA74D78C2A4B46689BDFC32C0A79F76D7276971194"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:TrustSet RLUSD: 署名した口座",
+   "expected": "V",
+   "actual": "V",
+   "ok": true,
+   "evidence": "650731740242C1A7864401AA74D78C2A4B46689BDFC32C0A79F76D7276971194"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:P:TrustSet ZKV",
+   "expected": "tesSUCCESS / validated / ledger 58870",
+   "actual": "tesSUCCESS / validated / ledger 58870",
+   "ok": true,
+   "evidence": "6B013BF34E479F8D44C046092D29ACB0B1EB9938B2DC70F455800A3AF3141998"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:P:TrustSet ZKV: 署名した口座",
+   "expected": "P",
+   "actual": "P",
+   "ok": true,
+   "evidence": "6B013BF34E479F8D44C046092D29ACB0B1EB9938B2DC70F455800A3AF3141998"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:N:TrustSet ZKV",
+   "expected": "tesSUCCESS / validated / ledger 58872",
+   "actual": "tesSUCCESS / validated / ledger 58872",
+   "ok": true,
+   "evidence": "0DB87EF2E25173A360960FCD6BBE1EECE81EE0C4B37EC9A1A63269B07A84A9D0"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:N:TrustSet ZKV: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "0DB87EF2E25173A360960FCD6BBE1EECE81EE0C4B37EC9A1A63269B07A84A9D0"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:S:TrustSet ZKV",
+   "expected": "tesSUCCESS / validated / ledger 58874",
+   "actual": "tesSUCCESS / validated / ledger 58874",
+   "ok": true,
+   "evidence": "D2BC4A9C4E04C83A3A8D5AC93D947CB0FF9F6F9615BE31A77A54C708FF127105"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:S:TrustSet ZKV: 署名した口座",
+   "expected": "S",
+   "actual": "S",
+   "ok": true,
+   "evidence": "D2BC4A9C4E04C83A3A8D5AC93D947CB0FF9F6F9615BE31A77A54C708FF127105"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:P:buy RLUSD 0.1 via AMM",
+   "expected": "tesSUCCESS / validated / ledger 58876",
+   "actual": "tesSUCCESS / validated / ledger 58876",
+   "ok": true,
+   "evidence": "92C0CF051F98D74788019C865C1742F6701C23B84A377488F947B2B493855082"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:P:buy RLUSD 0.1 via AMM: 署名した口座",
+   "expected": "P",
+   "actual": "P",
+   "ok": true,
+   "evidence": "92C0CF051F98D74788019C865C1742F6701C23B84A377488F947B2B493855082"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:N:buy RLUSD 0.1 via AMM",
+   "expected": "tesSUCCESS / validated / ledger 58878",
+   "actual": "tesSUCCESS / validated / ledger 58878",
+   "ok": true,
+   "evidence": "4B1DE69F233C8F74113F5B485B3197D2985274632DA1A0DF4A59EAF30980F92F"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:N:buy RLUSD 0.1 via AMM: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "4B1DE69F233C8F74113F5B485B3197D2985274632DA1A0DF4A59EAF30980F92F"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:issue offer ZKV→RLUSD 1:1",
+   "expected": "tesSUCCESS / validated / ledger 58880",
+   "actual": "tesSUCCESS / validated / ledger 58880",
+   "ok": true,
+   "evidence": "4C8E491664F1E44431A767648CAC6BB088E1D6D31A226D851F3CCBCEFE0EABBD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:issue offer ZKV→RLUSD 1:1: 署名した口座",
+   "expected": "V",
+   "actual": "V",
+   "ok": true,
+   "evidence": "4C8E491664F1E44431A767648CAC6BB088E1D6D31A226D851F3CCBCEFE0EABBD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:redeem offer（V の RLUSD が 0 のうちは置けない・失敗の記録）",
+   "expected": "tecUNFUNDED_OFFER / validated / ledger 58882",
+   "actual": "tecUNFUNDED_OFFER / validated / ledger 58882",
+   "ok": true,
+   "evidence": "ED04B3F681027F4681B1FD461C6DB2C828A310B424DFDD72CC4880139B911FD4"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "prep:V:redeem offer（V の RLUSD が 0 のうちは置けない・失敗の記録）: 署名した口座",
+   "expected": "V",
+   "actual": "V",
+   "ok": true,
+   "evidence": "ED04B3F681027F4681B1FD461C6DB2C828A310B424DFDD72CC4880139B911FD4"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "contrib:P",
+   "expected": "tesSUCCESS / validated / ledger 58894",
+   "actual": "tesSUCCESS / validated / ledger 58894",
+   "ok": true,
+   "evidence": "FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "contrib:P: 署名した口座",
+   "expected": "P",
+   "actual": "P",
+   "ok": true,
+   "evidence": "FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "v:redeem offer RLUSD→ZKV 1:1 passive",
+   "expected": "tesSUCCESS / validated / ledger 58896",
+   "actual": "tesSUCCESS / validated / ledger 58896",
+   "ok": true,
+   "evidence": "B38D969C681B350D59B852D5CFE483E29E0E0400CC71C54B4783C4C76D7227B9"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "v:redeem offer RLUSD→ZKV 1:1 passive: 署名した口座",
+   "expected": "V",
+   "actual": "V",
+   "ok": true,
+   "evidence": "B38D969C681B350D59B852D5CFE483E29E0E0400CC71C54B4783C4C76D7227B9"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "contrib:N",
+   "expected": "tesSUCCESS / validated / ledger 58898",
+   "actual": "tesSUCCESS / validated / ledger 58898",
+   "ok": true,
+   "evidence": "5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "contrib:N: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "issue:A",
+   "expected": "tesSUCCESS / validated / ledger 58900",
+   "actual": "tesSUCCESS / validated / ledger 58900",
+   "ok": true,
+   "evidence": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "issue:A: 署名した口座",
+   "expected": "P",
+   "actual": "P",
+   "ok": true,
+   "evidence": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "issue:B",
+   "expected": "tesSUCCESS / validated / ledger 58903",
+   "actual": "tesSUCCESS / validated / ledger 58903",
+   "ok": true,
+   "evidence": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "issue:B: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "issue:C",
+   "expected": "tesSUCCESS / validated / ledger 58905",
+   "actual": "tesSUCCESS / validated / ledger 58905",
+   "ok": true,
+   "evidence": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "issue:C: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "finish:A",
+   "expected": "tesSUCCESS / validated / ledger 58908",
+   "actual": "tesSUCCESS / validated / ledger 58908",
+   "ok": true,
+   "evidence": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "finish:A: 署名した口座",
+   "expected": "S",
+   "actual": "S",
+   "ok": true,
+   "evidence": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "redeem:A",
+   "expected": "tesSUCCESS / validated / ledger 58910",
+   "actual": "tesSUCCESS / validated / ledger 58910",
+   "ok": true,
+   "evidence": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "redeem:A: 署名した口座",
+   "expected": "S",
+   "actual": "S",
+   "ok": true,
+   "evidence": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "finish:B",
+   "expected": "tesSUCCESS / validated / ledger 58912",
+   "actual": "tesSUCCESS / validated / ledger 58912",
+   "ok": true,
+   "evidence": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "finish:B: 署名した口座",
+   "expected": "S",
+   "actual": "S",
+   "ok": true,
+   "evidence": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "redeem:B",
+   "expected": "tesSUCCESS / validated / ledger 58914",
+   "actual": "tesSUCCESS / validated / ledger 58914",
+   "ok": true,
+   "evidence": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "redeem:B: 署名した口座",
+   "expected": "S",
+   "actual": "S",
+   "ok": true,
+   "evidence": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "cancel:C",
+   "expected": "tesSUCCESS / validated / ledger 59034",
+   "actual": "tesSUCCESS / validated / ledger 59034",
+   "ok": true,
+   "evidence": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "cancel:C: 署名した口座",
+   "expected": "K",
+   "actual": "K",
+   "ok": true,
+   "evidence": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "redeem:C",
+   "expected": "tesSUCCESS / validated / ledger 59036",
+   "actual": "tesSUCCESS / validated / ledger 59036",
+   "ok": true,
+   "evidence": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456"
+  },
+  {
+   "section": "1 取引の確定",
+   "name": "redeem:C: 署名した口座",
+   "expected": "N",
+   "actual": "N",
+   "ok": true,
+   "evidence": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456"
+  },
+  {
+   "section": "2 券 A",
+   "name": "EscrowCreate: 持ち主・宛先・資産・額面・期限",
+   "expected": "P→S 0.1 ZKV(V) CancelAfter=849172590",
+   "actual": "P→S 0.1 ZKV(V) CancelAfter=849172590",
+   "ok": true,
+   "evidence": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D"
+  },
+  {
+   "section": "2 券 A",
+   "name": "Condition・Memo の鍵ハッシュ・OfferSequence・Escrow index",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "Escrow 15E2764ACC6E07309DAB51C25026A1807C3EFF43B313F31AE566FCCE08E5B495"
+  },
+  {
+   "section": "2 券 A",
+   "name": "台帳・Memo に世帯の識別子を載せていない（Memo は鍵ハッシュ 1 つだけ）",
+   "expected": "Memo 1 件",
+   "actual": "Memo 1 件",
+   "ok": true,
+   "evidence": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D"
+  },
+  {
+   "section": "2 券 A",
+   "name": "EscrowCreate で支援元の ZKV が額面ぶん減る（Escrow に拘束）",
+   "expected": "-0.1",
+   "actual": "-0.1",
+   "ok": true,
+   "evidence": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D"
+  },
+  {
+   "section": "2 券 A",
+   "name": "EscrowFinish: 店 S が実行・Owner・OfferSequence",
+   "expected": "S / rhHyqndMmQC5S48wjzBySgUt379t9iviS1 / 58852",
+   "actual": "S / rhHyqndMmQC5S48wjzBySgUt379t9iviS1 / 58852",
+   "ok": true,
+   "evidence": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD"
+  },
+  {
+   "section": "2 券 A",
+   "name": "Fulfillment の SHA-256 が Condition と一致・消えた Escrow が券のもの",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD"
+  },
+  {
+   "section": "2 券 A",
+   "name": "期限前に Finish（Finish の ledger の close_time < CancelAfter）",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "close_time=849165420 CancelAfter=849172590"
+  },
+  {
+   "section": "2 券 A",
+   "name": "店の ZKV が増える（精算）",
+   "expected": "+0.1",
+   "actual": "+0.1",
+   "ok": true,
+   "evidence": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD"
+  },
+  {
+   "section": "2 券 A",
+   "name": "償還: 店の ZKV が減る",
+   "expected": "-0.1",
+   "actual": "-0.1",
+   "ok": true,
+   "evidence": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303"
+  },
+  {
+   "section": "2 券 A",
+   "name": "償還: 店の RLUSD が増える（満額約定）",
+   "expected": "+0.1",
+   "actual": "+0.1",
+   "ok": true,
+   "evidence": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303"
+  },
+  {
+   "section": "2 券 A",
+   "name": "償還: V の RLUSD が減る・V の ZKV 義務が減る",
+   "expected": "-0.1 / -0.1",
+   "actual": "-0.1 / -0.1",
+   "ok": true,
+   "evidence": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303"
+  },
+  {
+   "section": "2 券 B",
+   "name": "EscrowCreate: 持ち主・宛先・資産・額面・期限",
+   "expected": "N→S 0.05 ZKV(V) CancelAfter=849172592",
+   "actual": "N→S 0.05 ZKV(V) CancelAfter=849172592",
+   "ok": true,
+   "evidence": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B"
+  },
+  {
+   "section": "2 券 B",
+   "name": "Condition・Memo の鍵ハッシュ・OfferSequence・Escrow index",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "Escrow AC41716BC4E33CFA6702E18FC5C54494696FBD32DFC57C39BE3F052817DEF672"
+  },
+  {
+   "section": "2 券 B",
+   "name": "台帳・Memo に世帯の識別子を載せていない（Memo は鍵ハッシュ 1 つだけ）",
+   "expected": "Memo 1 件",
+   "actual": "Memo 1 件",
+   "ok": true,
+   "evidence": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B"
+  },
+  {
+   "section": "2 券 B",
+   "name": "EscrowCreate で支援元の ZKV が額面ぶん減る（Escrow に拘束）",
+   "expected": "-0.05",
+   "actual": "-0.05",
+   "ok": true,
+   "evidence": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B"
+  },
+  {
+   "section": "2 券 B",
+   "name": "EscrowFinish: 店 S が実行・Owner・OfferSequence",
+   "expected": "S / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58854",
+   "actual": "S / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58854",
+   "ok": true,
+   "evidence": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9"
+  },
+  {
+   "section": "2 券 B",
+   "name": "Fulfillment の SHA-256 が Condition と一致・消えた Escrow が券のもの",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9"
+  },
+  {
+   "section": "2 券 B",
+   "name": "期限前に Finish（Finish の ledger の close_time < CancelAfter）",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "close_time=849165431 CancelAfter=849172592"
+  },
+  {
+   "section": "2 券 B",
+   "name": "店の ZKV が増える（精算）",
+   "expected": "+0.05",
+   "actual": "+0.05",
+   "ok": true,
+   "evidence": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9"
+  },
+  {
+   "section": "2 券 B",
+   "name": "償還: 店の ZKV が減る",
+   "expected": "-0.05",
+   "actual": "-0.05",
+   "ok": true,
+   "evidence": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C"
+  },
+  {
+   "section": "2 券 B",
+   "name": "償還: 店の RLUSD が増える（満額約定）",
+   "expected": "+0.05",
+   "actual": "+0.05",
+   "ok": true,
+   "evidence": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C"
+  },
+  {
+   "section": "2 券 B",
+   "name": "償還: V の RLUSD が減る・V の ZKV 義務が減る",
+   "expected": "-0.05 / -0.05",
+   "actual": "-0.05 / -0.05",
+   "ok": true,
+   "evidence": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C"
+  },
+  {
+   "section": "2 券 C",
+   "name": "EscrowCreate: 持ち主・宛先・資産・額面・期限",
+   "expected": "N→S 0.05 ZKV(V) CancelAfter=849165822",
+   "actual": "N→S 0.05 ZKV(V) CancelAfter=849165822",
+   "ok": true,
+   "evidence": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6"
+  },
+  {
+   "section": "2 券 C",
+   "name": "Condition・Memo の鍵ハッシュ・OfferSequence・Escrow index",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "Escrow 3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0"
+  },
+  {
+   "section": "2 券 C",
+   "name": "台帳・Memo に世帯の識別子を載せていない（Memo は鍵ハッシュ 1 つだけ）",
+   "expected": "Memo 1 件",
+   "actual": "Memo 1 件",
+   "ok": true,
+   "evidence": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6"
+  },
+  {
+   "section": "2 券 C",
+   "name": "EscrowCreate で支援元の ZKV が額面ぶん減る（Escrow に拘束）",
+   "expected": "-0.05",
+   "actual": "-0.05",
+   "ok": true,
+   "evidence": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6"
+  },
+  {
+   "section": "2 券 C",
+   "name": "EscrowCancel: keeper(K) が実行・Owner・OfferSequence・消えた Escrow",
+   "expected": "K / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58855 / 3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0",
+   "actual": "K / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58855 / 3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0",
+   "ok": true,
+   "evidence": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD"
+  },
+  {
+   "section": "2 券 C",
+   "name": "期限後に Cancel（Cancel の ledger の close_time > CancelAfter）",
+   "expected": "true",
+   "actual": "true",
+   "ok": true,
+   "evidence": "close_time=849165840 CancelAfter=849165822"
+  },
+  {
+   "section": "2 券 C",
+   "name": "一度も EscrowFinish されていない（manifest の取引に Finish なし・店の ZKV 変化なし）",
+   "expected": "0 件",
+   "actual": "0 件",
+   "ok": true,
+   "evidence": "manifest + メタデータ"
+  },
+  {
+   "section": "2 券 C",
+   "name": "【返還 ZKV】支援元へ ZKV が戻る",
+   "expected": "+0.05",
+   "actual": "+0.05",
+   "ok": true,
+   "evidence": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD"
+  },
+  {
+   "section": "2 券 C",
+   "name": "【償還 RLUSD】支援元の ZKV が減る",
+   "expected": "-0.05",
+   "actual": "-0.05",
+   "ok": true,
+   "evidence": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456"
+  },
+  {
+   "section": "2 券 C",
+   "name": "【償還 RLUSD】支援元の RLUSD が増える（満額約定）",
+   "expected": "+0.05",
+   "actual": "+0.05",
+   "ok": true,
+   "evidence": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456"
+  },
+  {
+   "section": "2 券 C",
+   "name": "期限前（validated ledger の close_time < CancelAfter）は未使用の Escrow が存在",
+   "expected": "存在 / true",
+   "actual": "存在 / true",
+   "ok": true,
+   "evidence": "ledger 58914 close_time=849165441 CancelAfter=849165822"
+  },
+  {
+   "section": "3 拠出",
+   "name": "P: RLUSD を拠出し ZKV を受ける（1:1）",
+   "expected": "RLUSD -0.1 / ZKV +0.1",
+   "actual": "RLUSD -0.1 / ZKV +0.1",
+   "ok": true,
+   "evidence": "FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C"
+  },
+  {
+   "section": "3 拠出",
+   "name": "P: V の RLUSD 準備金が増える・ZKV 義務が増える",
+   "expected": "+0.1 / +0.1",
+   "actual": "+0.1 / +0.1",
+   "ok": true,
+   "evidence": "FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C"
+  },
+  {
+   "section": "3 拠出",
+   "name": "N: RLUSD を拠出し ZKV を受ける（1:1）",
+   "expected": "RLUSD -0.1 / ZKV +0.1",
+   "actual": "RLUSD -0.1 / ZKV +0.1",
+   "ok": true,
+   "evidence": "5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576"
+  },
+  {
+   "section": "3 拠出",
+   "name": "N: V の RLUSD 準備金が増える・ZKV 義務が増える",
+   "expected": "+0.1 / +0.1",
+   "actual": "+0.1 / +0.1",
+   "ok": true,
+   "evidence": "5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576"
+  },
+  {
+   "section": "4 差額",
+   "name": "P: RLUSD の純増減（開始点 58882 → 終了 59036）",
+   "expected": "-0.1",
+   "actual": "-0.1",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances（validated ledger 58882 と 59036）"
+  },
+  {
+   "section": "4 差額",
+   "name": "P: 確定残高の差 = 取引メタデータの合計（説明できない差額）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "残高の差 − Σ(manifest の取引のメタデータ)"
+  },
+  {
+   "section": "4 差額",
+   "name": "P: ZKV の純増減（保有）。最終的に残らない",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances"
+  },
+  {
+   "section": "4 差額",
+   "name": "N: RLUSD の純増減（開始点 58882 → 終了 59036）",
+   "expected": "-0.05",
+   "actual": "-0.05",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances（validated ledger 58882 と 59036）"
+  },
+  {
+   "section": "4 差額",
+   "name": "N: 確定残高の差 = 取引メタデータの合計（説明できない差額）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "残高の差 − Σ(manifest の取引のメタデータ)"
+  },
+  {
+   "section": "4 差額",
+   "name": "N: ZKV の純増減（保有）。最終的に残らない",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances"
+  },
+  {
+   "section": "4 差額",
+   "name": "S: RLUSD の純増減（開始点 58882 → 終了 59036）",
+   "expected": "+0.15",
+   "actual": "+0.15",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances（validated ledger 58882 と 59036）"
+  },
+  {
+   "section": "4 差額",
+   "name": "S: 確定残高の差 = 取引メタデータの合計（説明できない差額）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "残高の差 − Σ(manifest の取引のメタデータ)"
+  },
+  {
+   "section": "4 差額",
+   "name": "S: ZKV の純増減（保有）。最終的に残らない",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances"
+  },
+  {
+   "section": "4 差額",
+   "name": "V: RLUSD の純増減（開始点 58882 → 終了 59036）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances（validated ledger 58882 と 59036）"
+  },
+  {
+   "section": "4 差額",
+   "name": "V: 確定残高の差 = 取引メタデータの合計（説明できない差額）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "残高の差 − Σ(manifest の取引のメタデータ)"
+  },
+  {
+   "section": "4 差額",
+   "name": "V: ZKV の純増減（V は発行残高の符号反転）。最終的に残らない",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_lines / gateway_balances"
+  },
+  {
+   "section": "4 差額",
+   "name": "P+N+S+V の RLUSD 純増減の合計",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "合計"
+  },
+  {
+   "section": "4 差額",
+   "name": "【N の純負担】= 拠出 − 返還（−0.10 + 0.05）",
+   "expected": "-0.05",
+   "actual": "-0.05",
+   "ok": true,
+   "evidence": "N の RLUSD 純増減"
+  },
+  {
+   "section": "5 終了時点",
+   "name": "試験対象の未決 Escrow（券 A・B・C の Escrow が台帳に残っているか）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "ledger_entry @59036"
+  },
+  {
+   "section": "5 終了時点",
+   "name": "P・N・S に関わる Escrow オブジェクトの総数",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "account_objects(type=escrow) @59036"
+  },
+  {
+   "section": "5 終了時点",
+   "name": "未償還の ZKV（V の発行残高の増減）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "gateway_balances(V) @58882→59036"
+  },
+  {
+   "section": "5 終了時点",
+   "name": "V の RLUSD 準備金 − ZKV の発行残高（1:1 の裏付け）",
+   "expected": "0",
+   "actual": "0",
+   "ok": true,
+   "evidence": "V の RLUSD 残高 + (−発行残高)"
+  },
+  {
+   "section": "6 説明できない取引",
+   "name": "開始点より後に P・N・S・V・K に触れた manifest 外の取引",
+   "expected": "0 件",
+   "actual": "0 件",
+   "ok": true,
+   "evidence": "account_tx（各口座、ページ末尾まで）"
+  },
+  {
+   "section": "2 券 A",
+   "name": "ZK 証明が検証を通る・公開入力の申請ダイジェストが申請の内容（店・額面・期限・Condition・鍵ハッシュ）と一致",
+   "expected": "true / 一致",
+   "actual": "true / 一致",
+   "ok": true,
+   "evidence": "bb.js verify + SHA-256"
+  },
+  {
+   "section": "2 券 A",
+   "name": "申請の内容が台帳の EscrowCreate と一致（Condition・店・持ち主・期限）",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D"
+  },
+  {
+   "section": "2 券 B",
+   "name": "ZK 証明が検証を通る・公開入力の申請ダイジェストが申請の内容（店・額面・期限・Condition・鍵ハッシュ）と一致",
+   "expected": "true / 一致",
+   "actual": "true / 一致",
+   "ok": true,
+   "evidence": "bb.js verify + SHA-256"
+  },
+  {
+   "section": "2 券 B",
+   "name": "申請の内容が台帳の EscrowCreate と一致（Condition・店・持ち主・期限）",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B"
+  },
+  {
+   "section": "2 券 C",
+   "name": "ZK 証明が検証を通る・公開入力の申請ダイジェストが申請の内容（店・額面・期限・Condition・鍵ハッシュ）と一致",
+   "expected": "true / 一致",
+   "actual": "true / 一致",
+   "ok": true,
+   "evidence": "bb.js verify + SHA-256"
+  },
+  {
+   "section": "2 券 C",
+   "name": "申請の内容が台帳の EscrowCreate と一致（Condition・店・持ち主・期限）",
+   "expected": "一致",
+   "actual": "一致",
+   "ok": true,
+   "evidence": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6"
+  }
+ ]
+}

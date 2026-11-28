@@ -1,0 +1,438 @@
+{
+ "schema": "todoke-spike15-manifest/1",
+ "generatedAt": "2026-11-28T07:31:21.312Z",
+ "network": "XRPL Testnet",
+ "endpoint": "wss://s.altnet.rippletest.net:51233",
+ "asset": {
+  "RLUSD": {
+   "currency": "524C555344000000000000000000000000000000",
+   "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG"
+  },
+  "ZKV": {
+   "currency": "ZKV",
+   "issuer": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF"
+  }
+ },
+ "accounts": {
+  "P": {
+   "address": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "role": "県（支援元）"
+  },
+  "N": {
+   "address": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "role": "NGO（支援元）"
+  },
+  "S": {
+   "address": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "role": "店舗"
+  },
+  "V": {
+   "address": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "role": "受給証の発行・償還"
+  },
+  "K": {
+   "address": "rBmN9jQyLe1YD8ETY8s1yqGvvf5qMQSZwq",
+   "role": "keeper（期限切れの取消）"
+  }
+ },
+ "baselineLedger": 58882,
+ "endLedger": 59036,
+ "midCheck": {
+  "ticket": "C",
+  "ledger": 58914,
+  "closeTime": 849165441,
+  "cancelAfter": 849165822
+ },
+ "contributions": {
+  "P": "0.1",
+  "N": "0.1"
+ },
+ "tickets": [
+  {
+   "id": "A",
+   "program": "P",
+   "donor": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "household": "H1",
+   "shop": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "value": "0.1",
+   "cancelAfter": 849172590,
+   "condition": "A02580200AD776620A2FD14380F1F954AF28CFBD5240A321007C023D93D2E1C709A09C67810120",
+   "pkHash": "6446E5089D71B99AE50B82C4F1F092CBB23CEAEA429C13D10A8EFCD090CACA4E",
+   "offerSequence": 58852,
+   "escrowIndex": "15E2764ACC6E07309DAB51C25026A1807C3EFF43B313F31AE566FCCE08E5B495",
+   "createTx": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D",
+   "createLedger": 58900,
+   "attempts": 1,
+   "proofSha256": "76DE7A6DA5EF02244088CDFD3C22B84BFE9A6078EEF3D232EB33A6087E4ECA41",
+   "nullifier": "2878317233565875905128205024807726592681102110969990191597323697019458884195",
+   "reqDigest": "62381FD61BAC1828A5DE9C65B9FA42CC564DD06D640CDECB401F55E7DAE1A7DA",
+   "outcome": "used",
+   "finalRecipient": "S",
+   "finishTx": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD",
+   "cancelTx": null,
+   "redeemTx": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303"
+  },
+  {
+   "id": "B",
+   "program": "N",
+   "donor": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "household": "H1",
+   "shop": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "value": "0.05",
+   "cancelAfter": 849172592,
+   "condition": "A0258020394750083C501D36A44B75DCBBADAC03F8E8ADDB037D93D1E086C54A014560EB810120",
+   "pkHash": "0089CD8737B35A08D148A8C91079812770262A0EF583C0DD1E485EA15E892D2A",
+   "offerSequence": 58854,
+   "escrowIndex": "AC41716BC4E33CFA6702E18FC5C54494696FBD32DFC57C39BE3F052817DEF672",
+   "createTx": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B",
+   "createLedger": 58903,
+   "attempts": 1,
+   "proofSha256": "2CC30AE858252B5D8DABD06CE03D7CDEDB3E47584D197621F3493A82160E26A0",
+   "nullifier": "4062032406642169293855578064565583530137970553283793303994492644726634125721",
+   "reqDigest": "20C808A07BA5953027111CCA85EA5D20E5D1BC827E38C0860BE05B1CB9A7147B",
+   "outcome": "used",
+   "finalRecipient": "S",
+   "finishTx": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9",
+   "cancelTx": null,
+   "redeemTx": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C"
+  },
+  {
+   "id": "C",
+   "program": "N",
+   "donor": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "household": "H2",
+   "shop": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "value": "0.05",
+   "cancelAfter": 849165822,
+   "condition": "A0258020F4316CDF2DA677405C71EC3057355A4E53C8B6F3FDD0CFB938CE8E14271830C6810120",
+   "pkHash": "2C990352B69CC876ABD9E2455ACB56479FEBFD1892ABCEC97FC1A3B73A6181EC",
+   "offerSequence": 58855,
+   "escrowIndex": "3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0",
+   "createTx": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6",
+   "createLedger": 58905,
+   "attempts": 1,
+   "proofSha256": "A9AC9A933455A53AE43D1DB6245EB99882197B617EB2EB1A9BED82F1F1E12545",
+   "nullifier": "9404780181797905180045909785540360890676161440123233377606543750602698579451",
+   "reqDigest": "62D77A735D7EC780E99DC8AD7B88B6B7D53EF114E6B3B5BA50EC31E863D77387",
+   "outcome": "expired",
+   "finalRecipient": "N",
+   "finishTx": null,
+   "cancelTx": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD",
+   "redeemTx": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456"
+  }
+ ],
+ "transactions": [
+  {
+   "label": "prep:V:asfDefaultRipple",
+   "phase": "prep",
+   "role": "prep-issuer-setup",
+   "ticket": null,
+   "account": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "type": "AccountSet",
+   "hash": "C2FD2747C854872A0958652E3CA0997D84B9A3D0FACDB77EFB6793AA3ED50FC2",
+   "expect": "tesSUCCESS",
+   "ledger": 58858,
+   "fee": "12"
+  },
+  {
+   "label": "prep:V:asfAllowTrustLineLocking",
+   "phase": "prep",
+   "role": "prep-issuer-setup",
+   "ticket": null,
+   "account": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "type": "AccountSet",
+   "hash": "215B723AF43B4A2C78D2AAF99952BE42B565A17E1FB42E12A9A7B725BC7BE1FD",
+   "expect": "tesSUCCESS",
+   "ledger": 58860,
+   "fee": "12"
+  },
+  {
+   "label": "prep:P:TrustSet RLUSD",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "type": "TrustSet",
+   "hash": "9C5FDB5AAF46C2D5671D4BFA3BA928C9076F3E8CA7DA57136FB50CDCD7A1CC83",
+   "expect": "tesSUCCESS",
+   "ledger": 58862,
+   "fee": "12"
+  },
+  {
+   "label": "prep:N:TrustSet RLUSD",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "TrustSet",
+   "hash": "25BB54B7483131E66CF82DC413E3E2638E60EDB2BF63FF8C5FEFD88CACA3E6C4",
+   "expect": "tesSUCCESS",
+   "ledger": 58864,
+   "fee": "12"
+  },
+  {
+   "label": "prep:S:TrustSet RLUSD",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "type": "TrustSet",
+   "hash": "AD9D1D263AB022EB9CA8357A7BD8CC19721C5B1B2C5CD331B9AB576628B7A329",
+   "expect": "tesSUCCESS",
+   "ledger": 58866,
+   "fee": "12"
+  },
+  {
+   "label": "prep:V:TrustSet RLUSD",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "type": "TrustSet",
+   "hash": "650731740242C1A7864401AA74D78C2A4B46689BDFC32C0A79F76D7276971194",
+   "expect": "tesSUCCESS",
+   "ledger": 58868,
+   "fee": "12"
+  },
+  {
+   "label": "prep:P:TrustSet ZKV",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "type": "TrustSet",
+   "hash": "6B013BF34E479F8D44C046092D29ACB0B1EB9938B2DC70F455800A3AF3141998",
+   "expect": "tesSUCCESS",
+   "ledger": 58870,
+   "fee": "12"
+  },
+  {
+   "label": "prep:N:TrustSet ZKV",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "TrustSet",
+   "hash": "0DB87EF2E25173A360960FCD6BBE1EECE81EE0C4B37EC9A1A63269B07A84A9D0",
+   "expect": "tesSUCCESS",
+   "ledger": 58872,
+   "fee": "12"
+  },
+  {
+   "label": "prep:S:TrustSet ZKV",
+   "phase": "prep",
+   "role": "prep-trustline",
+   "ticket": null,
+   "account": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "type": "TrustSet",
+   "hash": "D2BC4A9C4E04C83A3A8D5AC93D947CB0FF9F6F9615BE31A77A54C708FF127105",
+   "expect": "tesSUCCESS",
+   "ledger": 58874,
+   "fee": "12"
+  },
+  {
+   "label": "prep:P:buy RLUSD 0.1 via AMM",
+   "phase": "prep",
+   "role": "prep-rlusd-acquire",
+   "ticket": null,
+   "account": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "type": "Payment",
+   "hash": "92C0CF051F98D74788019C865C1742F6701C23B84A377488F947B2B493855082",
+   "expect": "tesSUCCESS",
+   "ledger": 58876,
+   "fee": "12"
+  },
+  {
+   "label": "prep:N:buy RLUSD 0.1 via AMM",
+   "phase": "prep",
+   "role": "prep-rlusd-acquire",
+   "ticket": null,
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "Payment",
+   "hash": "4B1DE69F233C8F74113F5B485B3197D2985274632DA1A0DF4A59EAF30980F92F",
+   "expect": "tesSUCCESS",
+   "ledger": 58878,
+   "fee": "12"
+  },
+  {
+   "label": "prep:V:issue offer ZKV→RLUSD 1:1",
+   "phase": "prep",
+   "role": "prep-v-offer",
+   "ticket": null,
+   "account": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "type": "OfferCreate",
+   "hash": "4C8E491664F1E44431A767648CAC6BB088E1D6D31A226D851F3CCBCEFE0EABBD",
+   "expect": "tesSUCCESS",
+   "ledger": 58880,
+   "fee": "12"
+  },
+  {
+   "label": "prep:V:redeem offer（V の RLUSD が 0 のうちは置けない・失敗の記録）",
+   "phase": "prep",
+   "role": "prep-v-offer",
+   "ticket": null,
+   "account": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "type": "OfferCreate",
+   "hash": "ED04B3F681027F4681B1FD461C6DB2C828A310B424DFDD72CC4880139B911FD4",
+   "expect": "tecUNFUNDED_OFFER",
+   "ledger": 58882,
+   "fee": "12"
+  },
+  {
+   "label": "contrib:P",
+   "phase": "scenario",
+   "role": "contribution",
+   "ticket": null,
+   "account": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "type": "OfferCreate",
+   "hash": "FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C",
+   "expect": "tesSUCCESS",
+   "ledger": 58894,
+   "fee": "12"
+  },
+  {
+   "label": "v:redeem offer RLUSD→ZKV 1:1 passive",
+   "phase": "scenario",
+   "role": "v-redeem-offer",
+   "ticket": null,
+   "account": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+   "type": "OfferCreate",
+   "hash": "B38D969C681B350D59B852D5CFE483E29E0E0400CC71C54B4783C4C76D7227B9",
+   "expect": "tesSUCCESS",
+   "ledger": 58896,
+   "fee": "12"
+  },
+  {
+   "label": "contrib:N",
+   "phase": "scenario",
+   "role": "contribution",
+   "ticket": null,
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "OfferCreate",
+   "hash": "5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576",
+   "expect": "tesSUCCESS",
+   "ledger": 58898,
+   "fee": "12"
+  },
+  {
+   "label": "issue:A",
+   "phase": "scenario",
+   "role": "escrow-create",
+   "ticket": "A",
+   "account": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+   "type": "EscrowCreate",
+   "hash": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D",
+   "expect": "tesSUCCESS",
+   "ledger": 58900,
+   "fee": null
+  },
+  {
+   "label": "issue:B",
+   "phase": "scenario",
+   "role": "escrow-create",
+   "ticket": "B",
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "EscrowCreate",
+   "hash": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B",
+   "expect": "tesSUCCESS",
+   "ledger": 58903,
+   "fee": null
+  },
+  {
+   "label": "issue:C",
+   "phase": "scenario",
+   "role": "escrow-create",
+   "ticket": "C",
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "EscrowCreate",
+   "hash": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6",
+   "expect": "tesSUCCESS",
+   "ledger": 58905,
+   "fee": null
+  },
+  {
+   "label": "finish:A",
+   "phase": "scenario",
+   "role": "escrow-finish",
+   "ticket": "A",
+   "account": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "type": "EscrowFinish",
+   "hash": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD",
+   "expect": "tesSUCCESS",
+   "ledger": 58908,
+   "fee": "423"
+  },
+  {
+   "label": "redeem:A",
+   "phase": "scenario",
+   "role": "redeem",
+   "ticket": "A",
+   "account": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "type": "OfferCreate",
+   "hash": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303",
+   "expect": "tesSUCCESS",
+   "ledger": 58910,
+   "fee": "12"
+  },
+  {
+   "label": "finish:B",
+   "phase": "scenario",
+   "role": "escrow-finish",
+   "ticket": "B",
+   "account": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "type": "EscrowFinish",
+   "hash": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9",
+   "expect": "tesSUCCESS",
+   "ledger": 58912,
+   "fee": "423"
+  },
+  {
+   "label": "redeem:B",
+   "phase": "scenario",
+   "role": "redeem",
+   "ticket": "B",
+   "account": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+   "type": "OfferCreate",
+   "hash": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C",
+   "expect": "tesSUCCESS",
+   "ledger": 58914,
+   "fee": "12"
+  },
+  {
+   "label": "cancel:C",
+   "phase": "scenario",
+   "role": "escrow-cancel",
+   "ticket": "C",
+   "account": "rBmN9jQyLe1YD8ETY8s1yqGvvf5qMQSZwq",
+   "type": "EscrowCancel",
+   "hash": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD",
+   "expect": "tesSUCCESS",
+   "ledger": 59034,
+   "fee": "12"
+  },
+  {
+   "label": "redeem:C",
+   "phase": "scenario",
+   "role": "redeem",
+   "ticket": "C",
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "OfferCreate",
+   "hash": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456",
+   "expect": "tesSUCCESS",
+   "ledger": 59036,
+   "fee": "12"
+  }
+ ],
+ "outsideWindow": [
+  {
+   "label": "outside:再実行の不具合で発生した N の RLUSD 追加購入（今回分の範囲外）",
+   "hash": "1D5ECEAD8652F0342523B0A1FF4993B2896D4CC3BE791ED5632FB467A05C98BC",
+   "account": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+   "type": "Payment",
+   "ledger": 59102,
+   "result": "tesSUCCESS",
+   "note": "再実行時、準備段階が「現在の RLUSD 残高 < 必要額」と判断して N が AMM で 0.05 RLUSD を追加購入した（実装の欠陥。修正済み）。給付の検算範囲（開始点〜終了 ledger）の外"
+  }
+ ],
+ "prepNote": "prep の取引（V の設定・トラストライン・AMM での RLUSD 入手・V の 1:1 注文）は給付ではない。baselineLedger までに完了。"
+}

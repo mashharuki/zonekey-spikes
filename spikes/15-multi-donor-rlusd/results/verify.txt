@@ -1,0 +1,315 @@
+# 検算: XRPL Testnet  manifest=/Users/harukikondo/git/zonekey-spikes/spikes/15-multi-donor-rlusd/results/manifest.json
+  開始点 ledger 58882 → 終了 ledger 59036。読み取りのみ（署名鍵なし）。
+
+
+■ 0 前提
+  ✓ 接続先は Testnet（network_id=1）
+      期待=1  実際=1  根拠=server_info
+  ✓ 履歴が開始点から終了点まで連続している
+      期待=true  実際=true  根拠=complete_ledgers=16200-59248
+  ✓ RLUSD の発行者が実在（自前発行の同名資産ではない）
+      期待=実在・Domain あり  実際=rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG Domain=https://ripple.com/  根拠=account_info
+  ✓ ZKV の発行者 V は RLUSD の発行者と別口座
+      期待=別  実際=別  根拠=manifest
+
+■ 1 取引の確定
+  ✓ prep:V:asfDefaultRipple
+      期待=tesSUCCESS / validated / ledger 58858  実際=tesSUCCESS / validated / ledger 58858  根拠=C2FD2747C854872A0958652E3CA0997D84B9A3D0FACDB77EFB6793AA3ED50FC2
+  ✓ prep:V:asfDefaultRipple: 署名した口座
+      期待=V  実際=V  根拠=C2FD2747C854872A0958652E3CA0997D84B9A3D0FACDB77EFB6793AA3ED50FC2
+  ✓ prep:V:asfAllowTrustLineLocking
+      期待=tesSUCCESS / validated / ledger 58860  実際=tesSUCCESS / validated / ledger 58860  根拠=215B723AF43B4A2C78D2AAF99952BE42B565A17E1FB42E12A9A7B725BC7BE1FD
+  ✓ prep:V:asfAllowTrustLineLocking: 署名した口座
+      期待=V  実際=V  根拠=215B723AF43B4A2C78D2AAF99952BE42B565A17E1FB42E12A9A7B725BC7BE1FD
+  ✓ prep:P:TrustSet RLUSD
+      期待=tesSUCCESS / validated / ledger 58862  実際=tesSUCCESS / validated / ledger 58862  根拠=9C5FDB5AAF46C2D5671D4BFA3BA928C9076F3E8CA7DA57136FB50CDCD7A1CC83
+  ✓ prep:P:TrustSet RLUSD: 署名した口座
+      期待=P  実際=P  根拠=9C5FDB5AAF46C2D5671D4BFA3BA928C9076F3E8CA7DA57136FB50CDCD7A1CC83
+  ✓ prep:N:TrustSet RLUSD
+      期待=tesSUCCESS / validated / ledger 58864  実際=tesSUCCESS / validated / ledger 58864  根拠=25BB54B7483131E66CF82DC413E3E2638E60EDB2BF63FF8C5FEFD88CACA3E6C4
+  ✓ prep:N:TrustSet RLUSD: 署名した口座
+      期待=N  実際=N  根拠=25BB54B7483131E66CF82DC413E3E2638E60EDB2BF63FF8C5FEFD88CACA3E6C4
+  ✓ prep:S:TrustSet RLUSD
+      期待=tesSUCCESS / validated / ledger 58866  実際=tesSUCCESS / validated / ledger 58866  根拠=AD9D1D263AB022EB9CA8357A7BD8CC19721C5B1B2C5CD331B9AB576628B7A329
+  ✓ prep:S:TrustSet RLUSD: 署名した口座
+      期待=S  実際=S  根拠=AD9D1D263AB022EB9CA8357A7BD8CC19721C5B1B2C5CD331B9AB576628B7A329
+  ✓ prep:V:TrustSet RLUSD
+      期待=tesSUCCESS / validated / ledger 58868  実際=tesSUCCESS / validated / ledger 58868  根拠=650731740242C1A7864401AA74D78C2A4B46689BDFC32C0A79F76D7276971194
+  ✓ prep:V:TrustSet RLUSD: 署名した口座
+      期待=V  実際=V  根拠=650731740242C1A7864401AA74D78C2A4B46689BDFC32C0A79F76D7276971194
+  ✓ prep:P:TrustSet ZKV
+      期待=tesSUCCESS / validated / ledger 58870  実際=tesSUCCESS / validated / ledger 58870  根拠=6B013BF34E479F8D44C046092D29ACB0B1EB9938B2DC70F455800A3AF3141998
+  ✓ prep:P:TrustSet ZKV: 署名した口座
+      期待=P  実際=P  根拠=6B013BF34E479F8D44C046092D29ACB0B1EB9938B2DC70F455800A3AF3141998
+  ✓ prep:N:TrustSet ZKV
+      期待=tesSUCCESS / validated / ledger 58872  実際=tesSUCCESS / validated / ledger 58872  根拠=0DB87EF2E25173A360960FCD6BBE1EECE81EE0C4B37EC9A1A63269B07A84A9D0
+  ✓ prep:N:TrustSet ZKV: 署名した口座
+      期待=N  実際=N  根拠=0DB87EF2E25173A360960FCD6BBE1EECE81EE0C4B37EC9A1A63269B07A84A9D0
+  ✓ prep:S:TrustSet ZKV
+      期待=tesSUCCESS / validated / ledger 58874  実際=tesSUCCESS / validated / ledger 58874  根拠=D2BC4A9C4E04C83A3A8D5AC93D947CB0FF9F6F9615BE31A77A54C708FF127105
+  ✓ prep:S:TrustSet ZKV: 署名した口座
+      期待=S  実際=S  根拠=D2BC4A9C4E04C83A3A8D5AC93D947CB0FF9F6F9615BE31A77A54C708FF127105
+  ✓ prep:P:buy RLUSD 0.1 via AMM
+      期待=tesSUCCESS / validated / ledger 58876  実際=tesSUCCESS / validated / ledger 58876  根拠=92C0CF051F98D74788019C865C1742F6701C23B84A377488F947B2B493855082
+  ✓ prep:P:buy RLUSD 0.1 via AMM: 署名した口座
+      期待=P  実際=P  根拠=92C0CF051F98D74788019C865C1742F6701C23B84A377488F947B2B493855082
+  ✓ prep:N:buy RLUSD 0.1 via AMM
+      期待=tesSUCCESS / validated / ledger 58878  実際=tesSUCCESS / validated / ledger 58878  根拠=4B1DE69F233C8F74113F5B485B3197D2985274632DA1A0DF4A59EAF30980F92F
+  ✓ prep:N:buy RLUSD 0.1 via AMM: 署名した口座
+      期待=N  実際=N  根拠=4B1DE69F233C8F74113F5B485B3197D2985274632DA1A0DF4A59EAF30980F92F
+  ✓ prep:V:issue offer ZKV→RLUSD 1:1
+      期待=tesSUCCESS / validated / ledger 58880  実際=tesSUCCESS / validated / ledger 58880  根拠=4C8E491664F1E44431A767648CAC6BB088E1D6D31A226D851F3CCBCEFE0EABBD
+  ✓ prep:V:issue offer ZKV→RLUSD 1:1: 署名した口座
+      期待=V  実際=V  根拠=4C8E491664F1E44431A767648CAC6BB088E1D6D31A226D851F3CCBCEFE0EABBD
+  ✓ prep:V:redeem offer（V の RLUSD が 0 のうちは置けない・失敗の記録）
+      期待=tecUNFUNDED_OFFER / validated / ledger 58882  実際=tecUNFUNDED_OFFER / validated / ledger 58882  根拠=ED04B3F681027F4681B1FD461C6DB2C828A310B424DFDD72CC4880139B911FD4
+  ✓ prep:V:redeem offer（V の RLUSD が 0 のうちは置けない・失敗の記録）: 署名した口座
+      期待=V  実際=V  根拠=ED04B3F681027F4681B1FD461C6DB2C828A310B424DFDD72CC4880139B911FD4
+  ✓ contrib:P
+      期待=tesSUCCESS / validated / ledger 58894  実際=tesSUCCESS / validated / ledger 58894  根拠=FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C
+  ✓ contrib:P: 署名した口座
+      期待=P  実際=P  根拠=FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C
+  ✓ v:redeem offer RLUSD→ZKV 1:1 passive
+      期待=tesSUCCESS / validated / ledger 58896  実際=tesSUCCESS / validated / ledger 58896  根拠=B38D969C681B350D59B852D5CFE483E29E0E0400CC71C54B4783C4C76D7227B9
+  ✓ v:redeem offer RLUSD→ZKV 1:1 passive: 署名した口座
+      期待=V  実際=V  根拠=B38D969C681B350D59B852D5CFE483E29E0E0400CC71C54B4783C4C76D7227B9
+  ✓ contrib:N
+      期待=tesSUCCESS / validated / ledger 58898  実際=tesSUCCESS / validated / ledger 58898  根拠=5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576
+  ✓ contrib:N: 署名した口座
+      期待=N  実際=N  根拠=5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576
+  ✓ issue:A
+      期待=tesSUCCESS / validated / ledger 58900  実際=tesSUCCESS / validated / ledger 58900  根拠=319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D
+  ✓ issue:A: 署名した口座
+      期待=P  実際=P  根拠=319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D
+  ✓ issue:B
+      期待=tesSUCCESS / validated / ledger 58903  実際=tesSUCCESS / validated / ledger 58903  根拠=3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B
+  ✓ issue:B: 署名した口座
+      期待=N  実際=N  根拠=3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B
+  ✓ issue:C
+      期待=tesSUCCESS / validated / ledger 58905  実際=tesSUCCESS / validated / ledger 58905  根拠=C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6
+  ✓ issue:C: 署名した口座
+      期待=N  実際=N  根拠=C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6
+  ✓ finish:A
+      期待=tesSUCCESS / validated / ledger 58908  実際=tesSUCCESS / validated / ledger 58908  根拠=CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD
+  ✓ finish:A: 署名した口座
+      期待=S  実際=S  根拠=CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD
+  ✓ redeem:A
+      期待=tesSUCCESS / validated / ledger 58910  実際=tesSUCCESS / validated / ledger 58910  根拠=1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303
+  ✓ redeem:A: 署名した口座
+      期待=S  実際=S  根拠=1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303
+  ✓ finish:B
+      期待=tesSUCCESS / validated / ledger 58912  実際=tesSUCCESS / validated / ledger 58912  根拠=9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9
+  ✓ finish:B: 署名した口座
+      期待=S  実際=S  根拠=9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9
+  ✓ redeem:B
+      期待=tesSUCCESS / validated / ledger 58914  実際=tesSUCCESS / validated / ledger 58914  根拠=7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C
+  ✓ redeem:B: 署名した口座
+      期待=S  実際=S  根拠=7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C
+  ✓ cancel:C
+      期待=tesSUCCESS / validated / ledger 59034  実際=tesSUCCESS / validated / ledger 59034  根拠=9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD
+  ✓ cancel:C: 署名した口座
+      期待=K  実際=K  根拠=9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD
+  ✓ redeem:C
+      期待=tesSUCCESS / validated / ledger 59036  実際=tesSUCCESS / validated / ledger 59036  根拠=A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456
+  ✓ redeem:C: 署名した口座
+      期待=N  実際=N  根拠=A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456
+
+■ 2 券 A
+  ✓ EscrowCreate: 持ち主・宛先・資産・額面・期限
+      期待=P→S 0.1 ZKV(V) CancelAfter=849172590  実際=P→S 0.1 ZKV(V) CancelAfter=849172590  根拠=319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D
+  ✓ Condition・Memo の鍵ハッシュ・OfferSequence・Escrow index
+      期待=一致  実際=一致  根拠=Escrow 15E2764ACC6E07309DAB51C25026A1807C3EFF43B313F31AE566FCCE08E5B495
+  ✓ 台帳・Memo に世帯の識別子を載せていない（Memo は鍵ハッシュ 1 つだけ）
+      期待=Memo 1 件  実際=Memo 1 件  根拠=319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D
+  ✓ EscrowCreate で支援元の ZKV が額面ぶん減る（Escrow に拘束）
+      期待=-0.1  実際=-0.1  根拠=319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D
+  ✓ EscrowFinish: 店 S が実行・Owner・OfferSequence
+      期待=S / rhHyqndMmQC5S48wjzBySgUt379t9iviS1 / 58852  実際=S / rhHyqndMmQC5S48wjzBySgUt379t9iviS1 / 58852  根拠=CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD
+  ✓ Fulfillment の SHA-256 が Condition と一致・消えた Escrow が券のもの
+      期待=一致  実際=一致  根拠=CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD
+  ✓ 期限前に Finish（Finish の ledger の close_time < CancelAfter）
+      期待=true  実際=true  根拠=close_time=849165420 CancelAfter=849172590
+  ✓ 店の ZKV が増える（精算）
+      期待=+0.1  実際=+0.1  根拠=CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD
+  ✓ 償還: 店の ZKV が減る
+      期待=-0.1  実際=-0.1  根拠=1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303
+  ✓ 償還: 店の RLUSD が増える（満額約定）
+      期待=+0.1  実際=+0.1  根拠=1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303
+  ✓ 償還: V の RLUSD が減る・V の ZKV 義務が減る
+      期待=-0.1 / -0.1  実際=-0.1 / -0.1  根拠=1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303
+
+■ 2 券 B
+  ✓ EscrowCreate: 持ち主・宛先・資産・額面・期限
+      期待=N→S 0.05 ZKV(V) CancelAfter=849172592  実際=N→S 0.05 ZKV(V) CancelAfter=849172592  根拠=3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B
+  ✓ Condition・Memo の鍵ハッシュ・OfferSequence・Escrow index
+      期待=一致  実際=一致  根拠=Escrow AC41716BC4E33CFA6702E18FC5C54494696FBD32DFC57C39BE3F052817DEF672
+  ✓ 台帳・Memo に世帯の識別子を載せていない（Memo は鍵ハッシュ 1 つだけ）
+      期待=Memo 1 件  実際=Memo 1 件  根拠=3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B
+  ✓ EscrowCreate で支援元の ZKV が額面ぶん減る（Escrow に拘束）
+      期待=-0.05  実際=-0.05  根拠=3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B
+  ✓ EscrowFinish: 店 S が実行・Owner・OfferSequence
+      期待=S / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58854  実際=S / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58854  根拠=9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9
+  ✓ Fulfillment の SHA-256 が Condition と一致・消えた Escrow が券のもの
+      期待=一致  実際=一致  根拠=9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9
+  ✓ 期限前に Finish（Finish の ledger の close_time < CancelAfter）
+      期待=true  実際=true  根拠=close_time=849165431 CancelAfter=849172592
+  ✓ 店の ZKV が増える（精算）
+      期待=+0.05  実際=+0.05  根拠=9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9
+  ✓ 償還: 店の ZKV が減る
+      期待=-0.05  実際=-0.05  根拠=7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C
+  ✓ 償還: 店の RLUSD が増える（満額約定）
+      期待=+0.05  実際=+0.05  根拠=7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C
+  ✓ 償還: V の RLUSD が減る・V の ZKV 義務が減る
+      期待=-0.05 / -0.05  実際=-0.05 / -0.05  根拠=7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C
+
+■ 2 券 C
+  ✓ EscrowCreate: 持ち主・宛先・資産・額面・期限
+      期待=N→S 0.05 ZKV(V) CancelAfter=849165822  実際=N→S 0.05 ZKV(V) CancelAfter=849165822  根拠=C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6
+  ✓ Condition・Memo の鍵ハッシュ・OfferSequence・Escrow index
+      期待=一致  実際=一致  根拠=Escrow 3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0
+  ✓ 台帳・Memo に世帯の識別子を載せていない（Memo は鍵ハッシュ 1 つだけ）
+      期待=Memo 1 件  実際=Memo 1 件  根拠=C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6
+  ✓ EscrowCreate で支援元の ZKV が額面ぶん減る（Escrow に拘束）
+      期待=-0.05  実際=-0.05  根拠=C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6
+  ✓ EscrowCancel: keeper(K) が実行・Owner・OfferSequence・消えた Escrow
+      期待=K / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58855 / 3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0  実際=K / rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup / 58855 / 3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0  根拠=9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD
+  ✓ 期限後に Cancel（Cancel の ledger の close_time > CancelAfter）
+      期待=true  実際=true  根拠=close_time=849165840 CancelAfter=849165822
+  ✓ 一度も EscrowFinish されていない（manifest の取引に Finish なし・店の ZKV 変化なし）
+      期待=0 件  実際=0 件  根拠=manifest + メタデータ
+  ✓ 【返還 ZKV】支援元へ ZKV が戻る
+      期待=+0.05  実際=+0.05  根拠=9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD
+  ✓ 【償還 RLUSD】支援元の ZKV が減る
+      期待=-0.05  実際=-0.05  根拠=A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456
+  ✓ 【償還 RLUSD】支援元の RLUSD が増える（満額約定）
+      期待=+0.05  実際=+0.05  根拠=A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456
+  ✓ 期限前（validated ledger の close_time < CancelAfter）は未使用の Escrow が存在
+      期待=存在 / true  実際=存在 / true  根拠=ledger 58914 close_time=849165441 CancelAfter=849165822
+
+■ 3 拠出
+  ✓ P: RLUSD を拠出し ZKV を受ける（1:1）
+      期待=RLUSD -0.1 / ZKV +0.1  実際=RLUSD -0.1 / ZKV +0.1  根拠=FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C
+  ✓ P: V の RLUSD 準備金が増える・ZKV 義務が増える
+      期待=+0.1 / +0.1  実際=+0.1 / +0.1  根拠=FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C
+  ✓ N: RLUSD を拠出し ZKV を受ける（1:1）
+      期待=RLUSD -0.1 / ZKV +0.1  実際=RLUSD -0.1 / ZKV +0.1  根拠=5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576
+  ✓ N: V の RLUSD 準備金が増える・ZKV 義務が増える
+      期待=+0.1 / +0.1  実際=+0.1 / +0.1  根拠=5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576
+
+■ 4 差額
+  ✓ P: RLUSD の純増減（開始点 58882 → 終了 59036）
+      期待=-0.1  実際=-0.1  根拠=account_lines / gateway_balances（validated ledger 58882 と 59036）
+  ✓ P: 確定残高の差 = 取引メタデータの合計（説明できない差額）
+      期待=0  実際=0  根拠=残高の差 − Σ(manifest の取引のメタデータ)
+  ✓ P: ZKV の純増減（保有）。最終的に残らない
+      期待=0  実際=0  根拠=account_lines / gateway_balances
+  ✓ N: RLUSD の純増減（開始点 58882 → 終了 59036）
+      期待=-0.05  実際=-0.05  根拠=account_lines / gateway_balances（validated ledger 58882 と 59036）
+  ✓ N: 確定残高の差 = 取引メタデータの合計（説明できない差額）
+      期待=0  実際=0  根拠=残高の差 − Σ(manifest の取引のメタデータ)
+  ✓ N: ZKV の純増減（保有）。最終的に残らない
+      期待=0  実際=0  根拠=account_lines / gateway_balances
+  ✓ S: RLUSD の純増減（開始点 58882 → 終了 59036）
+      期待=+0.15  実際=+0.15  根拠=account_lines / gateway_balances（validated ledger 58882 と 59036）
+  ✓ S: 確定残高の差 = 取引メタデータの合計（説明できない差額）
+      期待=0  実際=0  根拠=残高の差 − Σ(manifest の取引のメタデータ)
+  ✓ S: ZKV の純増減（保有）。最終的に残らない
+      期待=0  実際=0  根拠=account_lines / gateway_balances
+  ✓ V: RLUSD の純増減（開始点 58882 → 終了 59036）
+      期待=0  実際=0  根拠=account_lines / gateway_balances（validated ledger 58882 と 59036）
+  ✓ V: 確定残高の差 = 取引メタデータの合計（説明できない差額）
+      期待=0  実際=0  根拠=残高の差 − Σ(manifest の取引のメタデータ)
+  ✓ V: ZKV の純増減（V は発行残高の符号反転）。最終的に残らない
+      期待=0  実際=0  根拠=account_lines / gateway_balances
+  ✓ P+N+S+V の RLUSD 純増減の合計
+      期待=0  実際=0  根拠=合計
+  ✓ 【N の純負担】= 拠出 − 返還（−0.10 + 0.05）
+      期待=-0.05  実際=-0.05  根拠=N の RLUSD 純増減
+
+■ 5 終了時点
+  ✓ 試験対象の未決 Escrow（券 A・B・C の Escrow が台帳に残っているか）
+      期待=0  実際=0  根拠=ledger_entry @59036
+  ✓ P・N・S に関わる Escrow オブジェクトの総数
+      期待=0  実際=0  根拠=account_objects(type=escrow) @59036
+  ✓ 未償還の ZKV（V の発行残高の増減）
+      期待=0  実際=0  根拠=gateway_balances(V) @58882→59036
+  ✓ V の RLUSD 準備金 − ZKV の発行残高（1:1 の裏付け）
+      期待=0  実際=0  根拠=V の RLUSD 残高 + (−発行残高)
+
+■ 6 説明できない取引
+  ✓ 開始点より後に P・N・S・V・K に触れた manifest 外の取引
+      期待=0 件  実際=0 件  根拠=account_tx（各口座、ページ末尾まで）
+
+■ 2 券 A
+  ✓ ZK 証明が検証を通る・公開入力の申請ダイジェストが申請の内容（店・額面・期限・Condition・鍵ハッシュ）と一致
+      期待=true / 一致  実際=true / 一致  根拠=bb.js verify + SHA-256
+  ✓ 申請の内容が台帳の EscrowCreate と一致（Condition・店・持ち主・期限）
+      期待=一致  実際=一致  根拠=319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D
+
+■ 2 券 B
+  ✓ ZK 証明が検証を通る・公開入力の申請ダイジェストが申請の内容（店・額面・期限・Condition・鍵ハッシュ）と一致
+      期待=true / 一致  実際=true / 一致  根拠=bb.js verify + SHA-256
+  ✓ 申請の内容が台帳の EscrowCreate と一致（Condition・店・持ち主・期限）
+      期待=一致  実際=一致  根拠=3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B
+
+■ 2 券 C
+  ✓ ZK 証明が検証を通る・公開入力の申請ダイジェストが申請の内容（店・額面・期限・Condition・鍵ハッシュ）と一致
+      期待=true / 一致  実際=true / 一致  根拠=bb.js verify + SHA-256
+  ✓ 申請の内容が台帳の EscrowCreate と一致（Condition・店・持ち主・期限）
+      期待=一致  実際=一致  根拠=C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6
+
+■ 差額の表（RLUSD。開始点 → 終了）
+┌─────────┬─────────┬───────────┬───────────┬─────────────┬─────────┬───────────┐
+│ (index) │ account │ RLUSD開始 │ RLUSD終了 │ RLUSD純増減 │ 期待    │ ZKV純増減 │
+├─────────┼─────────┼───────────┼───────────┼─────────────┼─────────┼───────────┤
+│ 0       │ 'P'     │ '0.1'     │ '0'       │ '-0.1'      │ '-0.1'  │ '0'       │
+│ 1       │ 'N'     │ '0.1'     │ '0.05'    │ '-0.05'     │ '-0.05' │ '0'       │
+│ 2       │ 'S'     │ '0'       │ '0.15'    │ '+0.15'     │ '+0.15' │ '0'       │
+│ 3       │ 'V'     │ '0'       │ '0'       │ '0'         │ '0'     │ '0'       │
+└─────────┴─────────┴───────────┴───────────┴─────────────┴─────────┴───────────┘
+■ 券ごとの流れ
+{
+ "A": {
+  "create": {
+   "ZKV_donor": "-0.1"
+  },
+  "finish": {
+   "S_ZKV": "+0.1"
+  },
+  "redeem": {
+   "S_ZKV": "-0.1",
+   "S_RLUSD": "+0.1",
+   "V_RLUSD": "-0.1"
+  }
+ },
+ "B": {
+  "create": {
+   "ZKV_donor": "-0.05"
+  },
+  "finish": {
+   "S_ZKV": "+0.05"
+  },
+  "redeem": {
+   "S_ZKV": "-0.05",
+   "S_RLUSD": "+0.05",
+   "V_RLUSD": "-0.05"
+  }
+ },
+ "C": {
+  "create": {
+   "ZKV_donor": "-0.05"
+  },
+  "cancel": {
+   "N_ZKV": "+0.05"
+  },
+  "redeem": {
+   "N_ZKV": "-0.05",
+   "N_RLUSD": "+0.05"
+  }
+ }
+}
+
+■ XRP 手数料（今回分・別計上）: {"V":"12 drops","P":"24 drops","N":"48 drops","S":"870 drops","K":"12 drops"}
+
+結果: 116/116 項目が期待どおり。 未決 Escrow=0 未償還ZKV=0 説明できない取引=0 件
+詳細: /Users/harukikondo/git/zonekey-spikes/spikes/15-multi-donor-rlusd/results/verify.json

@@ -11,7 +11,8 @@ import { type Req, digestToFields, fmtUnits, hex, requestDigest } from "../../13
 import { PUBLIC_NAMES, type Statement, type Zk, expectedPublicInputs } from "../../13-zk-bound-voucher/src/zk.js";
 import { type J, accountHistory, chainInfo, coversRange, flat, queryTx, waitMs } from "./chain.js";
 
-export interface Program { id: bigint; owner: string; currency: string; issuer: string; allowedValues: bigint[]; allowedShops: string[]; stmt: Omit<Statement, "root" | "programId"> }
+export interface Program { id: bigint; owner: string; currency: string; issuer: string; allowedValues: bigint[]; allowedShops: string[]; stmt: Omit<Statement, "root" | "programId">;
+  /** 期限（CancelAfter）の最短の余裕（秒）。既定 3600。spike 15 が未請求券の失効試験のために短くする（既定値は spike 14 のまま） */ minTtlSec?: number }
 export interface Opts {
   dbPath: string; client: Client; wallet: Wallet; programs: Program[]; approvedRoots: bigint[]; zk?: Zk;
   /** LastLedgerSequence = 署名時の validated + この値（既定 20。XRPL の autofill と同じ） */
@@ -94,7 +95,7 @@ export class Service {
     if (!prog) return { status: "rejected", stage: "policy", reason: "unknown program" };
     const info0 = await chainInfo(this.o.client, this.o.wallet.address);
     const now = info0.closeTime;
-    const bad = req.owner !== prog.owner ? "owner" : req.currency !== prog.currency || req.issuer !== prog.issuer ? "asset" : !prog.allowedValues.includes(req.valueUnits) ? "value" : !prog.allowedShops.includes(req.shop) ? "shop" : !(req.cancelAfter > now + 3600 && req.cancelAfter <= now + 30 * 86400) ? "cancelAfter" : undefined;
+    const bad = req.owner !== prog.owner ? "owner" : req.currency !== prog.currency || req.issuer !== prog.issuer ? "asset" : !prog.allowedValues.includes(req.valueUnits) ? "value" : !prog.allowedShops.includes(req.shop) ? "shop" : !(req.cancelAfter > now + (prog.minTtlSec ?? 3600) && req.cancelAfter <= now + 30 * 86400) ? "cancelAfter" : undefined;
     if (bad) return { status: "rejected", stage: "policy", reason: `policy:${bad}` };
     const pi = proof.publicInputs.map((x) => BigInt(x));
     if (pi.length !== PUBLIC_NAMES.length) return { status: "rejected", stage: "public_input", reason: "count" };

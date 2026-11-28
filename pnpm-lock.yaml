@@ -600,6 +600,37 @@ importers:
         specifier: latest
         version: 7.0.2
 
+  spikes/15-multi-donor-rlusd:
+    dependencies:
+      '@aztec-foundation/bb.js':
+        specifier: 6.0.0
+        version: 6.0.0
+      '@noir-lang/noir_js':
+        specifier: 1.0.0
+        version: 1.0.0
+      '@noir-lang/noirc_abi':
+        specifier: 1.0.0
+        version: 1.0.0
+      ripple-address-codec:
+        specifier: latest
+        version: 5.0.1
+      xrpl:
+        specifier: latest
+        version: 5.3.0
+      xrpl-kit:
+        specifier: workspace:*
+        version: link:../../packages/xrpl-kit
+    devDependencies:
+      '@types/node':
+        specifier: latest
+        version: 26.6.11
+      tsx:
+        specifier: latest
+        version: 4.23.15
+      typescript:
+        specifier: latest
+        version: 7.0.2
+
 packages:
 
   '@adraffy/ens-normalize@1.11.1':

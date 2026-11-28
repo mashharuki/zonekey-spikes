@@ -1,0 +1,685 @@
+{
+  "schema": "todoke-spike15-run/1",
+  "startedAt": "2026-11-28T07:30:48.798Z",
+  "finishedAt": "2026-11-28T07:31:21.315Z",
+  "server": {
+    "build_version": "3.5.0-rc6",
+    "complete_ledgers": "16111-59158",
+    "validated": 59158,
+    "network_id": 1
+  },
+  "asset": {
+    "currency": "524C555344000000000000000000000000000000",
+    "issuer": "rpcFL7MzZvGYFCihoUx9nrhhgAp4nSDdvG",
+    "source": "https://tryrlusd.com/addresses（XRPL Testnet の RLUSD issuer / Currency code 524C555344…）",
+    "issuerFlags": {
+      "DefaultRipple": true,
+      "AllowTrustLineLocking": true,
+      "DepositAuth": true,
+      "DisableMaster": true,
+      "DisallowXRP": true,
+      "AllowTrustLineClawback": true,
+      "RequireAuth": false,
+      "GlobalFreeze": false
+    },
+    "issuerDomain": "https://ripple.com/",
+    "obligations": {
+      "524C555344000000000000000000000000000000": "2000000000"
+    },
+    "amm": {
+      "account": "rKK1ptBR793sX97BS6Ri1osefpPfwGR3Cf",
+      "xrpDrops": "1000000250003",
+      "rlusd": "999999.75"
+    },
+    "repoConstantIssuerStillExists": false
+  },
+  "accounts": {
+    "P": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+    "N": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+    "S": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+    "V": "rMUYGTwRFpztm4BBbvr2N5Q99Q7HUJ1fxF",
+    "K": "rBmN9jQyLe1YD8ETY8s1yqGvvf5qMQSZwq"
+  },
+  "xrpAtBaseline": {
+    "P": "99899963",
+    "N": "99899963",
+    "S": "99999976",
+    "V": "99999940",
+    "K": "100000000"
+  },
+  "baseline": {
+    "ledger": 58882,
+    "index": 58882,
+    "closeTime": 849165332,
+    "hash": "9D6E2A3CB5CFFBB3B6E0C78E440135CFE802ED6FE40C5A7EA45BB0C5CC3C063B",
+    "balances": {
+      "P": {
+        "RLUSD": "0.1",
+        "ZKV": "0"
+      },
+      "N": {
+        "RLUSD": "0.1",
+        "ZKV": "0"
+      },
+      "S": {
+        "RLUSD": "0",
+        "ZKV": "0"
+      },
+      "V": {
+        "RLUSD": "0",
+        "ZKV": "0"
+      }
+    },
+    "vOffers": 1,
+    "note": "V の ZKV は「発行済み残高（義務）」の符号反転。専用の新しい発行者なので試験外の残高はない",
+    "xrp": {
+      "P": "99899963",
+      "N": "99899963",
+      "S": "99999976",
+      "V": "99999940",
+      "K": "100000000"
+    }
+  },
+  "endLedger": 59036,
+  "endBalances": {
+    "P": {
+      "RLUSD": "0",
+      "ZKV": "0"
+    },
+    "N": {
+      "RLUSD": "0.05",
+      "ZKV": "0"
+    },
+    "S": {
+      "RLUSD": "0.15",
+      "ZKV": "0"
+    },
+    "V": {
+      "RLUSD": "0",
+      "ZKV": "0"
+    }
+  },
+  "純増減_開始点から終了点": {
+    "P": {
+      "RLUSD": "-0.1",
+      "ZKV": "0"
+    },
+    "N": {
+      "RLUSD": "-0.05",
+      "ZKV": "0"
+    },
+    "S": {
+      "RLUSD": "+0.15",
+      "ZKV": "0"
+    },
+    "V": {
+      "RLUSD": "0",
+      "ZKV": "0"
+    }
+  },
+  "negativeControl": {
+    "household": "H3",
+    "program": "N",
+    "proofCreated": false,
+    "error": "Circuit execution failed: senior required"
+  },
+  "escrowChecks": [
+    {
+      "ticket": "A",
+      "checks": {
+        "Escrow の持ち主 = 申請の支援元": true,
+        "宛先 = 店舗 S": true,
+        "資産 = ZKV（V 発行）": true,
+        "額面が一致": true,
+        "CancelAfter が一致": true,
+        "Condition が一致": true,
+        "Memo の鍵ハッシュ = 申請の pkHash": true,
+        "OfferSequence = 台帳上の Sequence": true,
+        "制度の公開入力（program_id）が申請の制度": true
+      }
+    },
+    {
+      "ticket": "B",
+      "checks": {
+        "Escrow の持ち主 = 申請の支援元": true,
+        "宛先 = 店舗 S": true,
+        "資産 = ZKV（V 発行）": true,
+        "額面が一致": true,
+        "CancelAfter が一致": true,
+        "Condition が一致": true,
+        "Memo の鍵ハッシュ = 申請の pkHash": true,
+        "OfferSequence = 台帳上の Sequence": true,
+        "制度の公開入力（program_id）が申請の制度": true
+      }
+    },
+    {
+      "ticket": "C",
+      "checks": {
+        "Escrow の持ち主 = 申請の支援元": true,
+        "宛先 = 店舗 S": true,
+        "資産 = ZKV（V 発行）": true,
+        "額面が一致": true,
+        "CancelAfter が一致": true,
+        "Condition が一致": true,
+        "Memo の鍵ハッシュ = 申請の pkHash": true,
+        "OfferSequence = 台帳上の Sequence": true,
+        "制度の公開入力（program_id）が申請の制度": true
+      }
+    }
+  ],
+  "offlineAcceptance": {
+    "A": {
+      "reason": "使える",
+      "ok": true,
+      "netAttempts": 0,
+      "listSize": 3,
+      "syncSize": 3,
+      "checkedAtRippleTime": 849165412
+    },
+    "B": {
+      "reason": "使える",
+      "ok": true,
+      "netAttempts": 0,
+      "listSize": 2,
+      "syncSize": 2,
+      "checkedAtRippleTime": 849165422
+    }
+  },
+  "tickets": [
+    {
+      "id": "A",
+      "program": "P",
+      "donor": "rhHyqndMmQC5S48wjzBySgUt379t9iviS1",
+      "household": "H1",
+      "shop": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+      "value": "0.1",
+      "cancelAfter": 849172590,
+      "condition": "A02580200AD776620A2FD14380F1F954AF28CFBD5240A321007C023D93D2E1C709A09C67810120",
+      "pkHash": "6446E5089D71B99AE50B82C4F1F092CBB23CEAEA429C13D10A8EFCD090CACA4E",
+      "offerSequence": 58852,
+      "escrowIndex": "15E2764ACC6E07309DAB51C25026A1807C3EFF43B313F31AE566FCCE08E5B495",
+      "createTx": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D",
+      "createLedger": 58900,
+      "attempts": 1,
+      "proofSha256": "76DE7A6DA5EF02244088CDFD3C22B84BFE9A6078EEF3D232EB33A6087E4ECA41",
+      "nullifier": "2878317233565875905128205024807726592681102110969990191597323697019458884195",
+      "reqDigest": "62381FD61BAC1828A5DE9C65B9FA42CC564DD06D640CDECB401F55E7DAE1A7DA"
+    },
+    {
+      "id": "B",
+      "program": "N",
+      "donor": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+      "household": "H1",
+      "shop": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+      "value": "0.05",
+      "cancelAfter": 849172592,
+      "condition": "A0258020394750083C501D36A44B75DCBBADAC03F8E8ADDB037D93D1E086C54A014560EB810120",
+      "pkHash": "0089CD8737B35A08D148A8C91079812770262A0EF583C0DD1E485EA15E892D2A",
+      "offerSequence": 58854,
+      "escrowIndex": "AC41716BC4E33CFA6702E18FC5C54494696FBD32DFC57C39BE3F052817DEF672",
+      "createTx": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B",
+      "createLedger": 58903,
+      "attempts": 1,
+      "proofSha256": "2CC30AE858252B5D8DABD06CE03D7CDEDB3E47584D197621F3493A82160E26A0",
+      "nullifier": "4062032406642169293855578064565583530137970553283793303994492644726634125721",
+      "reqDigest": "20C808A07BA5953027111CCA85EA5D20E5D1BC827E38C0860BE05B1CB9A7147B"
+    },
+    {
+      "id": "C",
+      "program": "N",
+      "donor": "rKeVTjcGHucD3k5nsH1i7gmz6gUfaysup",
+      "household": "H2",
+      "shop": "rQDnLqPzrH9yuyFWVdxfBuopn8xS7u4fBY",
+      "value": "0.05",
+      "cancelAfter": 849165822,
+      "condition": "A0258020F4316CDF2DA677405C71EC3057355A4E53C8B6F3FDD0CFB938CE8E14271830C6810120",
+      "pkHash": "2C990352B69CC876ABD9E2455ACB56479FEBFD1892ABCEC97FC1A3B73A6181EC",
+      "offerSequence": 58855,
+      "escrowIndex": "3E14F7BDCD1F796DFBAD5612F74ED93C463669AE2BB64F311F6EC69A064D36D0",
+      "createTx": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6",
+      "createLedger": 58905,
+      "attempts": 1,
+      "proofSha256": "A9AC9A933455A53AE43D1DB6245EB99882197B617EB2EB1A9BED82F1F1E12545",
+      "nullifier": "9404780181797905180045909785540360890676161440123233377606543750602698579451",
+      "reqDigest": "62D77A735D7EC780E99DC8AD7B88B6B7D53EF114E6B3B5BA50EC31E863D77387"
+    }
+  ],
+  "steps": [
+    {
+      "label": "contrib:P",
+      "role": "contribution",
+      "ticket": null,
+      "account": "P",
+      "type": "OfferCreate",
+      "hash": "FCBED258B27B9BD04CE34C809190234267DFB9AF3EC7F5481769383F1CC0A31C",
+      "result": "tesSUCCESS",
+      "ledger": 58894,
+      "closeTime": 849165371,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "P": {
+          "RLUSD": "-0.1",
+          "ZKV": "+0.1"
+        },
+        "V": {
+          "RLUSD": "+0.1",
+          "ZKV": "-0.1"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "RLUSD",
+          "差": "+0.1"
+        },
+        {
+          "口座": "P",
+          "通貨": "ZKV",
+          "差": "+0.1"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "-0.1"
+        },
+        {
+          "口座": "P",
+          "通貨": "RLUSD",
+          "差": "-0.1"
+        }
+      ]
+    },
+    {
+      "label": "v:redeem offer RLUSD→ZKV 1:1 passive",
+      "role": "v-redeem-offer",
+      "ticket": null,
+      "account": "V",
+      "type": "OfferCreate",
+      "hash": "B38D969C681B350D59B852D5CFE483E29E0E0400CC71C54B4783C4C76D7227B9",
+      "result": "tesSUCCESS",
+      "ledger": 58896,
+      "closeTime": 849165381,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {},
+      "メタデータからの差": []
+    },
+    {
+      "label": "contrib:N",
+      "role": "contribution",
+      "ticket": null,
+      "account": "N",
+      "type": "OfferCreate",
+      "hash": "5AC1AA89F04B3931BA0B7183E8FC4FE729EAD6F40B0EB3D25D1553097F399576",
+      "result": "tesSUCCESS",
+      "ledger": 58898,
+      "closeTime": 849165390,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "N": {
+          "RLUSD": "-0.1",
+          "ZKV": "+0.1"
+        },
+        "V": {
+          "RLUSD": "+0.1",
+          "ZKV": "-0.1"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "RLUSD",
+          "差": "+0.1"
+        },
+        {
+          "口座": "N",
+          "通貨": "RLUSD",
+          "差": "-0.1"
+        },
+        {
+          "口座": "N",
+          "通貨": "ZKV",
+          "差": "+0.1"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "-0.1"
+        }
+      ]
+    },
+    {
+      "label": "issue:A",
+      "role": "escrow-create",
+      "ticket": "A",
+      "account": "P",
+      "type": "EscrowCreate",
+      "hash": "319CB3571497A3D318A2F3D87BD0E829F6E9144AAAAF4D1E37E860B1D9064B7D",
+      "result": "tesSUCCESS",
+      "ledger": 58900,
+      "closeTime": 849165392,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "P": {
+          "ZKV": "-0.1"
+        },
+        "V": {
+          "ZKV": "+0.1"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "P",
+          "通貨": "ZKV",
+          "差": "-0.1"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "+0.1"
+        }
+      ]
+    },
+    {
+      "label": "issue:B",
+      "role": "escrow-create",
+      "ticket": "B",
+      "account": "N",
+      "type": "EscrowCreate",
+      "hash": "3F6E0EBD90EA378728885282A9B5E2D9A1BF32C3E41B42F57C6A95543FD4663B",
+      "result": "tesSUCCESS",
+      "ledger": 58903,
+      "closeTime": 849165402,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "N": {
+          "ZKV": "-0.05"
+        },
+        "V": {
+          "ZKV": "+0.05"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "N",
+          "通貨": "ZKV",
+          "差": "-0.05"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "+0.05"
+        }
+      ]
+    },
+    {
+      "label": "issue:C",
+      "role": "escrow-create",
+      "ticket": "C",
+      "account": "N",
+      "type": "EscrowCreate",
+      "hash": "C8119D49494525DE01BBFD58637439C75C949097B9F5D2210B2D0CB9E137D5D6",
+      "result": "tesSUCCESS",
+      "ledger": 58905,
+      "closeTime": 849165411,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "N": {
+          "ZKV": "-0.05"
+        },
+        "V": {
+          "ZKV": "+0.05"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "N",
+          "通貨": "ZKV",
+          "差": "-0.05"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "+0.05"
+        }
+      ]
+    },
+    {
+      "label": "finish:A",
+      "role": "escrow-finish",
+      "ticket": "A",
+      "account": "S",
+      "type": "EscrowFinish",
+      "hash": "CBA5F45AA6EDE505DE885AC27067FBD6CF1C0414F709DB9C8A85E42771F82BFD",
+      "result": "tesSUCCESS",
+      "ledger": 58908,
+      "closeTime": 849165420,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "S": {
+          "ZKV": "+0.1"
+        },
+        "V": {
+          "ZKV": "-0.1"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "-0.1"
+        },
+        {
+          "口座": "S",
+          "通貨": "ZKV",
+          "差": "+0.1"
+        }
+      ]
+    },
+    {
+      "label": "redeem:A",
+      "role": "redeem",
+      "ticket": "A",
+      "account": "S",
+      "type": "OfferCreate",
+      "hash": "1C2C9B2B98B5E01D0D2AC30425B239309F6B92C4E57A264955599792CC01F303",
+      "result": "tesSUCCESS",
+      "ledger": 58910,
+      "closeTime": 849165422,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "S": {
+          "RLUSD": "+0.1",
+          "ZKV": "-0.1"
+        },
+        "V": {
+          "RLUSD": "-0.1",
+          "ZKV": "+0.1"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "RLUSD",
+          "差": "-0.1"
+        },
+        {
+          "口座": "S",
+          "通貨": "RLUSD",
+          "差": "+0.1"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "+0.1"
+        },
+        {
+          "口座": "S",
+          "通貨": "ZKV",
+          "差": "-0.1"
+        }
+      ]
+    },
+    {
+      "label": "finish:B",
+      "role": "escrow-finish",
+      "ticket": "B",
+      "account": "S",
+      "type": "EscrowFinish",
+      "hash": "9607C0FB88D6AEDE7E4272560AC9743119281CBB016272089D4FD10D4D4C3DD9",
+      "result": "tesSUCCESS",
+      "ledger": 58912,
+      "closeTime": 849165431,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "S": {
+          "ZKV": "+0.05"
+        },
+        "V": {
+          "ZKV": "-0.05"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "-0.05"
+        },
+        {
+          "口座": "S",
+          "通貨": "ZKV",
+          "差": "+0.05"
+        }
+      ]
+    },
+    {
+      "label": "redeem:B",
+      "role": "redeem",
+      "ticket": "B",
+      "account": "S",
+      "type": "OfferCreate",
+      "hash": "7E5A5805BF2B87148F70F0671C86EBACBB926537DA5910F2DFAAB538513B0A5C",
+      "result": "tesSUCCESS",
+      "ledger": 58914,
+      "closeTime": 849165441,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "S": {
+          "RLUSD": "+0.05",
+          "ZKV": "-0.05"
+        },
+        "V": {
+          "RLUSD": "-0.05",
+          "ZKV": "+0.05"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "RLUSD",
+          "差": "-0.05"
+        },
+        {
+          "口座": "S",
+          "通貨": "RLUSD",
+          "差": "+0.05"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "+0.05"
+        },
+        {
+          "口座": "S",
+          "通貨": "ZKV",
+          "差": "-0.05"
+        }
+      ]
+    },
+    {
+      "label": "cancel:C",
+      "role": "escrow-cancel",
+      "ticket": "C",
+      "account": "K",
+      "type": "EscrowCancel",
+      "hash": "9127E80EA4EA683AD8D4A5DE1AEB99FBB85F67208394A375118B6DE0F182C7FD",
+      "result": "tesSUCCESS",
+      "ledger": 59034,
+      "closeTime": 849165840,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "N": {
+          "ZKV": "+0.05"
+        },
+        "V": {
+          "ZKV": "-0.05"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "N",
+          "通貨": "ZKV",
+          "差": "+0.05"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "-0.05"
+        }
+      ]
+    },
+    {
+      "label": "redeem:C",
+      "role": "redeem",
+      "ticket": "C",
+      "account": "N",
+      "type": "OfferCreate",
+      "hash": "A39F8FAD59830BFE136C5FED96C4E36E1900B5C45C17327C3164C8ED73177456",
+      "result": "tesSUCCESS",
+      "ledger": 59036,
+      "closeTime": 849165842,
+      "attempts": 1,
+      "残高の差_台帳L-1からL": {
+        "N": {
+          "RLUSD": "+0.05",
+          "ZKV": "-0.05"
+        },
+        "V": {
+          "RLUSD": "-0.05",
+          "ZKV": "+0.05"
+        }
+      },
+      "メタデータからの差": [
+        {
+          "口座": "V",
+          "通貨": "RLUSD",
+          "差": "-0.05"
+        },
+        {
+          "口座": "N",
+          "通貨": "RLUSD",
+          "差": "+0.05"
+        },
+        {
+          "口座": "N",
+          "通貨": "ZKV",
+          "差": "-0.05"
+        },
+        {
+          "口座": "V",
+          "通貨": "ZKV",
+          "差": "+0.05"
+        }
+      ]
+    }
+  ],
+  "midCheck": {
+    "ledger": 58914,
+    "closeTime": 849165441,
+    "cancelAfter": 849165822,
+    "exists": true
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "xrpl": "5.3.0"
+  }
+}
